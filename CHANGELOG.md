@@ -1,9 +1,33 @@
 # Changelog
 
-> Doc version 1.5.1 · Last updated 2026-11-01
+> Doc version 1.5.2 · Last updated 2026-11-01
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.5.2] — 2026-11-01
+
+### Added
+- **Disk image download.** `Shorthand-x.y.z.dmg` opens a window with Shorthand and an Applications shortcut to drag it onto. It's signed, notarized and stapled like the app; the zip is still provided for automatic updates.
+- **Uninstall Shorthand…** in Settings ▸ General: "keep my snippets" or "delete everything" (asks twice). A synced library is never deleted.
+- **Dark mode screenshots** throughout the Help and on the website. They follow your Mac's appearance.
+
+### Changed
+- **Automatic update checks are on by default** (once a day), so there's no extra prompt. Background checks show a gentle reminder, and the update window always comes to the front. Previously a manual check could open it behind other apps.
+- Update downloads are verified before they're unpacked.
+- Running Shorthand straight from Downloads (macOS "translocation") shows a tip to move it to Applications, and no longer changes the login item each launch.
+
+### Fixed
+- Declining the license agreement no longer loads or writes any data.
+- The Dock icon goes away after the license, update and other windows close.
+
+### Release process (developer)
+- `release.sh` refuses to publish unless:
+  - the app and zip are the notarized Developer ID build, with matching build numbers
+  - the Sparkle key in the Keychain matches the key built into the app
+  - the signature verifies
+- Failed feed or download checks stop the script, and leftover drafts are cleaned up.
+- The install step waits for the old copy to quit, and installs only Developer ID builds.
 
 ## [1.5.1] — 2026-11-01
 
@@ -77,7 +101,6 @@ Dates are local (Pacific).
 - **Passwords are normalized to NFC**, so the same password typed different ways always matches.
 
 ### Notes
-- iCloud Keychain sync of the key was tested and needs a Developer ID provisioning profile (`errSecMissingEntitlement`). Until then, other Macs use the password or recovery key once.
 - Security.json is plain on purpose: settings plus wrapped key slots, no secrets.
 
 ## [1.3.2] — 2026-11-01
@@ -184,7 +207,6 @@ Dates are local (Pacific).
 - **Stable code signing.** `build.sh` signs with a self-signed "Shorthand Signing" identity kept in a dedicated keychain (`~/Library/Application Support/ShorthandSigning`), so macOS keeps the Accessibility permission across rebuilds.
 - **Permission status you can see.** The menu bar menu shows "✓ Keyboard access OK", or a "Fix…" warning when macOS blocks the keyboard. Settings → General → Permissions shows Accessibility, keyboard monitor and Input Monitoring status. "Reset Permission & Ask Again" (`tccutil reset`, Shorthand only) clears a stale grant left by an older build. State changes are written to `~/Library/Application Support/Shorthand/diagnostics.log`.
 - **`%filltop%` now works.** The fill-in window opens at the top centre of the screen. In 1.1 the code was accepted but ignored.
-- **Docs.** CHANGELOG, FEATURES, ARCHITECTURE, PROCESS-FLOWS, SCHEMAS (+ JSON Schemas), TODO, TESTING, ONBOARDING, DOC-REGISTRY, and SVG diagrams.
 
 ### Changed
 - AI error messages name the provider instead of always saying "Claude".

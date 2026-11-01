@@ -35,7 +35,6 @@
   - The key is derived with HKDF-SHA256 (16-byte salt, info `shorthand-recovery-v1`); the code's high entropy makes slow stretching unnecessary.
   - Input is normalized to uppercase with dashes and spaces removed.
 - **Keychain:** a generic password, service `com.kirker.shorthand`, account `vault-key-<keyID>`, created by Shorthand's Developer ID signature. Other apps get a macOS prompt.
-- **iCloud Keychain sync:** the data-protection keychain (synchronizable or biometry-bound items) needs an application-identifier entitlement. Tested 2026-11-01: `errSecMissingEntitlement` (-34018) without a provisioning profile. Not used.
 
 ## 4. File formats
 - **Encrypted file:** `{"format":"shorthand-encrypted","version":1,"keyID":…,"slots":[…],"box":…}`. Schema: [encrypted-envelope.schema.json](schemas/encrypted-envelope.schema.json). Every encrypted file carries the slots, so a synced library can be opened on another Mac.
@@ -96,9 +95,7 @@
 ## 8b. Update integrity (1.5)
 Sparkle installs an update only if it carries a valid EdDSA signature from the developer's key (public key in Info.plist), **and** is signed by the same Developer ID. The feed comes over HTTPS from GitHub. The private signing key lives only in the developer's Keychain and must be backed up.
 
-## 9. Known limits / future
+## 9. Known limits
 - **Mixed versions while syncing:** Shorthand 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
-- iCloud Keychain key sync needs a Developer ID provisioning profile (see ROADMAP).
-- Old backups keep old slots after a password or recovery change. That's intended, but the old secret still opens them. Real revocation would need re-keying every file and backup (future).
 - Retired keys stay in the Keychain so older files remain readable. Removing Shorthand's Keychain items in Keychain Access deletes them.
 - A separate Shorthand password protects the app lock and other Macs. On this Mac, the data key is still opened automatically from the Keychain, so expansion can work without a prompt.

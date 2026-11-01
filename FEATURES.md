@@ -52,6 +52,9 @@
 |---|
 | Automatic updates (Sparkle 2, EdDSA-signed, from GitHub Releases), with Check for Updates… and auto-check/auto-install settings |
 | License agreement ("as is", no warranty) accepted once before first use; viewable in Help |
+| Notarized disk image (drag to Applications) alongside the update zip (1.5.2) |
+| Uninstall: keep snippets, or delete everything (Keychain items, data, login item, permissions) (1.5.2) |
+| Light and dark mode, with dark-mode screenshots in Help and on the website (1.5.2) |
 | Public website: downloads, docs, Help site (GitHub Pages) |
 
 ### Snippet content (macros)
@@ -153,7 +156,6 @@ Legend:
 | Import TE libraries | ✅ | |
 | Export group in TE format | ✅ | |
 | Groups subscribed from a URL (remote/shared groups) | ❌ | Not implemented. |
-| TextExpander touch / iOS sync | ❌ | Future idea (docs/TODO.md). |
 | Conditional text, calculations | ➕ | `%if`, `%calc`. |
 | Multi-select, bulk move/delete | ➕ | Plus duplicate, merge, drag to group/tag/Trash. |
 | Trash / restore deleted snippets | ➕ | TE5 deletes immediately (backups only). |
@@ -161,5 +163,3 @@ Legend:
 | Encryption at rest + app lock | ➕ | TE5 stores its library as a plain file. |
 | App/website blocklist | ➕ | TE5 has per-group app exceptions only. Shorthand also blocks websites and stops listening entirely. |
 | AI (rewrite, generate, suggest) | ➕ | 12 providers with fallback. |
-
-**Flags.** TE5 parity is checked against TE5's bundled help and the TextExpander libraries it was tested with, not against every TE5 setting. TE5 settings that aren't in the help, or that the TextExpander libraries it was tested with didn't use, may be missing. See docs/TODO.md.
