@@ -47,6 +47,13 @@
 | Encrypted sync folder: unlock once per Mac |
 | "Protect Shorthand?" offer; Settings → Security |
 
+### Distribution (1.5)
+| Capability |
+|---|
+| Automatic updates (Sparkle 2, EdDSA-signed, from GitHub Releases), with Check for Updates… and auto-check/auto-install settings |
+| License agreement ("as is", no warranty) accepted once before first use; viewable in Help |
+| Public website: downloads, docs, Help site (GitHub Pages) |
+
 ### Snippet content (macros)
 The full list is in Help › Macro Reference (also on the [Help site](https://jkirker.github.io/shorthand-releases/macros.html)). 
 | Family | Codes |

@@ -102,6 +102,9 @@ Both are off by default. When on, repeated phrases are tracked only as one-way f
 AI
 AI is off until you add a key. When you use an AI feature, only the text it needs goes straight to the provider you chose (or your fallback provider). Details: AI privacy.
 
+Update checks
+When checking for updates, Shorthand downloads a small file (the update feed) from GitHub. It sends no information about you, your Mac or your snippets. Turn automatic checks off in Settings ▸ General ▸ Updates.
+
 Scripts
 Script snippets run with your permissions. Imported libraries can contain scripts; check them before use, or turn off Run script snippets (AppleScript, shell, JavaScript). See Script Snippets.
 

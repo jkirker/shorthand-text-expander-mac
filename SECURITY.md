@@ -93,6 +93,9 @@
   - turning off back to plain
 - **`--security-selftest-prepare` + `--security-selftest-launch`** (9 checks): a fresh launch with encrypted files and no key starts locked, substitutes nothing, saves and backs up nothing, then unlocks with a loosely typed recovery key.
 
+## 8b. Update integrity (1.5)
+Sparkle installs an update only if it carries a valid EdDSA signature from the developer's key (public key in Info.plist), **and** is signed by the same Developer ID. The feed comes over HTTPS from GitHub. The private signing key lives only in the developer's Keychain and must be backed up.
+
 ## 9. Known limits / future
 - **Mixed versions while syncing:** Shorthand 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
 - iCloud Keychain key sync needs a Developer ID provisioning profile (see ROADMAP).
