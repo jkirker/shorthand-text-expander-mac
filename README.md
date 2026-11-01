@@ -6,7 +6,7 @@
 
 **[⬇ Download the latest version](https://github.com/jkirker/shorthand-releases/releases/latest)** · [Help](https://jkirker.github.io/shorthand-releases/) · [Features](FEATURES.md) · [What's new](CHANGELOG.md) · [Privacy](PRIVACY.md) · [Security](SECURITY.md) · [License](LICENSE.md)
 
-Current version: **1.5.0** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
+Current version: **1.5.1** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
 
 ## Highlights
 - **Everything TextExpander 5 does:** abbreviations, fill-ins (text, choices, optional sections), dates and date math, the clipboard, nested snippets, keys and cursor placement, script snippets, groups, per-app rules, search, statistics, backups and sync folders.
@@ -23,7 +23,7 @@ Current version: **1.5.0** · macOS 14 or later · Apple Silicon · signed with 
 | ![Privacy blocklist](images/settings-privacy.png) | ![Security](images/settings-security.png) |
 
 ## Install
-1. Download **Shorthand-1.5.0.zip** from [Releases](https://github.com/jkirker/shorthand-releases/releases/latest).
+1. Download **Shorthand-1.5.1.zip** from [Releases](https://github.com/jkirker/shorthand-releases/releases/latest).
 2. Unzip it and drag **Shorthand** into **Applications**, then open it.
 3. Accept the license agreement, then follow the setup: grant **Accessibility**, then import from TextExpander if you like.
 

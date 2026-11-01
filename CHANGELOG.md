@@ -1,9 +1,18 @@
 # Changelog
 
-> Doc version 1.5.0 · Last updated 2026-11-01
+> Doc version 1.5.1 · Last updated 2026-11-01
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.5.1] — 2026-11-01
+
+### Added
+- **Help ▸ Shorthand Website & Downloads** opens the Shorthand page on GitHub, with downloads, release notes and the online help.
+- **Help pages:** the license agreement (Getting Started), updates and the license (Support Shorthand), and what update checks send (nothing about you; see Privacy).
+
+### Notes
+- This is the first update delivered through automatic updates. If you're on 1.5.0, Shorthand offers it on its own.
 
 ## [1.5.0] — 2026-11-01
 
