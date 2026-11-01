@@ -1,6 +1,6 @@
 # Shorthand Privacy
 
-The full, formatted version is on the [Help site](https://jkirker.github.io/shorthand-releases/privacy.html).
+The full, formatted version is on the [Help site](https://jkirker.github.io/shorthand-text-expander-mac/privacy.html).
 
 Privacy, Blocklist &amp; Permissions
 A text expander has to see what you type. Here is exactly what Shorthand does with that, where you can switch it off completely, and what it asks macOS for.

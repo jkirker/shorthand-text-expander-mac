@@ -58,7 +58,7 @@
 | Public website: downloads, docs, Help site (GitHub Pages) |
 
 ### Snippet content (macros)
-The full list is in Help › Macro Reference (also on the [Help site](https://jkirker.github.io/shorthand-releases/macros.html)). 
+The full list is in Help › Macro Reference (also on the [Help site](https://jkirker.github.io/shorthand-text-expander-mac/macros.html)). 
 | Family | Codes |
 |---|---|
 | Fill-ins | `%filltext`, `%fillarea`, `%fillpopup`, `%fillpart…%fillpartend%`, `%filltop%` |

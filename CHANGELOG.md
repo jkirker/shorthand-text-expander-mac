@@ -1,9 +1,15 @@
 # Changelog
 
-> Doc version 1.5.2 · Last updated 2026-11-01
+> Doc version 1.5.3 · Last updated 2026-11-01
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.5.3] — 2026-11-01
+
+### Changed
+- Shorthand's home on GitHub is now **github.com/jkirker/shorthand-text-expander-mac**, a name that says what it is. The online help moved to **jkirker.github.io/shorthand-text-expander-mac**.
+- Updates, the Help ▸ Shorthand Website & Downloads menu item, and links in Help use the new address. Older versions keep updating through GitHub's automatic redirect.
 
 ## [1.5.2] — 2026-11-01
 
@@ -43,7 +49,7 @@ Dates are local (Pacific).
 ### Added
 - **Automatic updates.** Shorthand checks for new versions, shows what's new, and installs with one click.
   - Find it under Shorthand ▸ Check for Updates…, the menu bar menu, and Settings ▸ General ▸ Updates (check automatically, or download and install automatically).
-  - Updates come from the GitHub releases of jkirker/shorthand-releases.
+  - Updates come from the GitHub releases of jkirker/shorthand-text-expander-mac.
   - Each update is verified twice before installing: by the developer's Sparkle signature and by the same Developer ID.
 - **License agreement.** It's shown once before Shorthand starts and must be accepted ("as is", no warranty). You can read it any time under Help ▸ License Agreement.
 

@@ -4,9 +4,9 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="images/main-window-dark.png"><img alt="Shorthand main window" src="images/main-window.png"></picture>
 
-**[⬇ Download the latest version](https://github.com/jkirker/shorthand-releases/releases/latest)** · [Help](https://jkirker.github.io/shorthand-releases/) · [Features](FEATURES.md) · [What's new](CHANGELOG.md) · [Privacy](PRIVACY.md) · [Security](SECURITY.md) · [License](LICENSE.md)
+**[⬇ Download the latest version](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest)** · [Help](https://jkirker.github.io/shorthand-text-expander-mac/) · [Features](FEATURES.md) · [What's new](CHANGELOG.md) · [Privacy](PRIVACY.md) · [Security](SECURITY.md) · [License](LICENSE.md)
 
-Current version: **1.5.2** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
+Current version: **1.5.3** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
 
 ## Highlights
 - **Everything TextExpander 5 does:** abbreviations, fill-ins (text, choices, optional sections), dates and date math, the clipboard, nested snippets, keys and cursor placement, script snippets, groups, per-app rules, search, statistics, backups and sync folders.
@@ -27,14 +27,14 @@ Current version: **1.5.2** · macOS 14 or later · Apple Silicon · signed with 
 </tr></table>
 
 ## Install
-1. Download **Shorthand-1.5.2.dmg** from [Releases](https://github.com/jkirker/shorthand-releases/releases/latest).
+1. Download **Shorthand-1.5.3.dmg** from [Releases](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest).
 2. Open it and drag **Shorthand** onto the **Applications** shortcut, then open Shorthand from Applications.
 3. Accept the license agreement, then follow the setup: grant **Accessibility**, then import from TextExpander if you like.
 
 New versions install themselves (Shorthand ▸ Check for Updates…).
 
 ## Help
-The complete user guide is online at **[jkirker.github.io/shorthand-releases](https://jkirker.github.io/shorthand-releases/)**, and inside the app under Help ▸ Shorthand Help (⌘?).
+The complete user guide is online at **[jkirker.github.io/shorthand-text-expander-mac](https://jkirker.github.io/shorthand-text-expander-mac/)**, and inside the app under Help ▸ Shorthand Help (⌘?).
 
 ## License
 Shorthand is provided **"as is", without warranty of any kind**. See [LICENSE.md](LICENSE.md). You accept it on first launch.
