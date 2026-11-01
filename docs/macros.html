@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macro Reference — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Macro Reference</h1>
+<p class="lead">Every <code>%</code> code Shorthand understands, grouped by what it does. Codes are typed straight into a snippet’s text.</p>
+
+<div class="toc">
+<ul>
+<li><a href="#fill-ins">Fill-ins</a></li>
+<li><a href="#dates">Date and time</a></li>
+<li><a href="#date-math">Date and time math</a></li>
+<li><a href="#content">Clipboard and other snippets</a></li>
+<li><a href="#calc">Calculations, conditions and AI</a></li>
+<li><a href="#keys">Keys</a></li>
+<li><a href="#cursor">Cursor and selection</a></li>
+<li><a href="#delimiter">Delimiter and percent sign</a></li>
+<li><a href="#rules">Rules worth knowing</a></li>
+</ul>
+</div>
+
+<p>You don’t have to remember these. In the snippet editor, click the <span class="ui">Insert</span> menu (above the text, on the right) and pick a code. Its submenus are <span class="ui">Date</span>, <span class="ui">Time</span>, <span class="ui">Date/Time Math</span>, <span class="ui">Fill-ins</span>, <span class="ui">Snippet</span>, <span class="ui">Key</span>, <span class="ui">Clipboard</span>, <span class="ui">Calculation</span>, <span class="ui">Condition</span>, <span class="ui">AI ✨</span>, <span class="ui">Cursor</span>, <span class="ui">Delimiter</span> and <span class="ui">Percent Sign (%)</span>.</p>
+
+<h2 id="fill-ins">Fill-ins</h2>
+<p>Fill-ins open a small window where you type or choose values before the snippet is inserted. See <a href="fill-ins.html">Fill-ins</a> for a walkthrough.</p>
+<table>
+<tr><th>Code</th><th>What it does</th></tr>
+<tr><td><code>%filltext:name=Name:default=Sam:width=20%</code></td><td>A single-line text field. All settings are optional.</td></tr>
+<tr><td><code>%fillarea:name=Notes:default=:width=30:height=5%</code></td><td>A multi-line text box. <code>width</code> and <code>height</code> are in characters and lines.</td></tr>
+<tr><td><code>%fillpopup:name=Size:Small:default=Medium:Large%</code></td><td>A pop-up menu. Options are separated by colons; <code>default=</code> marks the option chosen at first. Without it, the first option is chosen.</td></tr>
+<tr><td><code>%fillpart:name=PS:default=yes%</code>…<code>%fillpartend%</code></td><td>An optional section with a checkbox. The text between the two codes is included only when the box is ticked. <code>default=yes</code> (or <code>true</code> or <code>1</code>) ticks it at first.</td></tr>
+<tr><td><code>%filltop%</code></td><td>Opens the fill-in window at the top centre of the screen instead of near the text cursor.</td></tr>
+</table>
+<p>Settings inside a fill-in: <code>name=</code>, <code>default=</code>, <code>width=</code> (not for pop-ups) and <code>height=</code> (multi-line boxes only). Fields with the same <code>name</code> share one value, so you type it once.</p>
+
+<h2 id="dates">Date and time</h2>
+<p>Names of months, weekdays and AM/PM follow your Mac’s language and region settings. Examples are for Monday, 5 January 2026 at 2:05:07 PM in New York.</p>
+<table>
+<tr><th>Code</th><th>Shows</th><th>Example</th></tr>
+<tr><td><code>%Y</code></td><td>Year, four digits</td><td>2026</td></tr>
+<tr><td><code>%y</code></td><td>Year, two digits</td><td>26</td></tr>
+<tr><td><code>%B</code></td><td>Month name</td><td>January</td></tr>
+<tr><td><code>%b</code></td><td>Short month name</td><td>Jan</td></tr>
+<tr><td><code>%m</code></td><td>Month number, two digits</td><td>01</td></tr>
+<tr><td><code>%1m</code></td><td>Month number, no leading zero</td><td>1</td></tr>
+<tr><td><code>%A</code></td><td>Weekday name</td><td>Monday</td></tr>
+<tr><td><code>%a</code></td><td>Short weekday name</td><td>Mon</td></tr>
+<tr><td><code>%d</code></td><td>Day of the month, two digits</td><td>05</td></tr>
+<tr><td><code>%e</code></td><td>Day of the month, no leading zero</td><td>5</td></tr>
+<tr><td><code>%j</code></td><td>Day of the year, three digits</td><td>005</td></tr>
+<tr><td><code>%H</code></td><td>Hour, 24-hour clock, two digits</td><td>14</td></tr>
+<tr><td><code>%1H</code></td><td>Hour, 24-hour clock, no leading zero</td><td>14</td></tr>
+<tr><td><code>%I</code></td><td>Hour, 12-hour clock, two digits</td><td>02</td></tr>
+<tr><td><code>%1I</code></td><td>Hour, 12-hour clock, no leading zero</td><td>2</td></tr>
+<tr><td><code>%M</code></td><td>Minute, two digits</td><td>05</td></tr>
+<tr><td><code>%1M</code></td><td>Minute, no leading zero</td><td>5</td></tr>
+<tr><td><code>%S</code></td><td>Second, two digits</td><td>07</td></tr>
+<tr><td><code>%1S</code></td><td>Second, no leading zero</td><td>7</td></tr>
+<tr><td><code>%p</code></td><td>AM or PM</td><td>PM</td></tr>
+<tr><td><code>%z</code></td><td>Offset from GMT</td><td>-0500</td></tr>
+<tr><td><code>%Z</code></td><td>Time zone abbreviation</td><td>EST</td></tr>
+<tr><td><code>%date:yyyy-MM-dd%</code></td><td>Any custom format, using Unicode date patterns</td><td>2026-01-05</td></tr>
+</table>
+<div class="note"><p>Capital and small letters mean different things: <code>%1m</code> is the month, <code>%1M</code> is the minute. <code>%d</code> pads with a zero, <code>%e</code> doesn’t.</p></div>
+
+<h2 id="date-math">Date and time math</h2>
+<p>Put <code>%@</code>, a plus or minus sign, a number and a unit before your date codes. Every date code <em>after</em> it uses the shifted date.</p>
+<table>
+<tr><th>Code</th><th>Shifts the date by</th></tr>
+<tr><td><code>%@+1Y</code></td><td>Years</td></tr>
+<tr><td><code>%@+1M</code></td><td>Months (capital M)</td></tr>
+<tr><td><code>%@+15D</code></td><td>Days</td></tr>
+<tr><td><code>%@-1D</code></td><td>Days back (yesterday)</td></tr>
+<tr><td><code>%@+2h</code></td><td>Hours</td></tr>
+<tr><td><code>%@+30m</code></td><td>Minutes (small m)</td></tr>
+<tr><td><code>%@+45s</code></td><td>Seconds</td></tr>
+</table>
+<p>More examples on <a href="dates.html">Dates &amp; Times</a>.</p>
+
+<h2 id="content">Clipboard and other snippets</h2>
+<table>
+<tr><th>Code</th><th>What it does</th></tr>
+<tr><td><code>%clipboard</code></td><td>Inserts the text currently on the clipboard.</td></tr>
+<tr><td><code>%snippet:sig%</code></td><td>Inserts another snippet by its abbreviation (here <code>sig</code>). Snippets can include snippets up to 8 levels deep. If no snippet has that abbreviation, nothing is inserted.</td></tr>
+</table>
+
+<h2 id="calc">Calculations, conditions and AI</h2>
+<table class="wrap">
+<tr><th>Code</th><th>What it does</th></tr>
+<tr><td><code>%calc:{qty}*{price}:2%</code></td><td>Works out a sum. <code>:2</code> at the end means two decimal places. See <a href="calc.html">Calculations &amp; Conditions</a>.</td></tr>
+<tr><td><code>%if:{field}%</code>…<code>%else%</code>…<code>%endif%</code></td><td>Includes text only when a condition is true. <code>%else%</code> is optional.</td></tr>
+<tr><td><code>%ai:Write a polite reply to: {clipboard}%</code></td><td>AI writes this part when the snippet expands. Needs an AI provider (<a href="ai-setup.html">Setting Up AI</a>).</td></tr>
+</table>
+<p><code>{name}</code> means “the value of the fill-in called <em>name</em>”, and <code>{clipboard}</code> means the clipboard text. These references work only inside <code>%calc</code>, <code>%if</code> and <code>%ai</code>, so curly braces in ordinary text (CSS, code) are left alone.</p>
+
+<h2 id="keys">Keys</h2>
+<p><code>%key:name%</code> presses a key while the snippet is being typed, for example to move between fields in a web form.</p>
+<table>
+<tr><th>Code</th><th>Presses</th></tr>
+<tr><td><code>%key:tab%</code></td><td>Tab</td></tr>
+<tr><td><code>%key:return%</code></td><td>Return</td></tr>
+<tr><td><code>%key:enter%</code></td><td>Enter</td></tr>
+<tr><td><code>%key:esc%</code> or <code>%key:escape%</code></td><td>Escape</td></tr>
+<tr><td><code>%key:space%</code></td><td>Space</td></tr>
+<tr><td><code>%key:backspace%</code></td><td>Delete (backwards)</td></tr>
+<tr><td><code>%key:delete%</code> or <code>%key:forwarddelete%</code></td><td>Forward delete</td></tr>
+<tr><td><code>%key:up%</code> / <code>%key:uparrow%</code></td><td>Up arrow</td></tr>
+<tr><td><code>%key:down%</code> / <code>%key:downarrow%</code></td><td>Down arrow</td></tr>
+<tr><td><code>%key:left%</code> / <code>%key:leftarrow%</code></td><td>Left arrow</td></tr>
+<tr><td><code>%key:right%</code> / <code>%key:rightarrow%</code></td><td>Right arrow</td></tr>
+<tr><td><code>%key:home%</code>, <code>%key:end%</code></td><td>Home, End</td></tr>
+<tr><td><code>%key:pageup%</code>, <code>%key:pagedown%</code></td><td>Page Up, Page Down</td></tr>
+</table>
+<p>Key names are not case-sensitive. An unknown key name is left in the text as typed.</p>
+
+<h2 id="cursor">Cursor and selection</h2>
+<table>
+<tr><th>Code</th><th>What it does</th></tr>
+<tr><td><code>%|</code></td><td>Puts the text cursor here after expanding.</td></tr>
+<tr><td><code>%\</code></td><td>Used after <code>%|</code>: selects the text between the two codes.</td></tr>
+<tr><td><code>%&lt;</code></td><td>Moves the cursor one place left after expanding.</td></tr>
+<tr><td><code>%&gt;</code></td><td>Moves the cursor one place right.</td></tr>
+<tr><td><code>%^</code></td><td>Moves the cursor up one line.</td></tr>
+<tr><td><code>%v</code></td><td>Moves the cursor down one line.</td></tr>
+</table>
+<p>Example: <code>&lt;b&gt;%|&lt;/b&gt;</code> types <code>&lt;b&gt;&lt;/b&gt;</code> and leaves the cursor between the tags.</p>
+
+<h2 id="delimiter">Delimiter and percent sign</h2>
+<table>
+<tr><th>Code</th><th>What it does</th></tr>
+<tr><td><code>%+</code></td><td>Keep the delimiter (the space, Return, etc. you typed after the abbreviation), whatever your setting.</td></tr>
+<tr><td><code>%-</code></td><td>Drop the delimiter, whatever your setting.</td></tr>
+<tr><td><code>%%</code></td><td>A literal percent sign.</td></tr>
+</table>
+<p>See <a href="expansion.html#delimiters">Delimiters</a> for what a delimiter is.</p>
+
+<h2 id="rules">Rules worth knowing</h2>
+<ul>
+<li>A code runs to the <strong>next <code>%</code></strong>. So a prompt, condition, field name or default can’t contain a <code>%</code> sign, and fill-in settings can’t contain a colon.</li>
+<li>Write <code>%%</code> for a real percent sign, e.g. <code>Save 20%% today</code>.</li>
+<li>Anything that isn’t a known code is left exactly as written, so <code>100% sure</code> still types “100% sure”.</li>
+<li>Script snippets (AppleScript, shell, JavaScript) don’t use these codes; their output is inserted as-is. See <a href="scripts.html">Script Snippets</a>.</li>
+</ul>
+
+<nav class="related">Related: <a href="fill-ins.html">Fill-ins</a> <a href="dates.html">Dates &amp; Times</a> <a href="calc.html">Calculations &amp; Conditions</a> <a href="ai-features.html">AI Features</a></nav>
+</main>
+</body>
+</html>

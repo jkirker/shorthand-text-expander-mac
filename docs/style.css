@@ -1,0 +1,227 @@
+/* Shorthand Help — shared styles.
+   Pages are shown in a transparent WKWebView over the window background,
+   so the body has no opaque background and colours adapt to light/dark mode. */
+
+:root {
+  color-scheme: light dark;
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --accent: #0a66d8;
+  --rule: rgba(0, 0, 0, 0.12);
+  --surface: rgba(0, 0, 0, 0.045);
+  --surface-strong: rgba(0, 0, 0, 0.08);
+  --tip: #1f8a3b;
+  --note: #0a66d8;
+  --warn: #b25e00;
+  --tip-bg: rgba(31, 138, 59, 0.09);
+  --note-bg: rgba(10, 102, 216, 0.08);
+  --warn-bg: rgba(214, 120, 0, 0.11);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f2f2f7;
+    --muted: #a1a1a6;
+    --accent: #4da3ff;
+    --rule: rgba(255, 255, 255, 0.16);
+    --surface: rgba(255, 255, 255, 0.06);
+    --surface-strong: rgba(255, 255, 255, 0.11);
+    --tip: #4cd36f;
+    --note: #4da3ff;
+    --warn: #ffb347;
+    --tip-bg: rgba(76, 211, 111, 0.12);
+    --note-bg: rgba(77, 163, 255, 0.12);
+    --warn-bg: rgba(255, 179, 71, 0.13);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 28px 32px 48px;
+  color: var(--text);
+  background: transparent;
+}
+
+main {
+  max-width: 46rem;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.25;
+  font-weight: 650;
+  margin: 1.8em 0 0.5em;
+}
+h1 { font-size: 1.85rem; margin-top: 0; letter-spacing: -0.01em; }
+h2 { font-size: 1.3rem; padding-top: 0.6em; border-top: 1px solid var(--rule); }
+h3 { font-size: 1.08rem; }
+h1 + p.lead { margin-top: -0.2em; }
+
+p, ul, ol, dl, table, figure, pre, .tip, .note, .warn { margin: 0 0 1em; }
+
+.lead { font-size: 1.08rem; color: var(--muted); }
+
+ul, ol { padding-left: 1.5em; }
+li { margin: 0.25em 0; }
+li > ul, li > ol { margin: 0.25em 0; }
+
+dl dt { font-weight: 600; margin-top: 0.7em; }
+dl dd { margin: 0.15em 0 0 1.2em; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong { font-weight: 650; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2em 0; }
+
+/* Code and keys */
+code, kbd, pre, samp {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+}
+code {
+  background: var(--surface-strong);
+  padding: 0.08em 0.35em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+pre {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 10px 14px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+pre code { background: none; padding: 0; white-space: inherit; }
+kbd {
+  display: inline-block;
+  min-width: 1.5em;
+  text-align: center;
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--rule);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  background: var(--surface);
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+.ui { font-weight: 600; }  /* names of buttons, menus and settings */
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+}
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--rule);
+}
+th { font-weight: 600; background: var(--surface); }
+td code { white-space: nowrap; }
+td:first-child { white-space: nowrap; }
+table.wrap td:first-child { white-space: normal; }
+caption { caption-side: top; text-align: left; font-weight: 600; padding: 0 0 6px; }
+
+/* Callouts */
+.tip, .note, .warn {
+  border-left: 4px solid;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+.tip  { border-color: var(--tip);  background: var(--tip-bg); }
+.note { border-color: var(--note); background: var(--note-bg); }
+.warn { border-color: var(--warn); background: var(--warn-bg); }
+.tip > :last-child, .note > :last-child, .warn > :last-child { margin-bottom: 0; }
+.tip::before, .note::before, .warn::before {
+  display: block;
+  font-weight: 650;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.tip::before  { content: "Tip";  color: var(--tip); }
+.note::before { content: "Note"; color: var(--note); }
+.warn::before { content: "Important"; color: var(--warn); }
+
+/* Figures and illustrations */
+figure {
+  margin: 1.2em 0 1.4em;
+  padding: 14px;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: var(--surface);
+  text-align: center;
+}
+figure svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  color: var(--text);
+}
+figure img { max-width: 100%; height: auto; }
+figcaption {
+  margin-top: 8px;
+  font-size: 0.88em;
+  color: var(--muted);
+}
+svg .accent { color: var(--accent); }
+svg .muted  { color: var(--muted); }
+
+/* Step lists */
+ol.steps > li { margin: 0.45em 0; }
+
+/* Page navigation */
+nav.related {
+  margin-top: 2.5em;
+  padding-top: 1em;
+  border-top: 1px solid var(--rule);
+  font-size: 0.92em;
+  color: var(--muted);
+}
+nav.related a { margin-right: 0.9em; white-space: nowrap; }
+
+.toc {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.93em;
+}
+.toc ul { margin: 0; padding-left: 1.2em; }
+
+footer.meta { margin-top: 2em; font-size: 0.85em; color: var(--muted); }
+
+/* Ko-fi button */
+.kofi { margin: 1.4em 0; }
+.kofi img { height: 46px; width: auto; display: block; }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: 10px; margin: 0 0 1.2em; }
+.cards a {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+.cards a:hover { text-decoration: none; border-color: var(--accent); }
+.cards a strong { display: block; color: var(--accent); }
+.cards a span { font-size: 0.88em; color: var(--muted); }
+
+/* Real screenshots (captured by `Shorthand --capture-help-screenshots`). */
+figure.shot img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,.18); border: 1px solid rgba(128,128,128,.25); }

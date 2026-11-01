@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abbreviations &amp; Expansion — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Abbreviations &amp; Expansion</h1>
+<p class="lead">How Shorthand notices an abbreviation and replaces it with your snippet, and the settings that control it.</p>
+
+<figure>
+<svg viewBox="0 0 560 150" width="560" role="img" aria-label="Type abbreviation, then delimiter, then the snippet is expanded" font-family="-apple-system, sans-serif" font-size="13">
+  <defs><marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <rect x="10" y="30" width="140" height="56" rx="8" fill="none" stroke="currentColor"/>
+  <text x="80" y="54" text-anchor="middle" font-weight="600" fill="currentColor">1. Type</text>
+  <text x="80" y="74" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" fill="currentColor">;sig</text>
+  <line x1="150" y1="58" x2="200" y2="58" stroke="currentColor" marker-end="url(#a2)"/>
+  <rect x="202" y="30" width="150" height="56" rx="8" fill="currentColor" fill-opacity="0.08" stroke="currentColor"/>
+  <text x="277" y="54" text-anchor="middle" font-weight="600" fill="currentColor">2. Delimiter</text>
+  <text x="277" y="74" text-anchor="middle" fill="currentColor">space · Tab · Return · Esc</text>
+  <line x1="352" y1="58" x2="402" y2="58" stroke="currentColor" marker-end="url(#a2)"/>
+  <rect x="404" y="30" width="146" height="56" rx="8" fill="none" stroke="currentColor" class="accent" stroke-width="2"/>
+  <text x="477" y="54" text-anchor="middle" font-weight="600" fill="currentColor">3. Expand</text>
+  <text x="477" y="74" text-anchor="middle" fill="currentColor">Best regards, John</text>
+  <text x="280" y="118" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">Shorthand deletes “;sig”, types the snippet, then keeps or drops the delimiter.</text>
+  <text x="280" y="136" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">With “Immediately when typed”, step 2 is skipped.</text>
+</svg>
+<figcaption>Abbreviation → delimiter → expansion.</figcaption>
+</figure>
+
+<h2 id="modes">When abbreviations expand</h2>
+<p>Choose in <span class="ui">Settings ▸ Expansion ▸ Expand abbreviations</span>:</p>
+<dl>
+<dt><span class="ui">At delimiter (keep delimiter)</span> (default)</dt>
+<dd>Type the abbreviation, then a delimiter such as a space. The snippet replaces the abbreviation and the space stays after it.</dd>
+<dt><span class="ui">At delimiter (abandon delimiter)</span></dt>
+<dd>Same, but the delimiter is dropped. Handy when snippets end with their own punctuation.</dd>
+<dt><span class="ui">Immediately when typed</span></dt>
+<dd>Expands the moment the last letter is typed. Fastest, and best for auto-correct style groups (<code>teh</code> → <code>the</code>), but make sure no abbreviation is the start of another.</dd>
+</dl>
+<p>A single snippet can override the keep/drop choice with <code>%+</code> (keep) or <code>%-</code> (drop). See <a href="macros.html#delimiter">Macro Reference</a>.</p>
+
+<h3 id="delimiters">Delimiters</h3>
+<p>A delimiter is the key you press after an abbreviation to make it expand. By default these are <kbd>Space</kbd>, <kbd>Tab</kbd>, <kbd>Return</kbd> and <kbd>Esc</kbd>.</p>
+<ol class="steps">
+<li>In <span class="ui">Settings ▸ Expansion</span>, click <span class="ui">Set Delimiters…</span> (shown only for the two delimiter modes).</li>
+<li>Tick the keys you want, such as <span class="ui">.</span> <span class="ui">,</span> <span class="ui">!</span> or <span class="ui">?</span>.</li>
+<li>Click <span class="ui">Done</span>. <span class="ui">Defaults</span> puts back Space, Tab, Return and Escape.</li>
+</ol>
+
+<h2 id="case">Upper and lower case</h2>
+<p>Each snippet has a case setting next to its abbreviation. New snippets use <span class="ui">Settings ▸ Expansion ▸ Default case sensitivity</span>.</p>
+<table class="wrap">
+<tr><th>Setting</th><th>Abbreviation <code>sig</code>; you type…</th></tr>
+<tr><td><span class="ui">Case Sensitive</span></td><td>Only <code>sig</code> expands.</td></tr>
+<tr><td><span class="ui">Ignore Case</span></td><td><code>sig</code>, <code>Sig</code> and <code>SIG</code> all expand to the same text.</td></tr>
+<tr><td><span class="ui">Adapt to Case of Abbreviation</span></td><td><code>sig</code> → “best regards”; <code>Sig</code> → “Best regards” (first letter capitalised); <code>SIG</code> → “BEST REGARDS”.</td></tr>
+</table>
+
+<h2 id="expand-after">Expand after</h2>
+<p>Each group decides what may come <em>right before</em> an abbreviation. Select the group and choose <span class="ui">Expand after</span>:</p>
+<table class="wrap">
+<tr><th>Choice</th><th>Abbreviation <code>btw</code> expands in…</th></tr>
+<tr><td><span class="ui">Whitespace</span></td><td>“ btw” at the start of a line or after a space, but not “(btw”.</td></tr>
+<tr><td><span class="ui">All but letters and numbers</span></td><td>Also “(btw” or “—btw”, but not “abtw”.</td></tr>
+<tr><td><span class="ui">All characters</span></td><td>Anywhere, even in the middle of a word. Useful for symbols, e.g. <code>:)</code> → ☺.</td></tr>
+</table>
+
+<h2 id="how">Good to know</h2>
+<ul>
+<li>When two abbreviations both match, the <strong>longer</strong> one wins.</li>
+<li>Shorthand forgets what you were typing when you click, use arrow keys, use a <kbd>⌘</kbd> or <kbd>⌃</kbd> shortcut, press <kbd>⌥</kbd><kbd>⌫</kbd>, or switch apps. Retype the abbreviation in one go.</li>
+<li>Abbreviations don’t expand inside Shorthand’s own windows, so you can type them in the editor.</li>
+<li>If you keep typing while a snippet is being inserted, your keystrokes are held and typed right after it.</li>
+<li>Shorthand inserts text by pasting it, then puts your clipboard back. Turn this off with <span class="ui">Restore clipboard after expansion</span>, or set <span class="ui">Restore delay</span> (0.15–2 seconds, default 0.40) if a slow app pastes the wrong thing.</li>
+<li>To pause all expansion, choose <span class="ui">Disable Expansion</span> from the menu bar icon, or set a hotkey for <span class="ui">Enable/Disable Expansion</span>.</li>
+</ul>
+
+<h2 id="more-settings">Other expansion settings</h2>
+<p>In <span class="ui">Settings ▸ Expansion ▸ When expanding</span>:</p>
+<ul>
+<li><span class="ui">Play sound</span> and <span class="ui">Sound</span>: a sound on every expansion (groups can choose their own).</li>
+<li><span class="ui">Include HTML for formatted snippets (web apps like Gmail)</span>: helps formatting survive in web apps.</li>
+<li><span class="ui">Run script snippets (AppleScript, shell, JavaScript)</span>: see <a href="scripts.html">Script Snippets</a>.</li>
+</ul>
+<p>In <span class="ui">Settings ▸ Options</span> (these work even without snippets):</p>
+<ul>
+<li><span class="ui">Capitalize new sentences</span>: “. hello” becomes “. Hello”.</li>
+<li><span class="ui">Double capitals</span>: fixes “THe” to “The”: <span class="ui">Do not correct</span>, <span class="ui">Eliminate at sentence start</span> or <span class="ui">Eliminate at word start</span>.</li>
+</ul>
+
+<nav class="related">Related: <a href="snippets.html">Snippets &amp; Groups</a> <a href="apps.html">Per-App Snippets</a> <a href="troubleshooting.html#one-snippet">One snippet doesn’t expand</a></nav>
+</main>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search, Menus &amp; Hotkeys — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Search, Menus &amp; Hotkeys</h1>
+<p class="lead">Can’t remember an abbreviation? Search for the snippet and insert it, pick it from the menu bar, or use a hotkey.</p>
+
+<h2 id="search">To search and insert a snippet</h2>
+<ol class="steps">
+<li>Click where you want the text to go.</li>
+<li>Choose <span class="ui">Search Snippets…</span> from the menu bar icon, or press your <span class="ui">Search Snippets</span> hotkey.</li>
+<li>Type part of the abbreviation, label, tag or text. To narrow it to a tag, type <code>#</code> and the tag name (see <a href="#tags">below</a>).</li>
+<li>Press <kbd>Return</kbd> or <kbd>Tab</kbd> to insert the highlighted snippet, or click one. <kbd>⌘</kbd><kbd>1</kbd>–<kbd>⌘</kbd><kbd>9</kbd> insert the first nine results directly.</li>
+</ol>
+<figure class="shot"><img src="img/search.png" width="560" alt="The Search Snippets panel"><figcaption>Search Snippets. Exact abbreviation matches come first, then abbreviations that start with or contain your text, then labels, then tag names, then snippet text.</figcaption></figure>
+<ul>
+<li>With an empty search, your snippets are listed by how often you use them.</li>
+<li><span class="ui">Inline Search</span> is the same panel, opened next to your text cursor instead of at the top of the screen. It has no menu item; give it a hotkey.</li>
+<li>Groups with <span class="ui">Include in search</span> turned off are left out (the <em>Suggested Snippets</em> group, for example).</li>
+<li>Snippets with fill-ins show the fill-in window as usual after you pick them.</li>
+</ul>
+
+<h3 id="tags">Searching by tag</h3>
+<p>The search field reads <em>Search snippets (#tag to filter by tag)</em>. A word that starts with <code>#</code> shows only snippets with a matching tag; the other words search as usual.</p>
+<table class="wrap">
+<tr><th>You type</th><th>What you get</th></tr>
+<tr><td><code>#email</code></td><td>Every snippet with a tag containing “email”.</td></tr>
+<tr><td><code>#email thanks</code></td><td>Snippets tagged “email” that also match “thanks”.</td></tr>
+<tr><td><code>#email #clients</code></td><td>Only snippets that have both tags.</td></tr>
+<tr><td><code>clients</code></td><td>Plain words match tag names too, as well as abbreviations, labels and text.</td></tr>
+</table>
+<p>Each result shows up to three of its tags as small coloured chips. More about tags: <a href="organize.html#tags">Tags</a>.</p>
+
+<h2 id="menubar">The menu bar menu</h2>
+<p>Click the Shorthand icon in the menu bar. Hotkeys you’ve set are shown next to each item.</p>
+<table class="wrap">
+<tr><th>Item</th><th>What it does</th></tr>
+<tr><td><span class="ui">Search Snippets…</span></td><td>Opens <a href="#search">search</a>.</td></tr>
+<tr><td><span class="ui">✨ AI Actions on Selection…</span></td><td>Rewrites the selected text with AI (<a href="ai-features.html#actions">AI Actions</a>).</td></tr>
+<tr><td><span class="ui">Open Shorthand</span></td><td>Opens the main window.</td></tr>
+<tr><td><span class="ui">Block Shorthand in <em>App</em></span> / <span class="ui">Block Shorthand on <em>site</em></span></td><td>Stops Shorthand listening in the app or on the website in front. See <a href="privacy.html#blocklist">Blocklist</a>.</td></tr>
+<tr><td><strong>⏸ Paused here: …</strong> and <span class="ui">Allow Shorthand Here</span></td><td>Shown instead when the app or website in front is blocked, or (as <strong>⏸ Paused here: waiting for your answer</strong>) while Shorthand is asking whether to work in a new app. <span class="ui">Allow Shorthand Here</span> removes the block, or answers Allow. See <a href="privacy.html#new-apps">The first time you use an app</a>.</td></tr>
+<tr><td><span class="ui">Disable Expansion</span> / <span class="ui">Enable Expansion</span></td><td>Pauses or resumes all expansion.</td></tr>
+<tr><td><span class="ui">Create New Snippet…</span></td><td>Opens the Create Snippet window, empty.</td></tr>
+<tr><td><span class="ui">Create Snippet from Selection…</span></td><td>Same, with the text selected in the front app.</td></tr>
+<tr><td><span class="ui">Create Snippet from Clipboard…</span></td><td>Same, with the clipboard contents (keeps formatting).</td></tr>
+<tr><td><span class="ui">Edit Last Expanded Snippet…</span></td><td>Opens the snippet you used last.</td></tr>
+<tr><td><span class="ui">💡 … Snippet Suggestions…</span></td><td>Shown when there are <a href="suggestions.html">suggestions</a> waiting.</td></tr>
+<tr><td>Your groups</td><td>Each group is a submenu. Choose a snippet to insert it where you were typing.</td></tr>
+<tr><td><span class="ui">Preferences…</span></td><td>Opens Settings.</td></tr>
+<tr><td><span class="ui">Help</span></td><td>Opens this help.</td></tr>
+<tr><td><span class="ui">Buy Me a Coffee on Ko-fi…</span></td><td>See <a href="support.html">Support Shorthand</a>.</td></tr>
+<tr><td><span class="ui">Quit Shorthand</span></td><td>Quits. Abbreviations stop expanding.</td></tr>
+</table>
+<p>Warnings (Secure Input, a second text expander running, missing Accessibility permission) appear in this menu too; see <a href="troubleshooting.html">Troubleshooting</a>.</p>
+<p>The icon itself changes: a crossed-out icon means expansion is off; a warning triangle means Secure Input is blocking expansion.</p>
+
+<h2 id="hotkeys">Hotkeys</h2>
+<p>Hotkeys work from any app. Set them in <span class="ui">Settings ▸ Hotkeys</span>:</p>
+<ol class="steps">
+<li>Click the button next to an action (it says <span class="ui">Click to set</span>).</li>
+<li>When it says <span class="ui">Press keys…</span>, press the combination you want. Press <kbd>Esc</kbd> to cancel.</li>
+<li>To remove a hotkey, click the ⓧ next to it.</li>
+</ol>
+<p>A hotkey needs at least one of <kbd>⌘</kbd> <kbd>⌥</kbd> <kbd>⌃</kbd>; <kbd>⇧</kbd> alone isn’t enough. Pick combinations other apps don’t use.</p>
+<table class="wrap">
+<tr><th>Action</th><th>Default</th></tr>
+<tr><td><span class="ui">Open Shorthand</span></td><td>none</td></tr>
+<tr><td><span class="ui">Enable/Disable Expansion</span></td><td>none</td></tr>
+<tr><td><span class="ui">Create New Snippet</span></td><td>none</td></tr>
+<tr><td><span class="ui">Create Snippet from Selection</span></td><td>none</td></tr>
+<tr><td><span class="ui">Create Snippet from Clipboard</span></td><td>none</td></tr>
+<tr><td><span class="ui">Edit Last Expanded Snippet</span></td><td>none</td></tr>
+<tr><td><span class="ui">Inline Search</span></td><td>none</td></tr>
+<tr><td><span class="ui">Search Snippets</span></td><td>none</td></tr>
+<tr><td><span class="ui">AI Actions on Selection</span></td><td><kbd>⌃</kbd><kbd>⌥</kbd><kbd>A</kbd></td></tr>
+</table>
+
+<h2 id="app-menus">Keyboard shortcuts in Shorthand’s windows</h2>
+<table>
+<tr><th>Shortcut</th><th>Menu item</th></tr>
+<tr><td><kbd>⌘</kbd><kbd>,</kbd></td><td><span class="ui">Shorthand ▸ Settings…</span></td></tr>
+<tr><td><kbd>⌘</kbd><kbd>N</kbd></td><td><span class="ui">File ▸ New Snippet</span></td></tr>
+<tr><td><kbd>⇧</kbd><kbd>⌘</kbd><kbd>N</kbd></td><td><span class="ui">File ▸ New Group</span></td></tr>
+<tr><td><kbd>⇧</kbd><kbd>⌘</kbd><kbd>I</kbd></td><td><span class="ui">File ▸ Import TextExpander Snippets…</span></td></tr>
+<tr><td><kbd>⌘</kbd><kbd>W</kbd></td><td><span class="ui">File ▸ Close Window</span></td></tr>
+<tr><td><kbd>⌘</kbd><kbd>B</kbd> / <kbd>⌘</kbd><kbd>I</kbd> / <kbd>⌘</kbd><kbd>U</kbd></td><td><span class="ui">Format ▸ Bold</span> / <span class="ui">Italic</span> / <span class="ui">Underline</span></td></tr>
+<tr><td><kbd>⌘</kbd><kbd>T</kbd></td><td><span class="ui">Format ▸ Show Fonts</span></td></tr>
+<tr><td><kbd>⇧</kbd><kbd>⌘</kbd><kbd>C</kbd></td><td><span class="ui">Format ▸ Show Colors</span></td></tr>
+<tr><td><kbd>⌘</kbd><kbd>0</kbd></td><td><span class="ui">Window ▸ Snippet Library</span></td></tr>
+<tr><td>—</td><td><span class="ui">Window ▸ Statistics</span>: expansions, characters and time saved, most-used snippets</td></tr>
+<tr><td><kbd>⇧</kbd><kbd>⌘</kbd><kbd>T</kbd></td><td><span class="ui">Window ▸ Tag Manager</span> (see <a href="organize.html#tag-manager">Tag Manager</a>)</td></tr>
+<tr><td><kbd>⌘</kbd><kbd>A</kbd></td><td><span class="ui">Edit ▸ Select All</span>: in the snippet list, selects every snippet shown (see <a href="organize.html#select">Multi-Select</a>)</td></tr>
+<tr><td><kbd>⌘</kbd><kbd>?</kbd></td><td><span class="ui">Help ▸ Shorthand Help</span></td></tr>
+<tr><td>—</td><td><span class="ui">Help ▸ Macro Reference</span></td></tr>
+</table>
+
+<nav class="related">Related: <a href="snippets.html">Snippets &amp; Groups</a> <a href="ai-features.html">AI Features</a> <a href="expansion.html">Abbreviations &amp; Expansion</a></nav>
+</main>
+</body>
+</html>

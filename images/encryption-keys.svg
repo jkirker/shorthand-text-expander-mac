@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" width="920" height="340" font-family="-apple-system, Helvetica, Arial, sans-serif" font-size="13">
+<title>Encryption at rest: one data key, several ways to open it (1.4)</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+<rect width="920" height="340" fill="#fff"/>
+<text x="460.0" y="26" text-anchor="middle" font-size="16" font-weight="600" fill="#222">Encryption at rest: one data key, several ways to open it (1.4)</text>
+<rect x="360" y="130" width="200" height="70" rx="8" fill="#fff6e0" stroke="#4a6fa5"/>
+<text x="460.0" y="161.0" text-anchor="middle" fill="#222" font-weight="600">Data key</text>
+<text x="460.0" y="177.0" text-anchor="middle" fill="#222" font-size="11">random 256-bit (AES-GCM)</text>
+<rect x="20" y="50" width="250" height="60" rx="8" fill="#eef3fb" stroke="#4a6fa5"/>
+<text x="145.0" y="76.0" text-anchor="middle" fill="#222" font-weight="600">Keychain (this Mac)</text>
+<text x="145.0" y="92.0" text-anchor="middle" fill="#222" font-size="11">opens automatically</text>
+<rect x="20" y="140" width="250" height="60" rx="8" fill="#eef3fb" stroke="#4a6fa5"/>
+<text x="145.0" y="166.0" text-anchor="middle" fill="#222" font-weight="600">Password slot</text>
+<text x="145.0" y="182.0" text-anchor="middle" fill="#222" font-size="11">PBKDF2-SHA256 · 1,000,000 rounds</text>
+<rect x="20" y="230" width="250" height="60" rx="8" fill="#eef3fb" stroke="#4a6fa5"/>
+<text x="145.0" y="256.0" text-anchor="middle" fill="#222" font-weight="600">Recovery key slot</text>
+<text x="145.0" y="272.0" text-anchor="middle" fill="#222" font-size="11">128-bit code · HKDF-SHA256</text>
+<rect x="650" y="50" width="250" height="90" rx="8" fill="#e8f5e9" stroke="#4a6fa5"/>
+<text x="775.0" y="83.0" text-anchor="middle" fill="#222" font-weight="600">Encrypted files</text>
+<text x="775.0" y="99.0" text-anchor="middle" fill="#222" font-size="11">Library · Preferences · Statistics</text>
+<text x="775.0" y="115.0" text-anchor="middle" fill="#222" font-size="11">Backups (+ synced copy)</text>
+<rect x="650" y="200" width="250" height="70" rx="8" fill="#eef3fb" stroke="#4a6fa5"/>
+<text x="775.0" y="231.0" text-anchor="middle" fill="#222" font-weight="600">Security.json (plain)</text>
+<text x="775.0" y="247.0" text-anchor="middle" fill="#222" font-size="11">settings + wrapped slots, no secrets</text>
+<line x1="270" y1="80.0" x2="360" y2="165.0" stroke="#555" stroke-width="1.4" marker-end="url(#ar)"/>
+<line x1="270" y1="170.0" x2="360" y2="165.0" stroke="#555" stroke-width="1.4" marker-end="url(#ar)"/>
+<line x1="270" y1="260.0" x2="360" y2="165.0" stroke="#555" stroke-width="1.4" marker-end="url(#ar)"/>
+<line x1="560" y1="165.0" x2="650" y2="95.0" stroke="#555" stroke-width="1.4" marker-end="url(#ar)"/>
+<text x="609.0" y="125.0" font-size="11" fill="#a33">encrypts</text>
+<line x1="560" y1="165.0" x2="650" y2="235.0" stroke="#555" stroke-width="1.4" marker-end="url(#ar)"/>
+<text x="609.0" y="195.0" font-size="11" fill="#a33">slots</text>
+<text x="20" y="325" font-size="11" fill="#666">App lock (Touch ID / Apple Watch / Mac or Shorthand password) gates the windows; it does not change the key.</text>
+</svg>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snippets &amp; Groups — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Snippets &amp; Groups</h1>
+<p class="lead">A snippet is a piece of text with an abbreviation. Groups are folders of snippets that share settings.</p>
+
+<h2 id="window">The main window</h2>
+<p>Open it with <span class="ui">Open Shorthand</span> from the menu bar icon, or <span class="ui">Window ▸ Snippet Library</span> (<kbd>⌘</kbd><kbd>0</kbd>).</p>
+<figure class="shot"><img src="img/main-window.png" width="1100" alt="The main window: groups and tags, the snippet list, and the editor"><figcaption>Groups on the left, the group’s snippets in the middle, the selected snippet on the right.</figcaption></figure>
+
+<h2 id="create">To create a snippet</h2>
+<ol class="steps">
+<li>Select a group in the sidebar.</li>
+<li>Choose <span class="ui">File ▸ New Snippet</span> (<kbd>⌘</kbd><kbd>N</kbd>), or click <span class="ui">New Snippet</span> in the toolbar.</li>
+<li>Type the content. Use the <span class="ui">Insert</span> menu to add dates, fill-ins and other codes.</li>
+<li>Fill in <span class="ui">Abbreviation:</span> and, optionally, <span class="ui">Label:</span> (a name shown in lists and search).</li>
+</ol>
+<p>Everything saves automatically. Click <span class="ui">Preview</span> to see what the snippet will type, with today’s date and the current clipboard filled in.</p>
+
+<h3 id="examples">Snippet ideas</h3>
+<table class="wrap">
+<tr><th>Abbreviation</th><th>Content</th></tr>
+<tr><td><code>;em</code></td><td><code>john@example.com</code></td></tr>
+<tr><td><code>;sig</code></td><td><code>Best regards,⏎John Appleseed⏎+1 555 0100</code></td></tr>
+<tr><td><code>;tmrw</code></td><td><code>%@+1D%A, %B %e</code> (tomorrow’s date; see <a href="dates.html">Dates</a>)</td></tr>
+<tr><td><code>;ty</code></td><td><code>Thanks %filltext:name=Name%, I really appreciate it.</code></td></tr>
+<tr><td><code>;link</code></td><td><code>&lt;a href=&quot;%clipboard&quot;&gt;%|&lt;/a&gt;</code></td></tr>
+</table>
+
+<h2 id="types">Content types</h2>
+<p>Choose the type from the <span class="ui">Content:</span> menu above the editor.</p>
+<dl>
+<dt><span class="ui">Plain Text</span></dt><dd>Takes on the formatting of wherever you type it. Best for most snippets.</dd>
+<dt><span class="ui">Formatted Text</span></dt><dd>Keeps fonts, bold, italic, colours and links. Use the <span class="ui">Format</span> menu (<span class="ui">Bold</span> <kbd>⌘</kbd><kbd>B</kbd>, <span class="ui">Italic</span> <kbd>⌘</kbd><kbd>I</kbd>, <span class="ui">Underline</span> <kbd>⌘</kbd><kbd>U</kbd>, <span class="ui">Show Fonts</span>, <span class="ui">Show Colors</span>). Formatted snippets show a small formatting icon in the list; scripts show a terminal icon.</dd>
+<dt><span class="ui">AppleScript</span>, <span class="ui">Shell Script</span>, <span class="ui">JavaScript</span></dt><dd>The snippet is a script; its output is typed. See <a href="scripts.html">Script Snippets</a>.</dd>
+</dl>
+<p>New snippets use the <span class="ui">Default snippet format</span> from <span class="ui">Settings ▸ Expansion</span>.</p>
+
+<h2 id="manage">Managing snippets</h2>
+<ul>
+<li><strong>Find a snippet:</strong> type in the <span class="ui">Filter</span> field above the list. It matches abbreviations, labels, content and tags. Start with <code>#</code> to match tags only, for example <code>#clients</code>.</li>
+<li><strong>Move it:</strong> drag it onto another group in the sidebar, use the <span class="ui">Group:</span> menu, or right-click and choose <span class="ui">Move to Group</span>.</li>
+<li><strong>Copy it:</strong> right-click and choose <span class="ui">Duplicate</span>. The copy’s abbreviation gets a number added (“1”, or the next free number).</li>
+<li><strong>Delete it:</strong> right-click and choose <span class="ui">Move to Trash</span>, or press <kbd>⌫</kbd>. It goes to the <a href="organize.html#trash">Trash</a>, where you can put it back later. Click <span class="ui">Undo</span> in the notice that appears, or press <kbd>⌘</kbd><kbd>Z</kbd>, to undo it straight away.</li>
+<li><strong>Tag it:</strong> type in the <span class="ui">Tags:</span> row of the editor. See <a href="organize.html#tags">Tags</a>.</li>
+<li><strong>Changed your mind?</strong> Moves, copies, deletes and tag changes can be undone with <span class="ui">Edit ▸ Undo</span> (<kbd>⌘</kbd><kbd>Z</kbd>) while the snippet list or sidebar is active. See <a href="organize.html#undo">Undoing changes</a>.</li>
+<li><strong>Edit the last one you used:</strong> choose <span class="ui">Edit Last Expanded Snippet…</span> from the menu bar icon.</li>
+</ul>
+<p>The bottom of the editor shows how many times the snippet has been used and when it was last changed.</p>
+<div class="tip"><p>To move, tag, copy or delete many snippets at once, <kbd>⌘</kbd>-click or <kbd>⇧</kbd>-click them first. See <a href="organize.html">Tags, Trash &amp; Multi-Select</a>.</p></div>
+
+<h3 id="conflicts">Conflicts</h3>
+<p>An abbreviation shown in <strong>orange</strong> is the beginning of another abbreviation, for example <code>;addr</code> and <code>;addr2</code>. The editor lists them under <em>Conflicts with:</em>. Depending on your expansion mode, the shorter one may fire before you can finish typing the longer one. Rename one of them to fix it.</p>
+
+<h2 id="groups">Groups</h2>
+<ol class="steps">
+<li>To add one, choose <span class="ui">File ▸ New Group</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>N</kbd>), or click <span class="ui">+</span> below the sidebar and choose <span class="ui">New Group</span>.</li>
+<li>Select the group (with no snippet selected) to see its settings.</li>
+<li>Drag groups to reorder them.</li>
+</ol>
+<p>Group settings:</p>
+<table class="wrap">
+<tr><th>Setting</th><th>What it does</th></tr>
+<tr><td><span class="ui">Name</span></td><td>Shown in the sidebar and in the menu bar menu.</td></tr>
+<tr><td><span class="ui">Enabled</span></td><td>Turn off to stop all of the group’s snippets expanding without deleting them.</td></tr>
+<tr><td><span class="ui">Expand in</span></td><td>Which apps the group works in. See <a href="apps.html">Per-App Snippets</a>.</td></tr>
+<tr><td><span class="ui">Expand after</span></td><td>What may come right before an abbreviation. See <a href="expansion.html#expand-after">Expand after</a>.</td></tr>
+<tr><td><span class="ui">Sound</span></td><td>A sound for this group’s expansions, <span class="ui">None</span>, or <span class="ui">Default (Preferences)</span>.</td></tr>
+<tr><td><span class="ui">Include in search</span></td><td>Show the group’s snippets in <a href="search.html">Search</a>.</td></tr>
+</table>
+<p>Right-click a group for <span class="ui">Duplicate Group</span>, <span class="ui">Export Group…</span>, <span class="ui">Disable Group</span> / <span class="ui">Enable Group</span> and <span class="ui">Move Group to Trash</span>. Select several groups to see their snippets together or merge them into one; see <a href="organize.html#groups">Selecting several groups</a>.</p>
+
+<nav class="related">Related: <a href="organize.html">Tags, Trash &amp; Multi-Select</a> <a href="expansion.html">Abbreviations &amp; Expansion</a> <a href="macros.html">Macro Reference</a> <a href="search.html">Search, Menus &amp; Hotkeys</a></nav>
+</main>
+</body>
+</html>

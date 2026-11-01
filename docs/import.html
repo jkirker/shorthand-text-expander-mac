@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Importing from TextExpander — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Importing from TextExpander</h1>
+<p class="lead">Shorthand imports from TextExpander: your snippets, groups, abbreviations and most group settings come across unchanged, and the snippet codes keep working.</p>
+
+<h2 id="how">To import your snippets</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File ▸ Import TextExpander Snippets…</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>I</kbd>). This opens the setup window; the import is one of its steps. You can also click <span class="ui">+</span> below the group list and choose <span class="ui">Import TextExpander Snippets…</span>.</li>
+<li>If Shorthand finds your library, it shows a button for it, such as <span class="ui">Import TextExpander/Settings.textexpander</span>. Click it.</li>
+<li>Otherwise click <span class="ui">Choose File…</span> and pick your file or backup folder.</li>
+<li>A green line reports what was imported, e.g. <em>Imported 1042 snippets in 9 groups (9 new, 0 replaced).</em></li>
+<li>Quit TextExpander (or turn off its expansion) so abbreviations don’t expand twice.</li>
+</ol>
+
+<h3 id="where">Where Shorthand looks automatically</h3>
+<ul>
+<li><code>~/Dropbox/TextExpander/Settings.textexpander</code></li>
+<li><code>~/Library/Application Support/TextExpander/Settings.textexpander</code></li>
+<li><code>TextExpander/Settings.textexpander</code> in iCloud Drive</li>
+</ul>
+
+<h2 id="formats">What you can import</h2>
+<table class="wrap">
+<tr><th>File</th><th>What it is</th></tr>
+<tr><td><code>Settings.textexpander</code></td><td>Your whole library: every group and snippet.</td></tr>
+<tr><td>A group <code>.textexpander</code> file</td><td>One exported group.</td></tr>
+<tr><td>A <code>.textexpanderbackup</code> folder</td><td>An automatic backup; each group inside is imported.</td></tr>
+<tr><td>A <code>.txt</code>, <code>.csv</code> or <code>.tsv</code> file</td><td>One snippet per line: <em>abbreviation</em>, <em>content</em>, and optionally a <em>label</em>, separated by a Tab (preferred) or a comma. The file becomes one group named after the file.</td></tr>
+</table>
+<p>Example text file:</p>
+<pre><code>;addr	12 High Street, Springfield	Home address
+;ph	+1 555 0100	Phone</code></pre>
+
+<h2 id="options">Import options</h2>
+<dl>
+<dt><span class="ui">Skip “Suggested Snippets” (auto-captured typing with no abbreviations)</span></dt>
+<dd>On by default. That group can hold thousands of phrases captured from your typing, possibly including private text, so it’s left behind unless you turn this off.</dd>
+<dt><span class="ui">Replace groups imported earlier (instead of adding copies)</span></dt>
+<dd>On by default. Importing the same library again updates the groups you imported before. Turn it off to add copies, named “… (imported)”.</dd>
+</dl>
+
+<h2 id="what-comes">What comes across</h2>
+<ul>
+<li>Abbreviations, labels, content and use counts.</li>
+<li>Plain-text, formatted-text and script snippets (AppleScript, shell, JavaScript).</li>
+<li>Each snippet’s case setting (<span class="ui">Case Sensitive</span>, <span class="ui">Ignore Case</span>, <span class="ui">Adapt to Case of Abbreviation</span>).</li>
+<li>Each group’s <span class="ui">Expand after</span> rule, app rules, and whether it’s included in search.</li>
+<li>Your lifetime “characters saved” total, shown in <span class="ui">Window ▸ Statistics</span> under <em>Including your TextExpander history</em>.</li>
+</ul>
+<p>The example group <em>My Snippets</em> is removed on import if you haven’t changed it.</p>
+<div class="note"><p>Importing copies your snippets; it never changes the original file. To send a group back the other way, right-click it in the sidebar and choose <span class="ui">Export Group…</span>, which saves a <code>.textexpander</code> group file.</p></div>
+
+<h2 id="errors">If the import fails</h2>
+<ul>
+<li><em>“… doesn’t look like a TextExpander snippet file.”</em> Pick <code>Settings.textexpander</code> itself, a group file, or a backup folder.</li>
+<li><em>“Couldn’t read …”</em> The file may still be downloading from Dropbox or iCloud. Wait and try again.</li>
+<li>A message about <em>missing snippet(s) in group</em> means the library listed snippets it didn’t contain; the rest imported fine.</li>
+</ul>
+
+<nav class="related">Related: <a href="getting-started.html">Getting Started</a> <a href="snippets.html">Snippets &amp; Groups</a> <a href="macros.html">Macro Reference</a></nav>
+</main>
+</body>
+</html>

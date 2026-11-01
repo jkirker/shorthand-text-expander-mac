@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Script Snippets — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Script Snippets</h1>
+<p class="lead">A script snippet runs a small program when it expands and types whatever the program outputs. Useful for things a fixed snippet can’t do, like the current song, a random password, or text from another app.</p>
+
+<h2 id="create">To make a script snippet</h2>
+<ol class="steps">
+<li>Create a snippet as usual (<a href="snippets.html#create">how</a>).</li>
+<li>In the <span class="ui">Content:</span> menu, choose <span class="ui">AppleScript</span>, <span class="ui">Shell Script</span> or <span class="ui">JavaScript</span>.</li>
+<li>Type the script in the editor and give it an abbreviation.</li>
+<li>Make sure <span class="ui">Run script snippets (AppleScript, shell, JavaScript)</span> is on in <span class="ui">Settings ▸ Expansion</span> (it is by default).</li>
+</ol>
+
+<h2 id="examples">Examples</h2>
+<h3>AppleScript: the frontmost Safari page title</h3>
+<pre><code>tell application "Safari" to return name of front document</code></pre>
+<p>The value the script <em>returns</em> is typed.</p>
+
+<h3>Shell script: a random password</h3>
+<pre><code>LC_ALL=C tr -dc 'A-Za-z0-9' &lt; /dev/urandom | head -c 16</code></pre>
+<p>Whatever the script prints is typed. Shell scripts run with <code>zsh</code> unless the first line says otherwise (for example <code>#!/bin/bash</code> or <code>#!/usr/bin/python3</code>).</p>
+
+<h3>JavaScript (JXA): today in ISO format</h3>
+<pre><code>new Date().toISOString().slice(0, 10)</code></pre>
+<p>JavaScript snippets run as JavaScript for Automation; the value of the last line is typed.</p>
+
+<h2 id="rules">How scripts behave</h2>
+<ul>
+<li><strong>10-second limit.</strong> A script still running after 10 seconds is stopped, and whatever it had printed by then (often nothing) is typed. Your typing never freezes while a script runs; keys you press are held and typed afterwards.</li>
+<li><strong>Only normal output is used.</strong> Error messages are discarded, so a failing script types nothing. Test it in Terminal or Script Editor first.</li>
+<li>One trailing line break is removed from AppleScript and JavaScript output.</li>
+<li>Output is typed exactly as produced. <code>%</code> codes in the output are <em>not</em> processed.</li>
+<li>A normal snippet can include a script snippet with <code>%snippet:<em>abbreviation</em>%</code>; the script runs and its output appears in that spot.</li>
+<li>If <span class="ui">Run script snippets</span> is off, typing a script snippet’s abbreviation just beeps.</li>
+<li>Scripts that control other apps may make macOS ask for permission the first time.</li>
+</ul>
+<div class="warn"><p>Scripts run with your own permissions and can do anything you can. Only use scripts you understand or trust, especially in imported libraries.</p></div>
+
+<nav class="related">Related: <a href="snippets.html#types">Content types</a> <a href="troubleshooting.html#scripts">Script troubleshooting</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a></nav>
+</main>
+</body>
+</html>

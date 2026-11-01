@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculations &amp; Conditions — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Calculations &amp; Conditions</h1>
+<p class="lead">Snippets can do arithmetic with the values you type into fill-ins, and include or leave out text depending on those values.</p>
+
+<h2 id="example">A complete example: a quote</h2>
+<pre><code>Quantity: %filltext:name=qty:default=1%
+Unit price: $%filltext:name=price:default=25%
+Subtotal: $%calc:{qty}*{price}:2%
+Tax (8%%): $%calc:{qty}*{price}*0.08:2%
+Total: $%calc:{qty}*{price}*1.08:2%
+%if:{qty}>=10%A 10%% volume discount will be applied.%endif%</code></pre>
+<p>With 12 at $25, this types:</p>
+<pre><code>Quantity: 12
+Unit price: $25
+Subtotal: $300.00
+Tax (8%): $24.00
+Total: $324.00
+A 10% volume discount will be applied.</code></pre>
+<p>Note the <code>%%</code> for a real percent sign.</p>
+
+<h2 id="calc">Calculations: %calc</h2>
+<p>Write <code>%calc:<em>sum</em>%</code>, or <code>%calc:<em>sum</em>:<em>decimals</em>%</code> to fix the number of decimal places. Use <code>{name}</code> for the value of a fill-in called <em>name</em>. In the editor: <span class="ui">Insert ▸ Calculation</span>.</p>
+<table>
+<tr><th>Symbol</th><th>Meaning</th><th>Example</th><th>Result</th></tr>
+<tr><td><code>+</code></td><td>add</td><td><code>%calc:2+3%</code></td><td>5</td></tr>
+<tr><td><code>-</code></td><td>subtract (or a negative number)</td><td><code>%calc:10-4%</code></td><td>6</td></tr>
+<tr><td><code>*</code> or <code>×</code></td><td>multiply</td><td><code>%calc:6*7%</code></td><td>42</td></tr>
+<tr><td><code>/</code> or <code>÷</code></td><td>divide</td><td><code>%calc:10/4%</code></td><td>2.5</td></tr>
+<tr><td><code>^</code></td><td>power</td><td><code>%calc:2^10%</code></td><td>1024</td></tr>
+<tr><td><code>( )</code></td><td>do this part first</td><td><code>%calc:(2+3)*4%</code></td><td>20</td></tr>
+</table>
+<ul>
+<li>Normal maths order applies: <code>^</code> first, then <code>*</code> <code>/</code>, then <code>+</code> <code>-</code>. <code>2^3^2</code> is worked out right to left.</li>
+<li><strong>Decimals:</strong> without a number, whole results have no decimals and others show up to two (<code>10/3</code> → 3.33, <code>10/4</code> → 2.5). With <code>:2</code> you always get exactly two (<code>5:2</code> → 5.00). From 0 to 10 decimals are allowed.</li>
+<li><strong>Typed values</strong> may include commas and a dollar sign: “$1,250” counts as 1250. A field that isn’t a number counts as 0.</li>
+<li>If the sum can’t be worked out (a typo, or dividing by zero), nothing is typed for it.</li>
+</ul>
+
+<h2 id="if">Conditions: %if, %else, %endif</h2>
+<p>Include text only when a condition is true. <code>%else%</code> is optional. In the editor: <span class="ui">Insert ▸ Condition</span>.</p>
+<pre><code>%if:{condition}%text when true%else%text when false%endif%</code></pre>
+<table class="wrap">
+<tr><th>Condition</th><th>True when</th></tr>
+<tr><td><code>{company}</code></td><td>The field has a value (anything except empty, <em>no</em>, <em>0</em>, <em>false</em> or <em>off</em>).</td></tr>
+<tr><td><code>{tone}=formal</code></td><td>The field equals “formal”. Text comparisons ignore capitals and accents.</td></tr>
+<tr><td><code>{tone}!=formal</code></td><td>The field is anything but “formal”.</td></tr>
+<tr><td><code>{qty}&gt;5</code>, <code>{qty}&lt;5</code></td><td>Greater than / less than.</td></tr>
+<tr><td><code>{qty}&gt;=5</code>, <code>{qty}&lt;=5</code></td><td>At least / at most.</td></tr>
+</table>
+<p>If both sides are numbers they’re compared as numbers; otherwise as text. An optional section (<code>%fillpart</code>) counts as <em>yes</em> when ticked and <em>no</em> when not. <code>{clipboard}</code> works too.</p>
+
+<h3 id="if-examples">Examples</h3>
+<pre><code>%fillpopup:name=Greeting:Formal:Casual%
+%if:{Greeting}=Formal%Dear %filltext:name=Name%,%else%Hi %filltext:name=Name%!%endif%</code></pre>
+<pre><code>%filltext:name=Company%
+Kind regards,
+John%if:{Company}%
+on behalf of {Company}%endif%</code></pre>
+<p>Careful: <code>{name}</code> is replaced only inside <code>%calc</code>, <code>%if</code> conditions and <code>%ai</code>. In ordinary text, use the fill-in code again. The second example therefore types the literal “{Company}”; write it as:</p>
+<pre><code>Kind regards,
+John%if:{Company}%
+on behalf of %filltext:name=Company%%endif%</code></pre>
+<p>Because both fields are called <em>Company</em>, you’re asked only once. You can put an <code>%if</code> inside another <code>%if</code>.</p>
+
+<nav class="related">Related: <a href="fill-ins.html">Fill-ins</a> <a href="macros.html#calc">Macro Reference</a> <a href="ai-features.html#ai-snippets">AI in snippets</a></nav>
+</main>
+</body>
+</html>

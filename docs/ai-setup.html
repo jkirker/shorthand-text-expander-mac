@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setting Up AI — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Setting Up AI</h1>
+<p class="lead">Shorthand’s AI features are optional and off until you add a key. You bring your own account with an AI provider; Shorthand talks to it directly.</p>
+
+<div class="toc"><ul>
+<li><a href="#quick">Quick setup</a></li>
+<li><a href="#providers">Choosing a provider</a></li>
+<li><a href="#key">Saving your key</a></li>
+<li><a href="#models">Choosing a model</a></li>
+<li><a href="#effort">Thinking effort</a></li>
+<li><a href="#fallback">Fallback provider</a></li>
+<li><a href="#local">Custom and local providers (Ollama, LM Studio)</a></li>
+<li><a href="#privacy">Privacy</a></li>
+<li><a href="#keychain">Keychain prompts</a></li>
+</ul></div>
+
+<h2 id="quick">Quick setup</h2>
+<ol class="steps">
+<li>Open Settings: choose <span class="ui">Shorthand ▸ Settings…</span> (<kbd>⌘</kbd><kbd>,</kbd>), or <span class="ui">Preferences…</span> from the Shorthand menu bar icon.</li>
+<li>Click the <span class="ui">AI</span> tab.</li>
+<li>Pick a <span class="ui">Provider</span>. Claude (Anthropic) is the default.</li>
+<li>Click the <span class="ui">Get a … key…</span> link, create a key on the provider’s website and copy it.</li>
+<li>Paste the key into the <span class="ui">API key</span> field.</li>
+<li>Click <span class="ui">Test key &amp; load models</span>. A line starting with <strong>✓ Key works with</strong> means you’re done.</li>
+</ol>
+
+<figure class="shot"><img src="img/settings-ai.png" width="680" alt="Settings ▸ AI with a main provider and a fallback"><figcaption>The top of the AI tab. Choosing a fallback provider adds its own key and model rows.</figcaption></figure>
+
+<h2 id="providers">Choosing a provider</h2>
+<p>Pick one in the <span class="ui">Provider</span> menu. Each provider needs its own API key, made on its website:</p>
+<table class="wrap">
+<tr><th>Provider (as shown in the menu)</th><th>Where to get a key</th></tr>
+<tr><td>Claude (Anthropic) – default</td><td><a href="https://console.anthropic.com/settings/keys">console.anthropic.com/settings/keys</a></td></tr>
+<tr><td>ChatGPT (OpenAI)</td><td><a href="https://platform.openai.com/api-keys">platform.openai.com/api-keys</a></td></tr>
+<tr><td>Gemini (Google)</td><td><a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a></td></tr>
+<tr><td>OpenRouter (any model)</td><td><a href="https://openrouter.ai/keys">openrouter.ai/keys</a></td></tr>
+<tr><td>Groq</td><td><a href="https://console.groq.com/keys">console.groq.com/keys</a></td></tr>
+<tr><td>Together AI</td><td><a href="https://api.together.xyz/settings/api-keys">api.together.xyz/settings/api-keys</a></td></tr>
+<tr><td>Mistral</td><td><a href="https://console.mistral.ai/api-keys">console.mistral.ai/api-keys</a></td></tr>
+<tr><td>DeepSeek</td><td><a href="https://platform.deepseek.com/api_keys">platform.deepseek.com/api_keys</a></td></tr>
+<tr><td>Kimi (Moonshot)</td><td><a href="https://platform.moonshot.ai/console/api-keys">platform.moonshot.ai/console/api-keys</a></td></tr>
+<tr><td>Grok (xAI)</td><td><a href="https://console.x.ai">console.x.ai</a></td></tr>
+<tr><td>Hugging Face (router)</td><td><a href="https://huggingface.co/settings/tokens">huggingface.co/settings/tokens</a></td></tr>
+<tr><td>Custom OpenAI-compatible (Ollama, LM Studio, …)</td><td>No key page: you run the server yourself. See <a href="#local">below</a>.</td></tr>
+</table>
+<div class="tip"><p>Not sure? Keep the default, Claude. If you want one key for many different models, OpenRouter is a good choice.</p></div>
+<p>API use is billed by the provider, separately from any chat subscription you may have.</p>
+
+<h2 id="key">Saving your key</h2>
+<ol class="steps">
+<li>Paste the key into the <span class="ui">API key</span> field.</li>
+<li>Press <kbd>Return</kbd> (you’ll see <strong>Key saved</strong>), or just click <span class="ui">Test key &amp; load models</span>, which saves it too.</li>
+</ol>
+<p>Keys are stored in your Mac’s Keychain, never in Shorthand’s settings files. Once a key is saved, the field shows <strong>•••••• saved – blank keeps it</strong>. To replace it, paste a new one; to delete it, click <span class="ui">Remove key</span>.</p>
+
+<h2 id="models">Choosing a model</h2>
+<p><span class="ui">Test key &amp; load models</span> does two things:</p>
+<ol>
+<li>It asks the provider which models your key can use and loads that live list.</li>
+<li>It sends a tiny test message to the selected model. The result reads, for example, <strong>✓ Key works with claude-opus-5-5 · 24 models available</strong>, or starts with <strong>✗</strong> and the reason.</li>
+</ol>
+<p>To pick a model, click the small ⇕ button at the end of the <span class="ui">model</span> field and choose from the list. Until you’ve loaded the list, the menu says <em>Click “Test key &amp; load models” to list models</em>.</p>
+<p><strong>Model not in the list?</strong> Type its id straight into the model field, for example a brand-new model or one your provider hides from its list. Shorthand uses whatever you type. The field starts with the provider’s suggested model; replace it with any model id.</p>
+
+<h2 id="effort">Thinking effort</h2>
+<p>Choose <span class="ui">Low — fastest</span> (the default), <span class="ui">Medium</span> or <span class="ui">High — most careful</span>. Higher effort lets the model think longer before answering: better on tricky rewrites, but slower.</p>
+<p>It is used by Claude and by OpenAI reasoning models. Other providers ignore it.</p>
+
+<h2 id="fallback">Fallback provider</h2>
+<p>A fallback is a second provider Shorthand can use when the first one has a problem.</p>
+<ol class="steps">
+<li>In the <span class="ui">Fallback (optional)</span> section, choose a <span class="ui">Fallback provider</span>.</li>
+<li>Enter its key and model in the rows that appear, and click <span class="ui">Test key &amp; load models</span>.</li>
+</ol>
+<figure>
+<svg viewBox="0 0 560 200" width="560" role="img" aria-label="Primary then fallback flow" font-family="-apple-system, sans-serif" font-size="13">
+  <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <rect x="10" y="70" width="110" height="44" rx="8" fill="none" stroke="currentColor"/>
+  <text x="65" y="97" text-anchor="middle" fill="currentColor">Your request</text>
+  <line x1="120" y1="92" x2="168" y2="92" stroke="currentColor" marker-end="url(#arr)"/>
+  <rect x="170" y="70" width="130" height="44" rx="8" fill="currentColor" fill-opacity="0.08" stroke="currentColor"/>
+  <text x="235" y="91" text-anchor="middle" fill="currentColor">Main provider</text>
+  <text x="235" y="106" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">tried first</text>
+  <line x1="300" y1="80" x2="418" y2="30" stroke="currentColor" marker-end="url(#arr)"/>
+  <text x="340" y="40" font-size="11" fill="currentColor">answer</text>
+  <rect x="420" y="10" width="130" height="38" rx="8" fill="none" stroke="currentColor"/>
+  <text x="485" y="34" text-anchor="middle" fill="currentColor">Text inserted</text>
+  <line x1="300" y1="92" x2="418" y2="92" stroke="currentColor" marker-end="url(#arr)"/>
+  <text x="312" y="86" font-size="11" fill="currentColor">declined</text>
+  <rect x="420" y="73" width="130" height="38" rx="8" fill="none" stroke="currentColor" stroke-dasharray="4 3"/>
+  <text x="485" y="97" text-anchor="middle" fill="currentColor">Stop, show why</text>
+  <line x1="300" y1="104" x2="358" y2="150" stroke="currentColor" marker-end="url(#arr)"/>
+  <text x="250" y="142" font-size="11" fill="currentColor">failed (key, outage,</text>
+  <text x="250" y="156" font-size="11" fill="currentColor">rate limit, network)</text>
+  <rect x="360" y="140" width="130" height="44" rx="8" fill="currentColor" fill-opacity="0.08" stroke="currentColor"/>
+  <text x="425" y="161" text-anchor="middle" fill="currentColor">Fallback provider</text>
+  <text x="425" y="176" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">tried once</text>
+  <path d="M490,150 C530,130 530,70 510,50" fill="none" stroke="currentColor" marker-end="url(#arr)"/>
+</svg>
+<figcaption>The fallback is tried once, only when the main provider fails. A refusal is final.</figcaption>
+</figure>
+<ul>
+<li><strong>Used when</strong> the main provider fails: a rejected key, an outage, a rate limit, a network problem, or an empty reply.</li>
+<li><strong>Not used when</strong> the model declines a request (a refusal). Shorthand shows the reason and stops; it never shops the same request around to another provider.</li>
+<li>It is tried <strong>once</strong>. If it also fails, you see both error messages.</li>
+<li>If the main provider has no key at all but the fallback does, Shorthand goes straight to the fallback.</li>
+</ul>
+
+<h2 id="local">Custom and local providers (Ollama, LM Studio)</h2>
+<p>Choose <span class="ui">Custom OpenAI-compatible (Ollama, LM Studio, …)</span> to use a model running on your own Mac, or any service that speaks the OpenAI chat-completions format.</p>
+<ol class="steps">
+<li>Start your local server (for example Ollama or LM Studio) and make sure a model is downloaded.</li>
+<li>In <span class="ui">Base URL</span>, enter the server’s address ending in <code>/v1</code>. The default is Ollama’s: <code>http://localhost:11434/v1</code>. LM Studio’s server usually listens on <code>http://localhost:1234/v1</code>.</li>
+<li>The key is <em>optional</em>; leave it empty for local servers that don’t need one.</li>
+<li>Click <span class="ui">Test key &amp; load models</span>, then pick or type a model id (for example <code>llama3.2</code>). A custom provider needs both a base URL and a model id before it can be used.</li>
+</ol>
+<div class="warn"><p><strong>Base URL rule:</strong> <code>https://</code> works with any address. Plain <code>http://</code> is allowed only for this Mac: <code>localhost</code>, <code>127.0.0.1</code> or <code>::1</code>. This keeps your key from ever travelling unencrypted. If the URL breaks the rule, an orange note appears under the field and the provider can’t be used.</p></div>
+
+<h2 id="privacy">Privacy</h2>
+<ul>
+<li>Nothing is sent until you use an AI feature. Then only the text that feature needs is sent: your selection (AI Actions), the prompt of a <code>%ai</code> snippet with any clipboard text or fill-in values it mentions, or the snippet you ask <span class="ui">Suggest with AI</span> to improve.</li>
+<li>It goes straight from your Mac to the provider you chose, or to the fallback if the main one fails. There is no Shorthand server in between.</li>
+<li>What happens to it next is up to that provider’s terms. With a local model (Ollama, LM Studio), nothing leaves your Mac.</li>
+<li>Your typing in general is never sent to any AI. See <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a>.</li>
+</ul>
+
+<h2 id="keychain">Keychain prompts</h2>
+<p>macOS may ask “Shorthand wants to use your confidential information stored in … in your keychain”. Click <span class="ui">Always Allow</span>. This mainly happens after Shorthand has been rebuilt or updated without a permanent signature (an ad-hoc build): macOS then treats it as a new app and asks once for each saved key.</p>
+
+<nav class="related">Related: <a href="ai-features.html">AI Features</a> <a href="troubleshooting.html#ai">AI troubleshooting</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a></nav>
+</main>
+</body>
+</html>

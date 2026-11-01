@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Features — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>AI Features</h1>
+<p class="lead">Three optional ways to use AI. Each one needs an AI provider and key first: see <a href="ai-setup.html">Setting Up AI</a>.</p>
+
+<div class="toc"><ul>
+<li><a href="#actions">AI Actions: rewrite selected text anywhere</a></li>
+<li><a href="#ai-snippets">AI in snippets: %ai</a></li>
+<li><a href="#suggest">Suggest with AI: turn text into a snippet</a></li>
+</ul></div>
+
+<h2 id="actions">AI Actions</h2>
+<p>Rewrite, shorten, translate or tidy any text you’ve selected, in any app.</p>
+<ol class="steps">
+<li>Select some text, for example a rough email draft.</li>
+<li>Press <kbd>⌃</kbd><kbd>⌥</kbd><kbd>A</kbd>, or choose <span class="ui">✨ AI Actions on Selection…</span> from the menu bar icon.</li>
+<li>A panel appears near your cursor showing the start of your selection. Click an action, or use <kbd>↑</kbd> <kbd>↓</kbd> and <kbd>Return</kbd>.</li>
+<li>Or type your own instruction, e.g. <em>make this sound less annoyed</em>. Typing also filters the list; if nothing matches, press <kbd>Return</kbd> to use your words as the instruction.</li>
+<li>“✨ Working…” appears briefly, then the result replaces your selection.</li>
+</ol>
+<figure class="shot"><img src="img/ai-actions.png" width="520" alt="The AI Actions panel over a selected paragraph"><figcaption>The AI Actions panel. Esc closes it without changing anything.</figcaption></figure>
+<p>Built-in actions: <em>Fix spelling &amp; grammar</em>, <em>Make shorter</em>, <em>More formal</em>, <em>More friendly</em>, <em>Clearer</em>, <em>Turn into bullet points</em>, <em>Expand into an email</em>, <em>Translate to Spanish</em> and <em>Translate to English</em>.</p>
+<div class="tip"><p>Don’t like the result? Press <kbd>⌘</kbd><kbd>Z</kbd>; in most apps that brings your original text back.</p></div>
+
+<h3 id="edit-actions">To change the list of actions</h3>
+<ol class="steps">
+<li>Open <span class="ui">Settings ▸ AI</span> and scroll to the <span class="ui">AI Actions</span> section.</li>
+<li>Edit an action’s name or instruction in place, drag to reorder, or click the minus button to remove one.</li>
+<li>Click <span class="ui">Add Action</span> for a new one, e.g. name <em>Translate to French</em>, instruction <em>Translate into French.</em></li>
+<li><span class="ui">Restore Defaults</span> brings back the built-in list.</li>
+</ol>
+<p>To use a different shortcut, change <span class="ui">AI Actions on Selection</span> in <span class="ui">Settings ▸ Hotkeys</span>.</p>
+<p>Selections longer than 20,000 characters are cut to that length before being sent.</p>
+
+<h2 id="ai-snippets">AI in snippets: %ai</h2>
+<p>Let AI write part of a snippet each time it expands. Put the instruction between <code>%ai:</code> and <code>%</code>:</p>
+<table class="wrap">
+<tr><th>Abbreviation</th><th>Content</th></tr>
+<tr><td><code>;reply</code></td><td><code>%ai:Write a brief, polite reply to this message: {clipboard}%</code></td></tr>
+<tr><td><code>;tldr</code></td><td><code>%ai:Summarize this in 3 bullet points: {clipboard}%</code></td></tr>
+<tr><td><code>;decline</code></td><td><code>Hi %filltext:name=Name%,⏎⏎Thanks for the invitation to %fillpopup:name=Event:the meeting:the dinner:the call%. %ai:Write one warm sentence declining an invitation to {Event}.%⏎⏎John</code></td></tr>
+</table>
+<ul>
+<li><code>{clipboard}</code> is replaced with the text on your clipboard, and <code>{Field name}</code> with what you typed into that fill-in, before the prompt is sent.</li>
+<li>If the snippet has fill-ins, you fill them in first; then the AI writes.</li>
+<li>Your abbreviation disappears at once and “✨ Writing…” shows while the AI works. You can keep typing elsewhere meanwhile.</li>
+<li>Several <code>%ai</code> parts in one snippet are written at the same time.</li>
+<li>If it fails, your abbreviation is typed back and a message explains why (<a href="troubleshooting.html#ai">AI errors</a>).</li>
+<li>The prompt can’t contain a <code>%</code> sign; write “percent”.</li>
+</ul>
+<p>The snippet editor’s <span class="ui">Insert ▸ AI ✨</span> menu has ready-made prompts: <em>AI Text…</em>, <em>Summarize Clipboard</em>, <em>Reply to Clipboard</em> and <em>Fix Clipboard Text</em>.</p>
+
+<h2 id="suggest">Suggest with AI</h2>
+<p>Turn a piece of text into a reusable snippet: AI picks an abbreviation and label, and replaces the parts that change (names, dates, amounts) with <a href="fill-ins.html">fill-ins</a>.</p>
+<ol class="steps">
+<li>Open a snippet in the editor, or select text in any app and choose <span class="ui">Create Snippet from Selection…</span>.</li>
+<li>Click <span class="ui">Suggest with AI</span>.</li>
+<li>In the <strong>Create Snippet</strong> window, the abbreviation, label and text are filled in for you; change anything before clicking <span class="ui">Create</span>.</li>
+<li>In the main snippet editor, a dialog <strong>Use this suggestion?</strong> shows the result. Choose:<ul><li><span class="ui">Use All</span>: takes the suggested abbreviation, label and text (the text only for plain-text snippets).</li><li><span class="ui">Abbreviation &amp; Label Only</span>: keeps your text, takes the label, and takes the abbreviation only if the snippet has none.</li><li><span class="ui">Cancel</span>: changes nothing.</li></ul></li>
+</ol>
+<p>It avoids abbreviations you already use. It’s not available for script snippets.</p>
+
+<nav class="related">Related: <a href="ai-setup.html">Setting Up AI</a> <a href="macros.html#calc">Macro Reference</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a></nav>
+</main>
+</body>
+</html>

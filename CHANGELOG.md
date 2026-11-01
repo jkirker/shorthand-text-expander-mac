@@ -1,0 +1,260 @@
+# Changelog
+
+> Doc version 1.5.0 · Last updated 2026-11-01
+
+All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
+Dates are local (Pacific).
+
+## [1.5.0] — 2026-11-01
+
+### Added
+- **Automatic updates.** Shorthand checks for new versions, shows what's new, and installs with one click.
+  - Find it under Shorthand ▸ Check for Updates…, the menu bar menu, and Settings ▸ General ▸ Updates (check automatically, or download and install automatically).
+  - Updates come from the GitHub releases of jkirker/shorthand-releases.
+  - Each update is verified twice before installing: by the developer's Sparkle signature and by the same Developer ID.
+- **License agreement.** It's shown once before Shorthand starts and must be accepted ("as is", no warranty). You can read it any time under Help ▸ License Agreement.
+
+### Changed
+- Releases are published with one command: `./scripts/release.sh`.
+
+## [1.4.1] — 2026-11-01
+
+### Added
+- `INSTALL=1 ./scripts/build.sh` copies the signed (and, with `NOTARIZE=1`, notarized) app to **/Applications/Shorthand.app**, then relaunches it.
+- "Launch at login" re-registers automatically when Shorthand has moved (for example, from the build folder into /Applications). This happens only after a move, to avoid repeated system notices.
+
+### Changed
+- Self-test and screenshot modes write their diagnostics to their temporary folder, never to the real log.
+- Shorthand now runs from /Applications on the developer's Mac. Moving it kept the Accessibility permission, which is tied to the Developer ID team and app ID.
+
+## [1.4.0] — 2026-11-01
+
+### Added
+- **Encryption at rest (optional).**
+  - The library, settings, statistics and every backup are encrypted with AES-256-GCM.
+  - **One random data key opens everything.** It's kept in this Mac's Keychain and wrapped in a **password slot** (PBKDF2-SHA256, 1,000,000 rounds) and a mandatory **recovery key** slot (a 128-bit code, HKDF).
+  - **The recovery key** is shown once, with Copy, Save to File… and Print…, and a required "I've saved my recovery key" checkbox.
+  - **Turning encryption on or off** converts every file and backup.
+- **App lock (optional).** Unlock with Touch ID, Apple Watch or the Mac password. Optionally, a separate Shorthand password replaces the Mac password.
+  - **While locked:** the library, Settings, Setup, Tag Manager, Statistics, Create Snippet and Search are closed and can't be opened, and the menu bar hides snippet names.
+  - **Lock again** on sleep or screen lock, after 5, 15 or 60 idle minutes, or only at quit.
+  - **Optional:** expansion pauses while locked.
+  - **Lock Now / Lock Shorthand** in Settings and the menu bar.
+- **The "Protect Shorthand?" offer** on first use, and once after updating. Its choices: encrypt (recommended), require unlock, pause expansion, separate password.
+- **Settings → Security** tab.
+- **Encrypted sync between Macs.** Choosing an encrypted sync folder on another Mac asks for the Shorthand password or recovery key once. If another Mac re-encrypts the library, saving pauses and a bubble asks you to unlock.
+- **Restoring a backup made with an earlier key** asks for the password or recovery key that was in use then.
+- **Self-tests** that run the real app code against throwaway data: `--security-selftest` (24 checks), and `--security-selftest-prepare` / `--security-selftest-launch` (9 checks).
+- **Help:** a new Security & Encryption topic, with 4 new screenshots.
+
+### Changed
+- File loading tells **ok / missing / locked / unreadable** apart. **A library encrypted with a key this Mac doesn't have is never treated as damaged, moved aside, overwritten or backed up.**
+- Turning encryption on, off or adopting a key is ordered so an interruption can't strand data: key, then settings, then files, then the old key. An old key is deleted only after every file it opened has been converted.
+
+### Fixed before release (independent security review, 13 findings)
+- **A planted slot could open with any password.** A slot with 0 rounds made PBKDF2 fail silently and derive an all-zero key. Slots are now validated (sizes, 100k–10M rounds), the KDF status is checked, and the file header is authenticated (AAD).
+- **An empty library could overwrite the real one** after unlocking while the synced file was missing (not downloaded yet) or damaged. Unlocking now stays locked for a missing file, and a damaged file is set aside.
+- **A damaged file with the right key was treated as "locked"**, leaving the app stuck. It's now "unreadable": set aside, then restore a backup.
+- **Passwords and recovery keys now stay in step across Macs** (slot generation).
+- **A Keychain error no longer reads as "wrong password".** The Keychain item is updated in place, and unlocking proceeds for the session with a warning.
+- **Keys are retired, not deleted,** so older backups and other Macs' files stay readable. Switching sync folders adopts the folder's key only after you choose "Use Library in Folder", and re-encrypts the current library too.
+- **Turning encryption on with another Mac's encrypted sync folder** is refused, so two keys can't compete.
+- **Turning off** checks the library really is plain before reporting success.
+- **If another Mac re-keys the library,** windows close (edits can't be saved) and the bubble shows once.
+- **The "Protect Shorthand?" choices apply only after "Done",** and closing the window brings the offer back next launch.
+- **While locked,** ⌘N, New Group and the Trash bubble's Undo require unlocking.
+- **With a sync folder,** turning on encryption first asks you to confirm every Mac runs 1.4+; an older Mac would replace the encrypted library with a starter one.
+- **Small fixes:** the Dock icon now disappears after the Unlock or Protect window closes; Turn On with an existing password asks for it once (not "new password"); relocking with expansion paused shows a reminder.
+- **Passwords are normalized to NFC**, so the same password typed different ways always matches.
+
+### Notes
+- iCloud Keychain sync of the key was tested and needs a Developer ID provisioning profile (`errSecMissingEntitlement`). Until then, other Macs use the password or recovery key once.
+- Security.json is plain on purpose: settings plus wrapped key slots, no secrets.
+
+## [1.3.2] — 2026-11-01
+
+### Added
+- **Developer ID signing and Apple notarization.**
+  - Builds are signed with "Developer ID Application: John Kirker (J9P2EN8MW4)", with the hardened runtime and a secure timestamp.
+  - `NOTARIZE=1 ./scripts/build.sh` notarizes and staples the app, and writes `build/Shorthand-<version>.zip`, which opens on any Mac without security warnings.
+  - The first submission (1.3.1 code) was accepted on 2026-11-01.
+- `scripts/Shorthand.entitlements`, with Apple Events for AppleScript snippets under the hardened runtime.
+
+### Changed
+- The Accessibility grant is now tied to the Developer ID team, so it survives rebuilds and certificate renewals. Switching from the self-signed identity needs **one** final re-grant (menu bar → Fix…). macOS may also ask once whether Shorthand can use each saved AI key: choose Always Allow.
+
+## [1.3.1] — 2026-11-01
+
+### Added
+- **⌘Z / ⇧⌘Z for library changes**, up to 50 steps:
+  - moves, duplicates, Move to Trash, Put Back, Delete Immediately, Empty Trash
+  - tag add/remove/rename/delete
+  - Merge Groups
+
+  Text fields keep their own undo. Undo history is cleared by any change that isn't undoable: snippet text, group settings, import, restoring a backup, switching sync folder, sync reload, reordering or creating snippets. So ⌘Z can never roll those back.
+- **Tag filter in the Search panel.** `#tag` words filter (all must match), plain words also match tag names, and results show tag chips.
+- **Real screenshots in Help** (9 images). They're made by a new `Shorthand --capture-help-screenshots <dir>` mode that renders Shorthand's own windows with a demo library in a temporary folder. It needs no Screen Recording permission and never touches your data.
+
+### Fixed (independent review of 1.3.0)
+- **Typing can't stall.** Browser page lookups now run off the main thread, with a 0.1 s Accessibility timeout per element and a 0.4 s budget per lookup. Previously a busy browser could delay keystrokes system-wide.
+- **Websites in Chromium browsers now work.** Chrome, Edge, Brave and Arc only build their web accessibility tree on request, so Shorthand now asks for it (`AXManualAccessibility`). Verified in Arc.
+- **Embedded login forms are caught.** Every frame on the focused path is checked, so an iframe login on a blocked site is blocked.
+- **No stale page address.** A failed quick lookup no longer reuses an old host; it schedules a fresh deep lookup. Return also triggers a re-check.
+- **No listening before you answer.** Shorthand doesn't listen in a new app until its first-use question is answered (no answer within ~12 s = Allow).
+  - Apps already open the first time 1.3.1 runs count as answered, so upgrading doesn't ask about every app.
+  - The question waits instead of covering a bubble that has an Undo button.
+- **The Trash bubble's Undo** acts only if nothing changed since the delete. Before, it could undo "Empty Trash" or a different delete.
+- **Syncing with a Mac still on 1.2** no longer wipes this Mac's Trash and tags. They're kept, written back, and a warning is shown.
+- **Hidden snippets are never acted on.** Delete and right-click use only visible rows, and the selection is trimmed when the filter or a move hides snippets. Before, ⌘A, filter, ⌫ trashed the hidden ones too.
+- **Merge Groups** asks first and keeps each source group's app rules. Snippets from disabled groups are set to "No Applications".
+- **Selection fixes:**
+  - ⌘N with Trash or a tag selected; Edit Last Expanded inside a multi-selection; Tag Manager "Show Snippets"; suggestions.
+  - Deleting groups resets the selection.
+  - The Trash list and detail pane share one selection, which resets on leaving the Trash.
+  - Renaming a tag keeps the sidebar highlight when it merges.
+- **Tags:** renaming onto a tag that's only used (not defined) now asks before merging. Removing a tag no longer leaves an unused tag behind.
+- **Smaller fixes:**
+  - Faster lists with large selections.
+  - Accessibility values are type-checked.
+  - Zero compiler warnings, including a Swift 6 concurrency warning in the script runner.
+- **Layout:**
+  - The AI key row was cut off. "Test key & load models" now has its own row.
+  - The fill-in window showed optional sections' names twice and had a gap above the Preview.
+  - The Privacy website field showed its hint as a label.
+
+## [1.3.0] — 2026-11-01
+
+### Added
+- **Multi-select.** ⌘-click or ⇧-click snippets, and groups in the sidebar. Right-click acts on the whole selection.
+  - Snippets: Duplicate, Move to Group (including New Group…), Tags, Move to Trash.
+  - Groups: Duplicate, Export, Enable/Disable, Merge Groups into One, Move to Trash.
+- **Several groups (or tags) at once.** Their snippets are listed together, each labelled with its group. Selections can be dragged onto a group, a tag or the Trash.
+- **Duplicating groups.** Copies start disabled so their abbreviations don't clash with the originals.
+- **Trash.** Deleting moves snippets and groups to a Trash in the sidebar, alongside the 8-second Undo bubble.
+  - Put Back returns an item to its original group, recreating the group if it's gone.
+  - Delete Immediately and Empty Trash… remove items for good.
+  - Settings → General → Trash deletes items automatically after 7/14/30/60/90 days or never (default 30). The check runs at launch, hourly, and when the setting changes.
+- **Tags.** Add them in the editor's Tags row. The sidebar has a Tags section with colours and counts, and the filter accepts `#tag`. A snippet created while a tag is selected gets that tag.
+- **Tag Manager** (Window ▸ Tag Manager, ⇧⌘T): rename (renaming onto an existing tag merges the two), colour, merge several, delete (the snippets are kept), add.
+- **Privacy blocklist.** In blocked apps and on blocked websites, keystrokes pass through untouched: nothing is buffered, matched, counted or suggested.
+  - Password managers are blocked by default.
+  - Website domains are read through Accessibility in Safari, Chrome, Arc, Edge, Brave, Firefox, Opera, Vivaldi and Chromium.
+  - There's a one-click list of common banking and finance sites to add.
+  - The menu bar shows "⏸ Paused here", "Allow Shorthand Here", "Block Shorthand in <app>" and "Block Shorthand on <site>".
+- **New-app question.** The first time an app is used, Shorthand asks "Use Shorthand in <app>?" with Allow and Block. Ignoring it means Allow. It can be turned off in Settings → Privacy.
+- **Settings → Privacy tab.**
+
+### Changed
+- "Delete" is now "Move to Trash" everywhere. Deleting a pending suggestion still discards it, and it isn't suggested again.
+- Settings → AI: the fallback clears when it's set to the same provider as the primary.
+
+### Data
+- `Library` gains `trash` and `tags`; `Snippet` gains `tags`.
+- `Preferences` gains `trashRetentionDays`, `blockedApps`, `blockedDomains`, `askForNewApps` and `knownApps`.
+- All of them decode leniently, so 1.2 files open unchanged. Older builds ignore the new keys, but **an older build that saves the library drops its Trash and tags.**
+
+## [1.2.0] — 2026-11-01
+
+### Added
+- **Multi-provider AI.** 12 providers, matching the Stetwell plugin's picker:
+  - Claude (Anthropic, the default) uses the native Messages API.
+  - These use the OpenAI-compatible API: ChatGPT (OpenAI), Gemini (Google), OpenRouter, Groq, Together AI, Mistral, DeepSeek, Kimi (Moonshot), Grok (xAI), Hugging Face (router).
+  - Custom OpenAI-compatible: Ollama, LM Studio and similar.
+- **Fallback provider.** It's optional and tried once when the main provider fails (bad key, outage, rate limit, network). It's never tried when a model declines a request.
+- **Live model lists.** "Test key & load models" calls each provider's `/models` endpoint. The model field lets you pick from the list or type any model id. Lists are cached in preferences, and loaded automatically when a key is already saved.
+- **Per-provider API keys in the Keychain.** Keys stored for any provider other than Anthropic go under accounts named `api-key-<provider>`.
+- **Retry in plain form on HTTP 400.** If a model rejects an optional parameter (effort, structured output, tools, server-side fallback), the request is retried once without them.
+- **In-app Help.** Help › Shorthand Help (⌘?) has 19 topics with a sidebar and full-text search. Pages live in `Resources/Help`. It's also reachable from the menu bar icon menu, Settings → General, and the "?" in Settings → AI.
+- **Ko-fi "Buy me a coffee" link.** It uses the official Ko-fi image and appears in:
+  - the Help menu
+  - the menu bar icon menu
+  - Settings → General
+  - the Help sidebar and the Support help page
+
+  `APP_STORE=1 ./scripts/build.sh` hides it (Info.plist `ShorthandShowSupport` = false).
+- **Stable code signing.** `build.sh` signs with a self-signed "Shorthand Signing" identity kept in a dedicated keychain (`~/Library/Application Support/ShorthandSigning`), so macOS keeps the Accessibility permission across rebuilds.
+- **Permission status you can see.** The menu bar menu shows "✓ Keyboard access OK", or a "Fix…" warning when macOS blocks the keyboard. Settings → General → Permissions shows Accessibility, keyboard monitor and Input Monitoring status. "Reset Permission & Ask Again" (`tccutil reset`, Shorthand only) clears a stale grant left by an older build. State changes are written to `~/Library/Application Support/Shorthand/diagnostics.log`.
+- **`%filltop%` now works.** The fill-in window opens at the top centre of the screen. In 1.1 the code was accepted but ignored.
+- **Docs.** CHANGELOG, FEATURES, ARCHITECTURE, PROCESS-FLOWS, SCHEMAS (+ JSON Schemas), TODO, TESTING, ONBOARDING, DOC-REGISTRY, and SVG diagrams.
+
+### Changed
+- AI error messages name the provider instead of always saying "Claude".
+- Settings → AI is laid out like Stetwell:
+  - Provider, API key, model and Thinking effort.
+  - A Fallback section.
+  - A privacy note naming "the provider you picked".
+- Settings → Options now says correctly that capitalization fixes apply in every app.
+- `build.sh` defaults `VERSION` to 1.2.0 and bundles `kofi.png` and `Help/`.
+
+### Fixed
+- **Choosing a sync folder could overwrite a library that was already there.** Example: setting up a second Mac. Shorthand now asks either "Use Library in Folder" or "Replace with This Mac's", and backs up the copy it sets aside. It never silently overwrites.
+- The Ko-fi image path in the Support help page now points inside `Help/`, the only folder the help viewer may read.
+
+### Migration
+- An Anthropic key saved by 1.1 keeps working: same Keychain account, `anthropic-api-key`.
+- The 1.1 `aiModel` setting is copied into `aiModels["anthropic"]` and kept in step for older builds.
+
+## [1.1.0] — 2026-10-31 (polish on 2026-11-01)
+
+### Added
+- **AI Actions palette** (⌃⌥A): rewrite selected text in any app with a preset or your own instruction.
+- **`%ai:prompt%` macro.** Generated text is inserted at the cursor, and you can keep typing while it works.
+- **Suggest with AI** in the editor and the Create Snippet window: abbreviation, label, and fill-in fields.
+- **Snippet suggestions** from phrases you type repeatedly. Only hashes are kept, and suggestions are off by default.
+- **Reminders** when you type out a snippet's full text.
+- `%calc:…%` math with fill-in values, and `%if…%else%…%endif%` conditional text.
+- **Per-snippet "Expand in" app scopes.** The same abbreviation can expand differently in different apps.
+- Lenient library/preferences decoding. An unreadable library is moved aside, never overwritten.
+- *(2026-11-01)* Undo for deleting snippets and groups.
+- *(2026-11-01)* Sync-folder reload when another Mac changes the library.
+- *(2026-11-01)* A warning while TextExpander is still running.
+- *(2026-11-01)* TextExpander's lifetime "Characters Saved" is carried into Statistics on import.
+
+### Changed
+- Import moved to ⇧⌘I, because ⌘I is Italic.
+- Use counts are stored in `Statistics.useCounts`, so the library file is no longer rewritten on every expansion.
+
+### Fixed (independent review
+- Script snippets no longer block typing. They run asynchronously with a real 10-second timeout.
+- A cancelled expansion in "immediately" mode restores the swallowed keystroke.
+- Expansions are serialized, so overlapping ones (e.g. while AI is working) can't scramble text or the clipboard.
+- ⌘V pressed right after an expansion waits for the clipboard to be restored.
+- ⇧Return / ⇧Tab delimiters keep Shift. This matters in Slack, where plain Return sends.
+- ⌥⌫ resets the abbreviation buffer. The buffer boundary after an expansion is fixed.
+- The fill-in window no longer leaks memory. HUD messages no longer hide each other.
+- Snippets don't expand inside Shorthand's own search and AI panels.
+- First-launch crash (recursive lock during preferences migration).
+
+## [1.0.0] — 2026-10-31
+
+### Added
+- A native arm64 app (`com.kirker.shorthand`) for macOS 14+, running without Rosetta.
+- **Imports TextExpander:** `Settings.textexpander`, single-group `.textexpander` files, `.textexpanderbackup` folders, and CSV/TSV. The auto-captured "Suggested Snippets" group is skipped by default.
+- All TextExpander 5 macros the TextExpander libraries it was tested with uses:
+  - fill-ins (text, area, popup, optional part, top)
+  - dates and date math
+  - clipboard
+  - nested snippets
+  - `%key:`
+  - cursor and selection
+  - arrows
+  - delimiter keep/abandon
+  - `%%`
+- **Expansion modes:** immediately, or at a delimiter (keep or abandon). Each group sets what an abbreviation must be followed by. Case modes: sensitive, ignore, adapt.
+- **Insertion:** clipboard paste (RTF/HTML) with save and restore.
+- **Interface:**
+  - main window and editor
+  - menu bar menu
+  - search panel (⌘1–9)
+  - inline search
+  - global hotkeys
+  - create from selection or clipboard
+  - edit last expanded
+- **More features:**
+  - sounds
+  - AppleScript, shell and JavaScript snippets
+  - statistics
+  - automatic backups
+  - sync folder
+  - launch at login
+  - auto-capitalize and double-caps fixes

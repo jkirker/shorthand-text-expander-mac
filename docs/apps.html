@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Per-App Snippets — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Per-App Snippets</h1>
+<p class="lead">Choose which apps a snippet or group works in. The same abbreviation can even type different text in different apps.</p>
+
+<h2 id="levels">Three levels of rules</h2>
+<p>Shorthand checks, in order, and uses the first rule that applies:</p>
+<figure>
+<svg viewBox="0 0 560 110" width="560" role="img" aria-label="Snippet rule, then group rule, then default rule" font-family="-apple-system, sans-serif" font-size="13">
+  <defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+  <rect x="10" y="20" width="150" height="56" rx="8" fill="none" stroke="currentColor" class="accent" stroke-width="2"/>
+  <text x="85" y="44" text-anchor="middle" font-weight="600" fill="currentColor">1. Snippet</text>
+  <text x="85" y="63" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">Expand in:</text>
+  <line x1="160" y1="48" x2="203" y2="48" stroke="currentColor" marker-end="url(#a3)"/>
+  <text x="182" y="92" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity="0.65">“Same as group”</text>
+  <rect x="205" y="20" width="150" height="56" rx="8" fill="none" stroke="currentColor"/>
+  <text x="280" y="44" text-anchor="middle" font-weight="600" fill="currentColor">2. Group</text>
+  <text x="280" y="63" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">Expand in</text>
+  <line x1="355" y1="48" x2="398" y2="48" stroke="currentColor" marker-end="url(#a3)"/>
+  <text x="377" y="92" text-anchor="middle" font-size="10" fill="currentColor" fill-opacity="0.65">“Default”</text>
+  <rect x="400" y="20" width="150" height="56" rx="8" fill="currentColor" fill-opacity="0.07" stroke="currentColor"/>
+  <text x="475" y="44" text-anchor="middle" font-weight="600" fill="currentColor">3. Settings</text>
+  <text x="475" y="63" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">Expand snippet groups in</text>
+</svg>
+<figcaption>A snippet set to “Same as group” follows its group; a group set to “Default (from Preferences)” follows Settings.</figcaption>
+</figure>
+
+<h2 id="default">The default for all groups</h2>
+<ol class="steps">
+<li>Open <span class="ui">Settings ▸ Expansion</span>.</li>
+<li>In <span class="ui">Expand snippet groups in</span>, choose <span class="ui">All applications</span>, <span class="ui">All applications except…</span> or <span class="ui">Only these applications…</span>.</li>
+<li>For the last two, click <span class="ui">Add Application…</span> and pick apps. Remove one with its minus button.</li>
+</ol>
+<p>Example: exclude your code editor so abbreviations never fire while you program.</p>
+
+<h2 id="group">A whole group</h2>
+<ol class="steps">
+<li>Select the group in the sidebar.</li>
+<li>Under <span class="ui">Expansion</span>, set <span class="ui">Expand in</span> to one of: <span class="ui">Default (from Preferences)</span>, <span class="ui">All Applications</span>, <span class="ui">All Applications, Except…</span>, <span class="ui">Only These Applications…</span> or <span class="ui">No Applications (Disabled)</span>.</li>
+<li>Add apps with <span class="ui">Add Application…</span> if needed.</li>
+</ol>
+<p>Example: a group of terminal commands set to <span class="ui">Only These Applications…</span> with Terminal.</p>
+
+<h2 id="snippet">A single snippet</h2>
+<ol class="steps">
+<li>Select the snippet.</li>
+<li>Set <span class="ui">Expand in:</span> to <span class="ui">Same as group</span>, <span class="ui">All Applications</span>, <span class="ui">All Applications, Except…</span>, <span class="ui">Only These Applications…</span> or <span class="ui">No Applications</span>.</li>
+<li>Add apps with <span class="ui">Add Application…</span>.</li>
+</ol>
+
+<h2 id="same-abbr">Same abbreviation, different apps</h2>
+<p>When more than one snippet has the same abbreviation, the one aimed at the current app wins: a snippet set to “Only These Applications…” beats one set to “All Applications, Except…”, which beats a general one. Snippet rules count before group rules.</p>
+<p>Example: two snippets with the abbreviation <code>;sig</code>:</p>
+<table class="wrap">
+<tr><th>Snippet</th><th>Expand in:</th><th>Result</th></tr>
+<tr><td>“Best, John” (casual)</td><td><span class="ui">Same as group</span> (all apps)</td><td>Used everywhere else</td></tr>
+<tr><td>“Kind regards, John Appleseed, Example Ltd.” (formal)</td><td><span class="ui">Only These Applications…</span> Mail</td><td>Used in Mail</td></tr>
+</table>
+
+<div class="note"><p><a href="suggestions.html">Snippet suggestions</a> follow the default in <span class="ui">Settings ▸ Expansion ▸ Expand snippet groups in</span>: phrases typed in excluded apps are never counted.</p></div>
+<p>Snippets still don’t expand in an app you allowed? See <a href="troubleshooting.html#one-app">Troubleshooting</a>.</p>
+
+<nav class="related">Related: <a href="snippets.html#groups">Groups</a> <a href="expansion.html">Abbreviations &amp; Expansion</a></nav>
+</main>
+</body>
+</html>

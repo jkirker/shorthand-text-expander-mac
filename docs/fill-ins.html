@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fill-ins — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Fill-ins</h1>
+<p class="lead">Fill-ins turn a fixed snippet into a template. When it expands, a small window asks for the parts that change each time: a name, an amount, a choice.</p>
+
+<h2 id="example">An example</h2>
+<p>Create a snippet with the abbreviation <code>;thx</code>, the label <em>Thank-you note</em>, and this content:</p>
+<pre><code>Hi %filltext:name=Name:default=there%,
+
+Thanks for your order of %fillpopup:name=Product:Coffee beans:default=Tea:Mugs%.
+%fillpart:name=Shipping note:default=yes%It will ship within 2 working days.%fillpartend%
+
+Best,
+John</code></pre>
+<p>Type <code>;thx</code> and a space. This window appears near your cursor:</p>
+
+<figure class="shot"><img src="img/fill-in.png" width="460" alt="The fill-in window for the ;thx example, with a live preview"><figcaption>The fill-in window: the snippet’s label, one row per field, a live Preview, and Cancel / OK.</figcaption></figure>
+
+<p>To finish:</p>
+<ol class="steps">
+<li>Type or choose a value for each field. The first text field is ready for typing.</li>
+<li>Watch the <span class="ui">Preview</span> update as you go.</li>
+<li>Click <span class="ui">OK</span> or press <kbd>Return</kbd> to insert the text. Click <span class="ui">Cancel</span> or press <kbd>Esc</kbd> to give up; your abbreviation stays as you typed it.</li>
+</ol>
+<div class="tip"><p>Your other abbreviations work inside the fill-in window too, so you can expand a snippet into a field.</p></div>
+
+<h2 id="types">The four kinds of field</h2>
+<p>Add them from the snippet editor’s <span class="ui">Insert ▸ Fill-ins</span> menu, or type them.</p>
+<table class="wrap">
+<tr><th>Menu item</th><th>Code</th><th>In the window</th></tr>
+<tr><td>Single Line Field</td><td><code>%filltext:name=City:default=London%</code></td><td>A one-line text box.</td></tr>
+<tr><td>Multi-line Field</td><td><code>%fillarea:name=Notes:height=5%</code></td><td>A larger box for several lines.</td></tr>
+<tr><td>Popup Menu</td><td><code>%fillpopup:name=Tone:Formal:default=Friendly:Brief%</code></td><td>A menu of choices, separated by colons. <code>default=</code> marks the one chosen at first; otherwise it’s the first option.</td></tr>
+<tr><td>Optional Section</td><td><code>%fillpart:name=PS:default=yes%</code>P.S. See you Friday!<code>%fillpartend%</code></td><td>A checkbox. The text between the codes is included only when it’s ticked. Use <code>default=yes</code> to tick it at first.</td></tr>
+</table>
+
+<h3 id="settings">Field settings</h3>
+<ul>
+<li><code>name=</code> is the label shown in the window. Unnamed fields are labelled <em>Text</em>, <em>Choice</em> or <em>Include</em>.</li>
+<li><code>default=</code> is the starting value.</li>
+<li><code>width=</code> sets the box width in characters (text fields and multi-line boxes); <code>height=</code> sets the number of lines (multi-line boxes only).</li>
+<li>Separate settings with colons. Values can’t contain a colon or a percent sign.</li>
+</ul>
+
+<h2 id="reuse">Use the same value twice</h2>
+<p>Fields with the same <code>name</code> share one value; you only fill it in once. This works across <a href="macros.html#content">nested snippets</a> too.</p>
+<pre><code>Dear %filltext:name=Client%,
+…
+I look forward to working with you, %filltext:name=Client%.</code></pre>
+
+<h2 id="with-calc">Use fill-in values in sums, conditions and AI</h2>
+<p>Inside <code>%calc</code>, <code>%if</code> and <code>%ai</code>, write <code>{Field name}</code> to use a field’s value:</p>
+<pre><code>%filltext:name=qty:default=1% × $%filltext:name=price:default=20%
+Total: $%calc:{qty}*{price}:2%
+%if:{qty}>10%Bulk discount applied.%endif%</code></pre>
+<p>See <a href="calc.html">Calculations &amp; Conditions</a> and <a href="ai-features.html#ai-snippets">AI in snippets</a>.</p>
+
+<h2 id="top">%filltop%</h2>
+<p><code>%filltop%</code> (<span class="ui">Insert ▸ Fill-ins ▸ Show at Top</span>) opens the fill-in window at the top centre of the screen instead of next to your text cursor. Use it when the window would cover what you need to see.</p>
+
+<nav class="related">Related: <a href="macros.html#fill-ins">Macro Reference</a> <a href="snippets.html">Snippets &amp; Groups</a> <a href="calc.html">Calculations &amp; Conditions</a></nav>
+</main>
+</body>
+</html>
