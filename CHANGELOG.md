@@ -1,9 +1,15 @@
 # Changelog
 
-> Doc version 1.5.3 · Last updated 2026-11-01
+> Doc version 1.5.4 · Last updated 2026-11-01
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.5.4] — 2026-11-01
+
+### Fixed
+- **Typing and clicking could freeze system-wide** (scrolling still worked) if Shorthand's Accessibility access was turned off in System Settings while it was running. Shorthand now notices within a fraction of a second and fully stops its keyboard monitor.
+- **Reset Permission & Ask Again** now stops the keyboard monitor before removing access, so it can't cause the same freeze.
 
 ## [1.5.3] — 2026-11-01
 
