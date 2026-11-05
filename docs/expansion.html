@@ -25,8 +25,8 @@
   <rect x="404" y="30" width="146" height="56" rx="8" fill="none" stroke="currentColor" class="accent" stroke-width="2"/>
   <text x="477" y="54" text-anchor="middle" font-weight="600" fill="currentColor">3. Expand</text>
   <text x="477" y="74" text-anchor="middle" fill="currentColor">Best regards, John</text>
-  <text x="280" y="118" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">Shorthand deletes “;sig”, types the snippet, then keeps or drops the delimiter.</text>
-  <text x="280" y="136" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">With “Immediately when typed”, step 2 is skipped.</text>
+  <text x="280" y="118" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">Shorthand deletes “;sig,” types the snippet, then keeps or drops the delimiter.</text>
+  <text x="280" y="136" text-anchor="middle" font-size="11" fill="currentColor" fill-opacity="0.65">With “Immediately when typed,” step 2 is skipped.</text>
 </svg>
 <figcaption>Abbreviation → delimiter → expansion.</figcaption>
 </figure>
@@ -44,11 +44,11 @@
 <p>A single snippet can override the keep/drop choice with <code>%+</code> (keep) or <code>%-</code> (drop). See <a href="macros.html#delimiter">Macro Reference</a>.</p>
 
 <h3 id="delimiters">Delimiters</h3>
-<p>A delimiter is the key you press after an abbreviation to make it expand. By default these are <kbd>Space</kbd>, <kbd>Tab</kbd>, <kbd>Return</kbd> and <kbd>Esc</kbd>.</p>
+<p>A delimiter is the key you press after an abbreviation to make it expand. By default these are <kbd>Space</kbd>, <kbd>Tab</kbd>, <kbd>Return</kbd>, and <kbd>Esc</kbd>.</p>
 <ol class="steps">
 <li>In <span class="ui">Settings ▸ Expansion</span>, click <span class="ui">Set Delimiters…</span> (shown only for the two delimiter modes).</li>
-<li>Tick the keys you want, such as <span class="ui">.</span> <span class="ui">,</span> <span class="ui">!</span> or <span class="ui">?</span>.</li>
-<li>Click <span class="ui">Done</span>. <span class="ui">Defaults</span> puts back Space, Tab, Return and Escape.</li>
+<li>Select the keys you want, such as <span class="ui">.</span> <span class="ui">,</span> <span class="ui">!</span> or <span class="ui">?</span>.</li>
+<li>Click <span class="ui">Done</span>. <span class="ui">Defaults</span> puts back Space, Tab, Return, and Escape.</li>
 </ol>
 
 <h2 id="case">Upper and lower case</h2>
@@ -56,8 +56,8 @@
 <table class="wrap">
 <tr><th>Setting</th><th>Abbreviation <code>sig</code>; you type…</th></tr>
 <tr><td><span class="ui">Case Sensitive</span></td><td>Only <code>sig</code> expands.</td></tr>
-<tr><td><span class="ui">Ignore Case</span></td><td><code>sig</code>, <code>Sig</code> and <code>SIG</code> all expand to the same text.</td></tr>
-<tr><td><span class="ui">Adapt to Case of Abbreviation</span></td><td><code>sig</code> → “best regards”; <code>Sig</code> → “Best regards” (first letter capitalised); <code>SIG</code> → “BEST REGARDS”.</td></tr>
+<tr><td><span class="ui">Ignore Case</span></td><td><code>sig</code>, <code>Sig</code>, and <code>SIG</code> all expand to the same text.</td></tr>
+<tr><td><span class="ui">Adapt to Case of Abbreviation</span></td><td><code>sig</code> → “best regards”; <code>Sig</code> → “Best regards” (first letter capitalized); <code>SIG</code> → “BEST REGARDS”.</td></tr>
 </table>
 
 <h2 id="expand-after">Expand after</h2>
@@ -80,6 +80,7 @@
 </ul>
 
 <h2 id="more-settings">Other expansion settings</h2>
+<figure class="shot"><picture><source srcset="img/settings-expansion-dark.png" media="(prefers-color-scheme: dark)"><img src="img/settings-expansion.png" width="680" alt="Settings ▸ Expansion"></picture><figcaption><span class="ui">Settings ▸ Expansion</span>: when abbreviations expand, delimiters, case, and what happens while expanding.</figcaption></figure>
 <p>In <span class="ui">Settings ▸ Expansion ▸ When expanding</span>:</p>
 <ul>
 <li><span class="ui">Play sound</span> and <span class="ui">Sound</span>: a sound on every expansion (groups can choose their own).</li>
@@ -87,9 +88,10 @@
 <li><span class="ui">Run script snippets (AppleScript, shell, JavaScript)</span>: see <a href="scripts.html">Script Snippets</a>.</li>
 </ul>
 <p>In <span class="ui">Settings ▸ Options</span> (these work even without snippets):</p>
+<figure class="shot"><picture><source srcset="img/settings-options-dark.png" media="(prefers-color-scheme: dark)"><img src="img/settings-options.png" width="680" alt="Settings ▸ Options"></picture><figcaption><span class="ui">Settings ▸ Options</span>.</figcaption></figure>
 <ul>
 <li><span class="ui">Capitalize new sentences</span>: “. hello” becomes “. Hello”.</li>
-<li><span class="ui">Double capitals</span>: fixes “THe” to “The”: <span class="ui">Do not correct</span>, <span class="ui">Eliminate at sentence start</span> or <span class="ui">Eliminate at word start</span>.</li>
+<li><span class="ui">Double capitals</span>: fixes “THe” to “The”: <span class="ui">Do not correct</span>, <span class="ui">Eliminate at sentence start</span>, or <span class="ui">Eliminate at word start</span>.</li>
 </ul>
 
 <nav class="related">Related: <a href="snippets.html">Snippets &amp; Groups</a> <a href="apps.html">Per-App Snippets</a> <a href="troubleshooting.html#one-snippet">One snippet doesn’t expand</a></nav>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Template Packs — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Template Packs</h1>
+<p class="lead">Ready-made groups of snippets you can add in one click: email, support, dates, symbols, meetings, AI writing, developers, and more.</p>
+
+<h2 id="add">To add a pack</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File ▸ Template Packs…</span>, or click <span class="ui">+</span> below the group list and choose <span class="ui">Template Packs…</span>.</li>
+<li>Pick a pack on the left. The right side lists its snippets and what each one types.</li>
+<li>Click <span class="ui">Add Pack</span>. The pack becomes a new group in your library, selected and ready to use.</li>
+</ol>
+<figure class="shot"><picture><source srcset="img/template-packs-dark.png" media="(prefers-color-scheme: dark)"><img src="img/template-packs.png" width="820" alt="The Template Packs window with Email essentials selected"></picture><figcaption>The Template Packs window. Blanks show as [Name]; they become fill-in fields when the snippet expands.</figcaption></figure>
+<ul>
+<li><strong>Abbreviations you already use</strong> aren’t replaced. The pack’s copy gets a number instead (<code>;thx</code> becomes <code>;thx1</code>), and Shorthand tells you which ones.</li>
+<li><strong>It’s your copy.</strong> Edit, rename, move, or delete the snippets like any others. Adding a pack again adds a second copy.</li>
+<li>Undo with <kbd>⌘</kbd><kbd>Z</kbd>, or move the group to the Trash.</li>
+</ul>
+<div class="tip"><p><strong>AI packs:</strong> copy some text, then type the abbreviation. AI writes the result where you’re typing. These need an AI provider; see <a href="ai-setup.html">Setting Up AI</a>.</p></div>
+
+<h2 id="packs">The packs</h2>
+<h3 id="pack-email">Email essentials</h3>
+<p>Thank-yous, follow-ups, introductions, out-of-office notes, and meeting requests, with blanks for the parts that change.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;thx</code></td><td>Thank you</td></tr><tr><td><code>;fu</code></td><td>Follow-up</td></tr><tr><td><code>;intro</code></td><td>Introduce two people</td></tr><tr><td><code>;ooo</code></td><td>Out of office</td></tr><tr><td><code>;meet</code></td><td>Meeting request</td></tr><tr><td><code>;att</code></td><td>Attachment note</td></tr>
+</table>
+<h3 id="pack-support">Customer support</h3>
+<p>Friendly, consistent replies for help desks: greetings, order numbers, refunds, updates, escalations, and closing a ticket.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;hi</code></td><td>Greeting</td></tr><tr><td><code>;order</code></td><td>Ask for the order number</td></tr><tr><td><code>;refund</code></td><td>Refund issued</td></tr><tr><td><code>;eta</code></td><td>Update coming</td></tr><tr><td><code>;esc</code></td><td>Escalated</td></tr><tr><td><code>;close</code></td><td>Closing the ticket</td></tr>
+</table>
+<h3 id="pack-dates">Dates &amp; times</h3>
+<p>Today, tomorrow, next week, and timestamps in the formats people actually use.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;td</code></td><td>Today, long</td></tr><tr><td><code>;iso</code></td><td>Today, ISO</td></tr><tr><td><code>;now</code></td><td>Time now</td></tr><tr><td><code>;stamp</code></td><td>Timestamp</td></tr><tr><td><code>;tmrw</code></td><td>Tomorrow</td></tr><tr><td><code>;nw</code></td><td>A week from today</td></tr><tr><td><code>;due</code></td><td>Due in 30 days</td></tr>
+</table>
+<h3 id="pack-symbols">Symbols &amp; keys</h3>
+<p>Mac key symbols, arrows, marks, and a couple of classics you can never find when you need them.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;cmd</code></td><td>Command key</td></tr><tr><td><code>;opt</code></td><td>Option key</td></tr><tr><td><code>;ctrl</code></td><td>Control key</td></tr><tr><td><code>;shift</code></td><td>Shift key</td></tr><tr><td><code>;ret</code></td><td>Return key</td></tr><tr><td><code>;arr</code></td><td>Arrow</td></tr><tr><td><code>;check</code></td><td>Check mark</td></tr><tr><td><code>;cross</code></td><td>Cross mark</td></tr><tr><td><code>;deg</code></td><td>Degree</td></tr><tr><td><code>;tm</code></td><td>Trademark</td></tr><tr><td><code>;copy</code></td><td>Copyright</td></tr><tr><td><code>;em</code></td><td>Em dash</td></tr><tr><td><code>;shrug</code></td><td>Shrug</td></tr><tr><td><code>;flip</code></td><td>Table flip</td></tr>
+</table>
+<h3 id="pack-meetings">Meetings &amp; notes</h3>
+<p>Agendas, meeting notes with action items, and a recap email with a next step and a date.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;agenda</code></td><td>Agenda</td></tr><tr><td><code>;notes</code></td><td>Meeting notes</td></tr><tr><td><code>;recap</code></td><td>Recap email</td></tr>
+</table>
+<h3 id="pack-ai-writing">AI writing assistant <span class="ui">Uses AI</span></h3>
+<p>Copy any text, type an abbreviation, and AI writes the result in place: summaries, fixes, rewrites, replies, and subject lines.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;tldr</code></td><td>Summarize the clipboard</td></tr><tr><td><code>;polish</code></td><td>Fix spelling and grammar</td></tr><tr><td><code>;shorter</code></td><td>Make it shorter</td></tr><tr><td><code>;kind</code></td><td>Make it kinder</td></tr><tr><td><code>;reply</code></td><td>Draft a reply</td></tr><tr><td><code>;subj</code></td><td>Subject line</td></tr><tr><td><code>;bullets</code></td><td>Notes to bullets</td></tr>
+</table>
+<h3 id="pack-ai-support">AI for support teams <span class="ui">Uses AI</span></h3>
+<p>Copy a customer’s message and let AI draft an apology, an answer, or an explanation in your voice, ready to check and send.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;sorry</code></td><td>Apology</td></tr><tr><td><code>;answer</code></td><td>Answer the question</td></tr><tr><td><code>;explain</code></td><td>Explain simply</td></tr><tr><td><code>;tone</code></td><td>Calm an angry reply</td></tr>
+</table>
+<h3 id="pack-developers">Developers</h3>
+<p>TODOs, logging, conventional commits, Markdown tables, and code fences, plus a fresh UUID from a script snippet.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;todo</code></td><td>TODO comment</td></tr><tr><td><code>;cl</code></td><td>console.log</td></tr><tr><td><code>;pf</code></td><td>Python f-string print</td></tr><tr><td><code>;cc</code></td><td>Conventional commit</td></tr><tr><td><code>;fence</code></td><td>Code fence</td></tr><tr><td><code>;mdt</code></td><td>Markdown table</td></tr><tr><td><code>;uuid</code></td><td>New UUID</td></tr><tr><td><code>;ip</code></td><td>This Mac’s local IP</td></tr>
+</table>
+<h3 id="pack-smart">Smart calculations</h3>
+<p>Snippets that do the math: a tip, a quick quote with tax, and a discount that only appears when it applies.</p>
+<table class="wrap">
+<tr><th>Type</th><th>What it does</th></tr>
+<tr><td><code>;tip</code></td><td>Tip calculator</td></tr><tr><td><code>;quote</code></td><td>Quote with tax</td></tr>
+</table>
+
+<nav class="related">Related: <a href="snippets.html">Snippets &amp; Groups</a> <a href="fill-ins.html">Fill-ins</a> <a href="ai-features.html">AI Features</a></nav>
+</main>
+</body>
+</html>

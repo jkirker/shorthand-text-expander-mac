@@ -39,12 +39,12 @@ John</code></pre>
 <tr><td>Single Line Field</td><td><code>%filltext:name=City:default=London%</code></td><td>A one-line text box.</td></tr>
 <tr><td>Multi-line Field</td><td><code>%fillarea:name=Notes:height=5%</code></td><td>A larger box for several lines.</td></tr>
 <tr><td>Popup Menu</td><td><code>%fillpopup:name=Tone:Formal:default=Friendly:Brief%</code></td><td>A menu of choices, separated by colons. <code>default=</code> marks the one chosen at first; otherwise it’s the first option.</td></tr>
-<tr><td>Optional Section</td><td><code>%fillpart:name=PS:default=yes%</code>P.S. See you Friday!<code>%fillpartend%</code></td><td>A checkbox. The text between the codes is included only when it’s ticked. Use <code>default=yes</code> to tick it at first.</td></tr>
+<tr><td>Optional Section</td><td><code>%fillpart:name=PS:default=yes%</code>P.S. See you Friday!<code>%fillpartend%</code></td><td>A checkbox. The text between the codes is included only when it’s checked. Use <code>default=yes</code> to check it at first.</td></tr>
 </table>
 
 <h3 id="settings">Field settings</h3>
 <ul>
-<li><code>name=</code> is the label shown in the window. Unnamed fields are labelled <em>Text</em>, <em>Choice</em> or <em>Include</em>.</li>
+<li><code>name=</code> is the label shown in the window. Unnamed fields are labeled <em>Text</em>, <em>Choice</em>, or <em>Include</em>.</li>
 <li><code>default=</code> is the starting value.</li>
 <li><code>width=</code> sets the box width in characters (text fields and multi-line boxes); <code>height=</code> sets the number of lines (multi-line boxes only).</li>
 <li>Separate settings with colons. Values can’t contain a colon or a percent sign.</li>
@@ -56,15 +56,15 @@ John</code></pre>
 …
 I look forward to working with you, %filltext:name=Client%.</code></pre>
 
-<h2 id="with-calc">Use fill-in values in sums, conditions and AI</h2>
-<p>Inside <code>%calc</code>, <code>%if</code> and <code>%ai</code>, write <code>{Field name}</code> to use a field’s value:</p>
+<h2 id="with-calc">Use fill-in values in sums, conditions, and AI</h2>
+<p>Inside <code>%calc</code>, <code>%if</code>, and <code>%ai</code>, write <code>{Field name}</code> to use a field’s value:</p>
 <pre><code>%filltext:name=qty:default=1% × $%filltext:name=price:default=20%
 Total: $%calc:{qty}*{price}:2%
 %if:{qty}>10%Bulk discount applied.%endif%</code></pre>
 <p>See <a href="calc.html">Calculations &amp; Conditions</a> and <a href="ai-features.html#ai-snippets">AI in snippets</a>.</p>
 
 <h2 id="top">%filltop%</h2>
-<p><code>%filltop%</code> (<span class="ui">Insert ▸ Fill-ins ▸ Show at Top</span>) opens the fill-in window at the top centre of the screen instead of next to your text cursor. Use it when the window would cover what you need to see.</p>
+<p><code>%filltop%</code> (<span class="ui">Insert ▸ Fill-ins ▸ Show at Top</span>) opens the fill-in window at the top center of the screen instead of next to your text cursor. Use it when the window would cover what you need to see.</p>
 
 <nav class="related">Related: <a href="macros.html#fill-ins">Macro Reference</a> <a href="snippets.html">Snippets &amp; Groups</a> <a href="calc.html">Calculations &amp; Conditions</a></nav>
 </main>

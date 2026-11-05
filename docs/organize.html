@@ -24,9 +24,9 @@
 </ul></div>
 
 <h2 id="sidebar">The sidebar</h2>
-<p>The main window’s sidebar has three sections: <strong>Groups</strong>, <strong>Tags</strong> and <strong>Trash</strong>. Each group and tag shows how many snippets it has.</p>
-<figure class="shot"><picture><source srcset="img/multi-select-dark.png" media="(prefers-color-scheme: dark)"><img src="img/multi-select.png" width="1100" alt="Three snippets selected. The sidebar shows Groups, Tags (with colours and counts) and Trash"></picture><figcaption>Two groups selected (their snippets are listed together). Tags show their colour and count; the ☰ button opens the Tag Manager.</figcaption></figure>
-<p>The <span class="ui">+</span> button below the sidebar offers <span class="ui">New Group</span>, <span class="ui">New Tag…</span> and <span class="ui">Import TextExpander Snippets…</span>.</p>
+<p>The main window’s sidebar has three sections: <strong>Groups</strong>, <strong>Tags</strong>, and <strong>Trash</strong>. Each group and tag shows how many snippets it has.</p>
+<figure class="shot"><picture><source srcset="img/multi-select-dark.png" media="(prefers-color-scheme: dark)"><img src="img/multi-select.png" width="1100" alt="Three snippets selected. The sidebar shows Groups, Tags (with colors and counts) and Trash"></picture><figcaption>Two groups selected (their snippets are listed together). Tags show their color and count; the ☰ button opens the Tag Manager.</figcaption></figure>
+<p>The <span class="ui">+</span> button below the sidebar offers <span class="ui">New Group</span>, <span class="ui">New Tag…</span> and <span class="ui">Import Snippets…</span>.</p>
 
 <h2 id="select">Selecting several snippets</h2>
 <ul>
@@ -68,12 +68,12 @@
   <text x="248" y="150" fill="currentColor">New Tag…</text>
   <text x="248" y="172" fill="currentColor">Tag Manager…</text>
 </svg>
-<figcaption>A tick means every selected snippet already has that tag.</figcaption>
+<figcaption>A check mark means every selected snippet already has that tag.</figcaption>
 </figure>
 <dl>
 <dt><span class="ui">Duplicate</span></dt><dd>Copies each snippet into the same group. The copy’s abbreviation gets the first free number added (<code>;sig</code> becomes <code>;sig1</code>, or <code>;sig2</code> if <code>;sig1</code> is taken), and its label gets “copy” added.</dd>
 <dt><span class="ui">Move to Group</span></dt><dd>Choose a group, or <span class="ui">New Group…</span> to make a new group and move the snippets into it in one step.</dd>
-<dt><span class="ui">Tags</span></dt><dd>Lists every tag. A tick means all the selected snippets have it: choose it to remove it from them all. Choose a tag without a tick to add it to them all. <span class="ui">New Tag…</span> creates a tag and adds it; <span class="ui">Tag Manager…</span> opens the <a href="#tag-manager">Tag Manager</a>.</dd>
+<dt><span class="ui">Tags</span></dt><dd>Lists every tag. A check mark means all the selected snippets have it: choose it to remove it from them all. Choose a tag without a check mark to add it to them all. <span class="ui">New Tag…</span> creates a tag and adds it; <span class="ui">Tag Manager…</span> opens the <a href="#tag-manager">Tag Manager</a>.</dd>
 <dt><span class="ui">Move to Trash</span></dt><dd>Moves the snippets to the <a href="#trash">Trash</a>. Pressing <kbd>⌫</kbd> does the same.</dd>
 </dl>
 
@@ -106,33 +106,33 @@
 <p>Changed your mind? Press <kbd>⌘</kbd><kbd>Z</kbd> (<span class="ui">Edit ▸ Undo Merge Groups</span>). See <a href="#undo">Undoing changes</a>.</p>
 
 <h2 id="tags">Tags</h2>
-<p>Tags label snippets across groups. A snippet can have any number of tags, and a tag can be on snippets in any group. Unlike groups, tags don’t change how snippets expand; they just help you find and organise them. Tag names ignore capitals: “Clients” and “clients” are the same tag.</p>
+<p>Tags label snippets across groups. A snippet can have any number of tags, and a tag can be on snippets in any group. Unlike groups, tags don’t change how snippets expand; they just help you find and organize them. Tag names ignore capitals: “Clients” and “clients” are the same tag.</p>
 
 <h3 id="add-tags">To tag a snippet</h3>
 <ol class="steps">
 <li>Select the snippet.</li>
 <li>In the <span class="ui">Tags:</span> row of the editor, type a tag name in <span class="ui">Add tag</span> and press <kbd>Return</kbd>. Or click the tag button at the end of the row to pick an existing tag.</li>
 </ol>
-<p>Each tag appears as a chip in its colour. Click the chip’s <strong>×</strong> to remove the tag. In the snippet list, a snippet shows up to three coloured dots for its tags.</p>
+<p>Each tag appears as a chip in its color. Click the chip’s <strong>×</strong> to remove the tag. In the snippet list, a snippet shows up to three colored dots for its tags.</p>
 <p>To tag several snippets at once, use the right-click <a href="#actions">Tags</a> menu, the <a href="#multi-pane">Add Tag</a> button, or <a href="#drag">drag them</a> onto a tag.</p>
 
 <h3 id="tags-sidebar">Tags in the sidebar</h3>
 <ul>
 <li>Click a tag to list every snippet with that tag, from any group. Select several tags (or tags and groups) to list them all together.</li>
 <li>With a tag selected, <span class="ui">New Snippet</span> creates a snippet that already has that tag.</li>
-<li>Right-click a tag for <span class="ui">Rename Tag…</span>, <span class="ui">Colour</span>, <span class="ui">Delete Tag</span> and <span class="ui">Tag Manager…</span>. If you rename it to a tag that’s already in use, Shorthand asks before merging the two.</li>
+<li>Right-click a tag for <span class="ui">Rename Tag…</span>, <span class="ui">Color</span>, <span class="ui">Delete Tag</span>, and <span class="ui">Tag Manager…</span>. If you rename it to a tag that’s already in use, Shorthand asks before merging the two.</li>
 </ul>
 
 <h3 id="filter">Filtering by tag</h3>
-<p>The <span class="ui">Filter</span> field above the snippet list matches tags as well as abbreviations, labels and content. Start with <code>#</code> to match tags only: <code>#client</code> shows snippets with a tag containing “client”.</p>
+<p>The <span class="ui">Filter</span> field above the snippet list matches tags as well as abbreviations, labels, and content. Start with <code>#</code> to match tags only: <code>#client</code> shows snippets with a tag containing “client”.</p>
 <p>The <a href="search.html#tags">Search Snippets</a> panel understands tags too: <code>#email thanks</code> finds snippets tagged “email” that also contain “thanks”.</p>
 
 <h2 id="tag-manager">The Tag Manager</h2>
-<figure class="shot"><picture><source srcset="img/tag-manager-dark.png" media="(prefers-color-scheme: dark)"><img src="img/tag-manager.png" width="480" alt="The Tag Manager"></picture><figcaption>The Tag Manager: colour, name and snippet count for each tag</figcaption></figure>
-<p>Open it with <span class="ui">Window ▸ Tag Manager</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>T</kbd>), the tag button in the main window’s toolbar, or the small slider button next to the <strong>Tags</strong> heading in the sidebar. It lists every tag with its colour and the number of snippets that use it.</p>
+<figure class="shot"><picture><source srcset="img/tag-manager-dark.png" media="(prefers-color-scheme: dark)"><img src="img/tag-manager.png" width="480" alt="The Tag Manager"></picture><figcaption>The Tag Manager: color, name, and snippet count for each tag</figcaption></figure>
+<p>Open it with <span class="ui">Window ▸ Tag Manager</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>T</kbd>), the tag button in the main window’s toolbar, or the small slider button next to the <strong>Tags</strong> heading in the sidebar. It lists every tag with its color and the number of snippets that use it.</p>
 <ul>
-<li><strong>Rename:</strong> double-click a name, type the new one and press <kbd>Return</kbd>. If you rename a tag to the name of a tag that already exists or is already on some snippets, Shorthand asks whether to merge them: every snippet with the old tag gets the other tag instead.</li>
-<li><strong>Colour:</strong> click the coloured dot and choose a colour (Red, Orange, Yellow, Green, Mint, Teal, Blue, Indigo, Purple, Pink or Gray).</li>
+<li><strong>Rename:</strong> double-click a name, type the new one, and press <kbd>Return</kbd>. If you rename a tag to the name of a tag that already exists or is already on some snippets, Shorthand asks whether to merge them: every snippet with the old tag gets the other tag instead.</li>
+<li><strong>Color:</strong> click the colored dot and choose a color (Red, Orange, Yellow, Green, Mint, Teal, Blue, Indigo, Purple, Pink, or Gray).</li>
 <li><strong>Merge several:</strong> select two or more tags (<kbd>⌘</kbd>-click), click <span class="ui">Merge…</span> and type the name to keep.</li>
 <li><strong>Delete:</strong> select tags and click <span class="ui">Delete</span>. The tag is removed from every snippet; the snippets themselves are kept.</li>
 <li><strong>Add a tag:</strong> type in <span class="ui">New tag</span> at the bottom and click <span class="ui">Add</span>. It appears in the sidebar and menus, ready to use.</li>
@@ -161,12 +161,12 @@
 <div class="tip"><p>Even after the Trash is emptied, your <a href="sync.html#backups">automatic backups</a> still have older copies of your library.</p></div>
 
 <h2 id="undo">Undoing changes</h2>
-<p>Choose <span class="ui">Edit ▸ Undo</span> (<kbd>⌘</kbd><kbd>Z</kbd>) in the main window to undo the last change to your library, and <span class="ui">Edit ▸ Redo</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>Z</kbd>) to do it again. The menu names what it will undo, such as <span class="ui">Undo Move Snippets</span>, <span class="ui">Undo Add Tag</span>, <span class="ui">Undo Merge Groups</span>, <span class="ui">Undo Put Back</span> or <span class="ui">Undo Empty Trash</span>.</p>
+<p>Choose <span class="ui">Edit ▸ Undo</span> (<kbd>⌘</kbd><kbd>Z</kbd>) in the main window to undo the last change to your library, and <span class="ui">Edit ▸ Redo</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>Z</kbd>) to do it again. The menu names what it will undo, such as <span class="ui">Undo Move Snippets</span>, <span class="ui">Undo Add Tag</span>, <span class="ui">Undo Merge Groups</span>, <span class="ui">Undo Put Back</span>, or <span class="ui">Undo Empty Trash</span>.</p>
 <p>You can undo:</p>
 <ul>
 <li>moving and duplicating snippets, and duplicating groups;</li>
-<li>moving snippets and groups to the Trash, <span class="ui">Put Back</span>, <span class="ui">Delete Immediately</span> and <span class="ui">Empty Trash</span>;</li>
-<li>adding, removing, renaming and deleting tags, creating a tag, and changing a tag’s colour;</li>
+<li>moving snippets and groups to the Trash, <span class="ui">Put Back</span>, <span class="ui">Delete Immediately</span>, and <span class="ui">Empty Trash</span>;</li>
+<li>adding, removing, renaming, and deleting tags, creating a tag, and changing a tag’s color;</li>
 <li>enabling and disabling groups from the right-click menu;</li>
 <li>merging groups.</li>
 </ul>

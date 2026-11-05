@@ -1,15 +1,15 @@
 # Shorthand Privacy
 
-The full, formatted version is on the [Help site](https://jkirker.github.io/shorthand-text-expander-mac/privacy.html).
+The full, formatted version is in the [help centre](https://shorthandexpander.com/help/privacy/).
 
 Privacy, Blocklist &amp; Permissions
 A text expander has to see what you type. Here is exactly what Shorthand does with that, where you can switch it off completely, and what it asks macOS for.
 
 Your typing
 
-Shorthand keeps only the last few hundred characters you typed, in memory, to check whether they end with an abbreviation. Clicking, arrow keys, shortcuts and switching apps clear it.
-Your typing is never saved to disk, never logged and never sent anywhere.
-Shorthand has no account, no analytics and no tracking. It contacts the internet only for the AI features you use.
+Shorthand keeps only the last few hundred characters you typed, in memory, to check whether they end with an abbreviation. Clicking, arrow keys, shortcuts, and switching apps clear it.
+Your typing is never saved to disk, never logged, and never sent anywhere.
+Shorthand has no account, no analytics, and no tracking. It contacts the internet only for the AI features you use.
 While a password field (or another app’s Secure Input) is active, macOS hides keystrokes from Shorthand completely. See Secure Input.
 In apps and on websites you block, Shorthand doesn’t look at your typing at all. See Blocklist.
 
@@ -21,7 +21,7 @@ What “paused” means
 In a blocked app, or on a blocked website, Shorthand is paused. Your keystrokes pass straight through, untouched. Nothing is kept in memory, nothing is matched against abbreviations, nothing is counted in statistics and nothing is used for suggestions. Snippets don’t expand there.
 
 Blocked apps
-Password managers are blocked from the start: 1Password (versions 7 and 8), Bitwarden, Keychain Access and Passwords (macOS 15 and later).
+Password managers are blocked from the start: 1Password (versions 7 and 8), Bitwarden, Keychain Access, and Passwords (macOS 15 and later).
 
 To block another app, click Add Application… under Blocked apps and choose it.
 To unblock one, click the − next to it.
@@ -35,10 +35,10 @@ chase.comchase.com and every address ending in .chase.com, such as secure.chase.
 *.mybank.com or https://www.mybank.com/loginTidied up to mybank.com, which then works as above. Shorthand drops https://, www., a leading *., anything after the first /, and port numbers.
 bank (a word with no dot)Any site whose address contains it: bankofamerica.com, mybank.co.uk, and so on.
 
-Add Common Banking &amp; Finance Sites adds a ready-made list in one click: the word bank (so every address containing “bank”) plus chase.com, wellsfargo.com, bankofamerica.com, citi.com, capitalone.com, usbank.com, americanexpress.com, discover.com, paypal.com, venmo.com, schwab.com, fidelity.com, vanguard.com, irs.gov and ssa.gov. Remove any you don’t want with −.
+Add Common Banking &amp; Finance Sites adds a ready-made list in one click: the word bank (so every address containing “bank”) plus chase.com, wellsfargo.com, bankofamerica.com, citi.com, capitalone.com, usbank.com, americanexpress.com, discover.com, paypal.com, venmo.com, schwab.com, fidelity.com, vanguard.com, irs.gov, and ssa.gov. Remove any you don’t want with −.
 Shorthand checks every part of the page, not just its address. Many sites embed a sign-in box from another site (a bank login inside a shopping or bill-payment page, for example). Shorthand pauses if either the page or the embedded box is on your blocklist.
-Shorthand reads page addresses in these browsers: Safari (and Safari Technology Preview), Google Chrome (and its Beta and Canary versions), Arc, Microsoft Edge, Brave, Firefox, Opera, Vivaldi and Chromium.
-Chrome, Arc, Edge, Brave, Opera, Vivaldi and Chromium only prepare the accessibility information Shorthand reads when an app asks for it, so Shorthand asks for it. Website blocking has been confirmed working in Arc. The other browsers haven’t been confirmed yet: after you block a site, open it and check that the menu shows ⏸ Paused here: before relying on it.
+Shorthand reads page addresses in these browsers: Safari (and Safari Technology Preview), Google Chrome (and its Beta and Canary versions), Arc, Microsoft Edge, Brave, Firefox, Opera, Vivaldi, and Chromium.
+Chrome, Arc, Edge, Brave, Opera, Vivaldi, and Chromium only prepare the accessibility information Shorthand reads when an app asks for it, so Shorthand asks for it. Website blocking has been confirmed working in Arc. The other browsers haven’t been confirmed yet: after you block a site, open it and check that the menu shows ⏸ Paused here: before relying on it.
 
 Blocking and allowing from the menu bar
 Click the Shorthand icon in the menu bar while you’re in the app or on the page:
@@ -76,7 +76,7 @@ Shorthand needs Accessibility permission to see keystrokes, find your text curso
 Open System Settings ▸ Privacy &amp; Security ▸ Accessibility, or click Grant… in Shorthand’s setup window or in Settings ▸ General ▸ Permissions.
 Turn on Shorthand.
 
-The status is shown in Settings ▸ General ▸ Permissions (green tick or red ✕). If expansion stops after an update, see re-granting after a rebuild.
+The status is shown in Settings ▸ General ▸ Permissions (green check mark or red ✕). If expansion stops after an update, see re-granting after a rebuild.
 Shorthand may also ask, through macOS, to control other apps when an AppleScript snippet does so, and to use its Keychain items for AI keys.
 
 The clipboard
@@ -93,7 +93,7 @@ Security settings (lock settings and locked copies of your encryption key, no pa
 Diagnostics (permission status only, never typed text)~/Library/Application Support/Shorthand/diagnostics.log
 AI keys, and the encryption key if encryption is onYour login Keychain, never in the files above
 
-Normally the library is a plain text file, like most documents. If you turn on encryption in Settings ▸ Security, the library (including the copy in a sync folder), settings, statistics and every backup are encrypted, so a copy of them can’t be read without your key. Security.json and the diagnostics log stay plain; neither contains your snippets or any secret. See Security &amp; Encryption, including what encryption can’t do.
+Normally the library is a plain text file, like most documents. If you turn on encryption in Settings ▸ Security, the library (including the copy in a sync folder), settings, statistics, and every backup are encrypted, so a copy of them can’t be read without your key. Security.json and the diagnostics log stay plain; neither contains your snippets or any secret. See Security &amp; Encryption, including what encryption can’t do.
 Even with encryption, it’s best not to keep passwords in snippets. A password manager is the right place for them.
 
 Suggestions and reminders
@@ -103,7 +103,7 @@ AI
 AI is off until you add a key. When you use an AI feature, only the text it needs goes straight to the provider you chose (or your fallback provider). Details: AI privacy.
 
 Update checks
-When checking for updates, Shorthand downloads a small file (the update feed) from GitHub. It sends no information about you, your Mac or your snippets. Turn automatic checks off in Settings ▸ General ▸ Updates.
+When checking for updates, Shorthand downloads a small file (the update feed) from GitHub. It sends no information about you, your Mac, or your snippets. Turn automatic checks off in Settings ▸ General ▸ Updates.
 
 Scripts
 Script snippets run with your permissions. Imported libraries can contain scripts; check them before use, or turn off Run script snippets (AppleScript, shell, JavaScript). See Script Snippets.

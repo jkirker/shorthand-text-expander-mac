@@ -39,7 +39,7 @@ A 10% volume discount will be applied.</code></pre>
 <tr><td><code>( )</code></td><td>do this part first</td><td><code>%calc:(2+3)*4%</code></td><td>20</td></tr>
 </table>
 <ul>
-<li>Normal maths order applies: <code>^</code> first, then <code>*</code> <code>/</code>, then <code>+</code> <code>-</code>. <code>2^3^2</code> is worked out right to left.</li>
+<li>Normal math order applies: <code>^</code> first, then <code>*</code> <code>/</code>, then <code>+</code> <code>-</code>. <code>2^3^2</code> is worked out right to left.</li>
 <li><strong>Decimals:</strong> without a number, whole results have no decimals and others show up to two (<code>10/3</code> → 3.33, <code>10/4</code> → 2.5). With <code>:2</code> you always get exactly two (<code>5:2</code> → 5.00). From 0 to 10 decimals are allowed.</li>
 <li><strong>Typed values</strong> may include commas and a dollar sign: “$1,250” counts as 1250. A field that isn’t a number counts as 0.</li>
 <li>If the sum can’t be worked out (a typo, or dividing by zero), nothing is typed for it.</li>
@@ -50,13 +50,13 @@ A 10% volume discount will be applied.</code></pre>
 <pre><code>%if:{condition}%text when true%else%text when false%endif%</code></pre>
 <table class="wrap">
 <tr><th>Condition</th><th>True when</th></tr>
-<tr><td><code>{company}</code></td><td>The field has a value (anything except empty, <em>no</em>, <em>0</em>, <em>false</em> or <em>off</em>).</td></tr>
+<tr><td><code>{company}</code></td><td>The field has a value (anything except empty, <em>no</em>, <em>0</em>, <em>false</em>, or <em>off</em>).</td></tr>
 <tr><td><code>{tone}=formal</code></td><td>The field equals “formal”. Text comparisons ignore capitals and accents.</td></tr>
 <tr><td><code>{tone}!=formal</code></td><td>The field is anything but “formal”.</td></tr>
 <tr><td><code>{qty}&gt;5</code>, <code>{qty}&lt;5</code></td><td>Greater than / less than.</td></tr>
 <tr><td><code>{qty}&gt;=5</code>, <code>{qty}&lt;=5</code></td><td>At least / at most.</td></tr>
 </table>
-<p>If both sides are numbers they’re compared as numbers; otherwise as text. An optional section (<code>%fillpart</code>) counts as <em>yes</em> when ticked and <em>no</em> when not. <code>{clipboard}</code> works too.</p>
+<p>If both sides are numbers they’re compared as numbers; otherwise as text. An optional section (<code>%fillpart</code>) counts as <em>yes</em> when checked and <em>no</em> when not. <code>{clipboard}</code> works too.</p>
 
 <h3 id="if-examples">Examples</h3>
 <pre><code>%fillpopup:name=Greeting:Formal:Casual%

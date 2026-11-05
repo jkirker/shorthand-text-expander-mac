@@ -95,7 +95,19 @@
 ## 8b. Update integrity (1.5)
 Sparkle installs an update only if it carries a valid EdDSA signature from the developer's key (public key in Info.plist), **and** is signed by the same Developer ID. The feed comes over HTTPS from GitHub. The private signing key lives only in the developer's Keychain and must be backed up.
 
+## 8b2. Exports (1.6.0)
+File ▸ Export Snippets… always writes plain files, even when the library is encrypted; the window says so. Uninstall's "delete everything" now points to it for keeping a copy.
+
+## 8c. Input safety (1.5.4)
+Shorthand's keyboard monitor is an active event tap. If its Accessibility access is removed while it runs, macOS can
+stall typing and clicks for the whole session. Since 1.5.4 the tap is removed within a fraction of a second of access
+going away, and "Reset Permission & Ask Again" stops it before resetting. See ARCHITECTURE §3 and PROCESS-FLOWS §12.
+
 ## 9. Known limits
 - **Mixed versions while syncing:** Shorthand 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
 - Retired keys stay in the Keychain so older files remain readable. Removing Shorthand's Keychain items in Keychain Access deletes them.
 - A separate Shorthand password protects the app lock and other Macs. On this Mac, the data key is still opened automatically from the Keychain, so expansion can work without a prompt.
+
+## Doc history
+- 2026-11-05: Added §8c input safety (1.5.4).
+- 2026-11-05 (later): Exports are plain files (§8b2).

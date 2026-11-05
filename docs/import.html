@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Importing from TextExpander — Shorthand Help</title>
+<title>Importing Snippets — Shorthand Help</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
-<h1>Importing from TextExpander</h1>
-<p class="lead">Shorthand imports from TextExpander: your snippets, groups, abbreviations and most group settings come across unchanged, and the snippet codes keep working.</p>
+<h1>Importing Snippets</h1>
+<p class="lead">Bring your snippets from TextExpander, Espanso, Raycast, Alfred, macOS Text Replacements, or any app that exports a spreadsheet. TextExpander snippets come across unchanged, and their codes keep working.</p>
 
 <h2 id="how">To import your snippets</h2>
 <ol class="steps">
-<li>Choose <span class="ui">File ▸ Import TextExpander Snippets…</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>I</kbd>). This opens the setup window; the import is one of its steps. You can also click <span class="ui">+</span> below the group list and choose <span class="ui">Import TextExpander Snippets…</span>.</li>
+<li>Choose <span class="ui">File ▸ Import Snippets…</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>I</kbd>). This opens the setup window; the import is one of its steps. You can also click <span class="ui">+</span> below the group list and choose <span class="ui">Import Snippets…</span>.</li>
 <li>If Shorthand finds your library, it shows a button for it, such as <span class="ui">Import TextExpander/Settings.textexpander</span>. Click it.</li>
 <li>Otherwise click <span class="ui">Choose File…</span> and pick your file or backup folder.</li>
 <li>A green line reports what was imported, e.g. <em>Imported 1042 snippets in 9 groups (9 new, 0 replaced).</em></li>
@@ -33,7 +33,7 @@
 <tr><td><code>Settings.textexpander</code></td><td>Your whole library: every group and snippet.</td></tr>
 <tr><td>A group <code>.textexpander</code> file</td><td>One exported group.</td></tr>
 <tr><td>A <code>.textexpanderbackup</code> folder</td><td>An automatic backup; each group inside is imported.</td></tr>
-<tr><td>A <code>.txt</code>, <code>.csv</code> or <code>.tsv</code> file</td><td>One snippet per line: <em>abbreviation</em>, <em>content</em>, and optionally a <em>label</em>, separated by a Tab (preferred) or a comma. The file becomes one group named after the file.</td></tr>
+<tr><td>A <code>.txt</code>, <code>.csv</code>, or <code>.tsv</code> file</td><td>One snippet per line: <em>abbreviation</em>, <em>content</em>, and optionally a <em>label</em>, separated by a Tab (preferred) or a comma. The file becomes one group named after the file.</td></tr>
 </table>
 <p>Example text file:</p>
 <pre><code>;addr	12 High Street, Springfield	Home address
@@ -49,23 +49,40 @@
 
 <h2 id="what-comes">What comes across</h2>
 <ul>
-<li>Abbreviations, labels, content and use counts.</li>
-<li>Plain-text, formatted-text and script snippets (AppleScript, shell, JavaScript).</li>
+<li>Abbreviations, labels, content, and use counts.</li>
+<li>Plain-text, formatted-text, and script snippets (AppleScript, shell, JavaScript).</li>
 <li>Each snippet’s case setting (<span class="ui">Case Sensitive</span>, <span class="ui">Ignore Case</span>, <span class="ui">Adapt to Case of Abbreviation</span>).</li>
 <li>Each group’s <span class="ui">Expand after</span> rule, app rules, and whether it’s included in search.</li>
 <li>Your lifetime “characters saved” total, shown in <span class="ui">Window ▸ Statistics</span> under <em>Including your TextExpander history</em>.</li>
 </ul>
 <p>The example group <em>My Snippets</em> is removed on import if you haven’t changed it.</p>
-<div class="note"><p>Importing copies your snippets; it never changes the original file. To send a group back the other way, right-click it in the sidebar and choose <span class="ui">Export Group…</span>, which saves a <code>.textexpander</code> group file.</p></div>
+<div class="note"><p>Importing copies your snippets; it never changes the original file. To take snippets the other way, see <a href="export.html">Exporting Your Snippets</a>.</p></div>
+
+<h2 id="other-apps">From other apps</h2>
+<p>Use <span class="ui">Choose File…</span> in the same window and pick the file (or folder) the other app exports. Each import becomes a new group.</p>
+<table class="wrap">
+<tr><th>App</th><th>What to choose</th><th>What Shorthand converts</th></tr>
+<tr><td>Espanso</td><td>A match file (<code>.yml</code>), or the whole <code>match</code> folder (one group per file). Run <code>espanso path</code> in Terminal to find it.</td><td><code>$|$</code> (cursor), clipboard variables, date variables (with offsets) and forms become Shorthand codes.</td></tr>
+<tr><td>Raycast</td><td>The <code>.json</code> file from Raycast’s snippet export.</td><td><code>{clipboard}</code>, <code>{cursor}</code>, <code>{date}</code>, <code>{time}</code>, <code>{datetime}</code>, <code>{day}</code> and <code>{argument}</code> (as fill-ins, with options as pop-up menus).</td></tr>
+<tr><td>Alfred</td><td>A <code>.alfredsnippets</code> file (export a snippet collection in Alfred’s preferences).</td><td><code>{clipboard}</code>, <code>{cursor}</code>, dates and times. The collection’s keyword prefix and suffix are added to each abbreviation.</td></tr>
+<tr><td>macOS Text Replacements</td><td>In <span class="ui">System Settings ▸ Keyboard ▸ Text Replacements</span>, select them all and drag them to the desktop. Choose the <code>Text Substitutions.plist</code> file that appears.</td><td>Everything (they’re plain text).</td></tr>
+<tr><td>aText, TypeIt4Me, Typinator, PhraseExpress, Text Blaze, Rocket Typist, and others</td><td>Export from that app as CSV or tab-separated text (see its help), then choose the file.</td><td>The text comes across as is. Their own codes have no direct Shorthand equivalent, so check snippets that used them.</td></tr>
+<tr><td>Shorthand</td><td>A <code>.json</code> file from <a href="export.html">File ▸ Export Snippets…</a></td><td>Everything, including tags, types, and app rules.</td></tr>
+</table>
+<ul>
+<li><strong>Spreadsheets</strong> can have a header row: Shorthand finds columns named like <em>abbreviation</em>, <em>shortcut</em>, <em>keyword</em>, or <em>trigger</em>, <em>content</em>, <em>snippet</em>, <em>text</em>, or <em>phrase</em>, and <em>label</em> or <em>name</em>. Without a header, the columns are abbreviation, content, label. Quoted fields can span several lines.</li>
+<li>A <code>%</code> sign in imported text is kept as a percent sign (Shorthand writes it as <code>%%</code>).</li>
+<li>Codes with no Shorthand equivalent (for example Espanso shell variables or Raycast’s <code>{uuid}</code>) stay as text. Shorthand tells you how many, so you can find and fix them (search your snippets for the code’s name).</li>
+</ul>
 
 <h2 id="errors">If the import fails</h2>
 <ul>
-<li><em>“… doesn’t look like a TextExpander snippet file.”</em> Pick <code>Settings.textexpander</code> itself, a group file, or a backup folder.</li>
+<li><em>“… isn’t a snippet file Shorthand can import.”</em> Pick <code>Settings.textexpander</code>, a group file or backup folder, or one of the formats in <a href="#other-apps">From other apps</a>.</li>
 <li><em>“Couldn’t read …”</em> The file may still be downloading from Dropbox or iCloud. Wait and try again.</li>
 <li>A message about <em>missing snippet(s) in group</em> means the library listed snippets it didn’t contain; the rest imported fine.</li>
 </ul>
 
-<nav class="related">Related: <a href="getting-started.html">Getting Started</a> <a href="snippets.html">Snippets &amp; Groups</a> <a href="macros.html">Macro Reference</a></nav>
+<nav class="related">Related: <a href="getting-started.html">Getting Started</a> <a href="export.html">Exporting Your Snippets</a> <a href="macros.html">Macro Reference</a></nav>
 </main>
 </body>
 </html>

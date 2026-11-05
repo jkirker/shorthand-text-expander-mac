@@ -9,7 +9,7 @@
 <body>
 <main>
 <h1>Security &amp; Encryption</h1>
-<p class="lead">Your snippets can hold addresses, account numbers and other personal details. Shorthand can encrypt them on disk, and can lock its windows until you unlock with Touch ID or a password. Both are optional and both are off until you turn them on.</p>
+<p class="lead">Your snippets can hold addresses, account numbers, and other personal details. Shorthand can encrypt them on disk, and can lock its windows until you unlock with Touch ID or a password. Both are optional and both are off until you turn them on.</p>
 
 <div class="toc"><ul>
 <li><a href="#overview">What’s protected</a></li>
@@ -51,9 +51,9 @@
 <p>Shorthand shows this window once: right after you finish the setup window, or the first time you open Shorthand after updating to 1.4. It offers four choices:</p>
 <dl>
 <dt><span class="ui">Encrypt my snippets (recommended)</span></dt>
-<dd>On to start with. Encrypts your library, settings and backups, including copies in Dropbox or iCloud. See <a href="#encryption">Turning on encryption</a>.</dd>
+<dd>On to start with. Encrypts your library, settings, and backups, including copies in Dropbox, or iCloud. See <a href="#encryption">Turning on encryption</a>.</dd>
 <dt><span class="ui">Require unlock to open Shorthand</span></dt>
-<dd>Turns on the <a href="#lock">app lock</a>, unlocked with Touch ID, Apple Watch or your Mac password.</dd>
+<dd>Turns on the <a href="#lock">app lock</a>, unlocked with Touch ID, Apple Watch, or your Mac password.</dd>
 <dt><span class="ui">Also pause expansion until unlocked after login or wake</span></dt>
 <dd>Only available with the lock on. Snippets don’t expand until you unlock.</dd>
 <dt><span class="ui">Use a separate Shorthand password</span></dt>
@@ -62,7 +62,7 @@
 <p>Click <span class="ui">Protect</span> to apply your choices. If you chose encryption, the <a href="#recovery">recovery key</a> screen comes next, and nothing is encrypted until you’ve saved the key and clicked <span class="ui">Done</span>. Click <span class="ui">Not Now</span> to skip; the offer isn’t shown again.</p>
 
 <h2 id="encryption">Turning on encryption</h2>
-<figure class="shot"><picture><source srcset="img/settings-security-dark.png" media="(prefers-color-scheme: dark)"><img src="img/settings-security.png" width="680" alt="Settings ▸ Security"></picture><figcaption>Settings ▸ Security: Encryption, App lock and Shorthand password.</figcaption></figure>
+<figure class="shot"><picture><source srcset="img/settings-security-dark.png" media="(prefers-color-scheme: dark)"><img src="img/settings-security.png" width="680" alt="Settings ▸ Security"></picture><figcaption>Settings ▸ Security: Encryption, App lock, and Shorthand password.</figcaption></figure>
 <ol class="steps">
 <li>Open <span class="ui">Settings ▸ Security</span> and click <span class="ui">Turn On Encryption…</span>.</li>
 <li>If you already use the app lock or a Shorthand password, confirm it’s you with Touch ID or your password.</li>
@@ -70,7 +70,7 @@
 <li>The <strong>Save your recovery key</strong> screen appears. Keep the key safe: see <a href="#recovery">below</a>.</li>
 <li>Turn on <span class="ui">I’ve saved my recovery key somewhere safe</span>, then click <span class="ui">Done</span>.</li>
 </ol>
-<p>Shorthand then encrypts your library (wherever it is, including a sync folder), your settings, your statistics and every backup in the Backups folder. The status changes to <strong>On</strong>, and Settings shows <strong>Encryption is on.</strong></p>
+<p>Shorthand then encrypts your library (wherever it is, including a sync folder), your settings, your statistics, and every backup in the Backups folder. The status changes to <strong>On</strong>, and Settings shows <strong>Encryption is on.</strong></p>
 <ul>
 <li>Shorthand uses AES-256, a standard, strong form of encryption.</li>
 <li>The key is kept in your Keychain on this Mac, so on this Mac Shorthand opens your files by itself. You don’t type a password every time.</li>
@@ -79,12 +79,12 @@
 <div class="note"><p>Older versions of Shorthand can’t read an encrypted library. If you sync between Macs, update Shorthand on every Mac before turning encryption on.</p></div>
 
 <h2 id="recovery">The recovery key</h2>
-<figure class="shot"><picture><source srcset="img/recovery-key-dark.png" media="(prefers-color-scheme: dark)"><img src="img/recovery-key.png" width="460" alt="The Save your recovery key screen"></picture><figcaption>The recovery key screen. <span class="ui">Done</span> stays dimmed until you tick the checkbox.</figcaption></figure>
-<p>The recovery key is a code of 26 letters and numbers in groups of four, such as <code>K7QM-3XRA-…</code>. It opens your encrypted snippets if you forget your Shorthand password, or when you set up Shorthand on another Mac. When you type it, capitals, spaces and dashes don’t matter.</p>
+<figure class="shot"><picture><source srcset="img/recovery-key-dark.png" media="(prefers-color-scheme: dark)"><img src="img/recovery-key.png" width="460" alt="The Save your recovery key screen"></picture><figcaption>The recovery key screen. <span class="ui">Done</span> stays dimmed until you select the checkbox.</figcaption></figure>
+<p>The recovery key is a code of 26 letters and numbers in groups of four, such as <code>K7QM-3XRA-…</code>. It opens your encrypted snippets if you forget your Shorthand password, or when you set up Shorthand on another Mac. When you type it, capitals, spaces, and dashes don’t matter.</p>
 <p>Use one of the buttons to keep it:</p>
 <ul>
 <li><span class="ui">Copy</span>: copies the key so you can paste it into your password manager.</li>
-<li><span class="ui">Save to File…</span>: saves a text file named <em>Shorthand Recovery Key.txt</em>. Keep it somewhere other than this Mac, such as a USB stick.</li>
+<li><span class="ui">Save to File…</span>: saves a text file named <em>Shorthand Recovery Key.txt</em>. Keep it somewhere other than this Mac, such as a USB drive.</li>
 <li><span class="ui">Print…</span>: prints it on paper.</li>
 </ul>
 <div class="warn"><p>Shorthand can’t show the recovery key again. Nobody, including the developer, can recover your snippets without your recovery key or your Shorthand password.</p></div>
@@ -93,17 +93,17 @@
 <p>If you lose the key, or think someone else has seen it, make a new one while this Mac can still open your snippets:</p>
 <ol class="steps">
 <li>In <span class="ui">Settings ▸ Security</span>, click <span class="ui">New Recovery Key…</span> and confirm it’s you.</li>
-<li>Save the new key the same way, tick the checkbox and click <span class="ui">Done</span>.</li>
+<li>Save the new key the same way, select the checkbox, and click <span class="ui">Done</span>.</li>
 </ol>
 <p>Keep the new key. Your files from now on carry it, and other Macs that share your sync folder pick it up automatically. Backups and synced copies saved <em>before</em> the change can still be opened with the old key, so it isn’t a way to lock out someone who already has the old key and an old copy.</p>
 
 <h2 id="password">Shorthand password</h2>
-<p>A Shorthand password is optional. Without one, Shorthand unlocks with Touch ID, Apple Watch or your Mac password, and your recovery key opens your library on another Mac. With one:</p>
+<p>A Shorthand password is optional. Without one, Shorthand unlocks with Touch ID, Apple Watch, or your Mac password, and your recovery key opens your library on another Mac. With one:</p>
 <ul>
 <li>With encryption on, it also opens your library on another Mac (your recovery key always does).</li>
 <li>You can choose to unlock Shorthand with it instead of your Mac password.</li>
 </ul>
-<h3 id="set-password">To set, change or remove it</h3>
+<h3 id="set-password">To set, change, or remove it</h3>
 <ol class="steps">
 <li>In <span class="ui">Settings ▸ Security</span>, under <strong>Shorthand password</strong>, click <span class="ui">Set a Shorthand Password…</span>.</li>
 <li>Type it in <span class="ui">New password</span> and <span class="ui">Confirm new password</span>. It must be at least 8 characters. Click <span class="ui">Save</span>.</li>
@@ -114,7 +114,7 @@
 
 <h2 id="lock">App lock</h2>
 <figure class="shot"><picture><source srcset="img/unlock-dark.png" media="(prefers-color-scheme: dark)"><img src="img/unlock.png" width="380" alt="The Unlock Shorthand window"></picture><figcaption>Unlocking with Touch ID or your Mac password.</figcaption></figure>
-<p>Turn on <span class="ui">Require unlock to open Shorthand</span> in <span class="ui">Settings ▸ Security ▸ App lock</span>. When Shorthand is locked and you open one of its windows, the <strong>Unlock Shorthand</strong> window appears. Click <span class="ui">Unlock with Touch ID or Password</span> and use Touch ID, your Apple Watch or your Mac password. (Without Touch ID, the button says <span class="ui">Unlock with Mac Password</span>. If you chose to unlock with your Shorthand password, type it and click <span class="ui">Unlock</span>.)</p>
+<p>Turn on <span class="ui">Require unlock to open Shorthand</span> in <span class="ui">Settings ▸ Security ▸ App lock</span>. When Shorthand is locked and you open one of its windows, the <strong>Unlock Shorthand</strong> window appears. Click <span class="ui">Unlock with Touch ID or Password</span> and use Touch ID, your Apple Watch, or your Mac password. (Without Touch ID, the button says <span class="ui">Unlock with Mac Password</span>. If you chose to unlock with your Shorthand password, type it and click <span class="ui">Unlock</span>.)</p>
 
 <h3 id="what-locks">What’s locked</h3>
 <ul>
@@ -134,26 +134,26 @@
 <li><span class="ui">After 1 hour idle (and on sleep/lock)</span></li>
 <li><span class="ui">Only when Shorthand quits</span></li>
 </ul>
-<p>“Idle” means you haven’t used the keyboard, mouse or trackpad for that long.</p>
+<p>“Idle” means you haven’t used the keyboard, mouse, or trackpad for that long.</p>
 <p>To lock straight away, click <span class="ui">Lock Now</span> in Settings, or choose <span class="ui">Lock Shorthand</span> from the menu bar icon’s menu.</p>
 <h3 id="at-login">At login</h3>
 <p>When Shorthand starts locked, for example at login, it doesn’t pop up a password prompt. If <span class="ui">Pause expansion while locked</span> is on, a bubble reminds you: <strong>Shorthand is locked. Snippets expand after you unlock.</strong> Click <span class="ui">Unlock…</span> in it, or choose <strong>🔒 Shorthand is locked — Unlock…</strong> from the menu bar icon.</p>
 
 <h2 id="sync">Syncing between Macs</h2>
-<p>With encryption on, the copy of your library in your sync folder is encrypted, so Dropbox, iCloud or anyone else who sees that folder can’t read it.</p>
+<p>With encryption on, the copy of your library in your sync folder is encrypted, so Dropbox, iCloud, or anyone else who sees that folder can’t read it.</p>
 <p>The key itself stays in this Mac’s Keychain. Shorthand can’t yet sync it through iCloud Keychain, so each other Mac needs your Shorthand password or recovery key once:</p>
 <ol class="steps">
 <li>On the other Mac, open <span class="ui">Settings ▸ General</span>, click <span class="ui">Use Sync Folder…</span> and choose the shared folder, as described in <a href="sync.html#other-macs">Sync</a>.</li>
 <li>Shorthand says <strong>This library is encrypted.</strong> Type your Shorthand password or recovery key and click <span class="ui">Unlock</span>.</li>
 <li>Choose <span class="ui">Use Library in Folder</span> as usual.</li>
 </ol>
-<p>That Mac keeps the key in its own Keychain from then on, so it opens the library by itself. Its own settings, statistics and backups are encrypted with the same key. If the password or key is wrong, Shorthand says <strong>That password or recovery key didn’t open the library.</strong> and nothing is changed.</p>
+<p>That Mac keeps the key in its own Keychain from then on, so it opens the library by itself. Its own settings, statistics, and backups are encrypted with the same key. If the password or key is wrong, Shorthand says <strong>That password or recovery key didn’t open the library.</strong> and nothing is changed.</p>
 <p>If another Mac turns on encryption (or starts again with a new key) while this Mac is already syncing, a bubble says <strong>Your synced library was encrypted on another Mac. Unlock it with your Shorthand password or recovery key.</strong> Click <span class="ui">Unlock…</span> and type either one. Until you do, this Mac doesn’t save the library and snippets don’t expand, so nothing is overwritten.</p>
 
 <h2 id="off">Turning encryption off</h2>
 <ol class="steps">
 <li>In <span class="ui">Settings ▸ Security</span>, click <span class="ui">Turn Off Encryption…</span> and confirm it’s you.</li>
-<li>Shorthand asks <strong>Turn off encryption?</strong> Your library, settings and backups will be saved as plain files again, including any synced copy. Click <span class="ui">Turn Off</span>.</li>
+<li>Shorthand asks <strong>Turn off encryption?</strong> Your library, settings, and backups will be saved as plain files again, including any synced copy. Click <span class="ui">Turn Off</span>.</li>
 </ol>
 <p>If Shorthand can’t write the plain files (for example, the sync folder isn’t available), it leaves encryption on and tells you; nothing is lost. Shorthand keeps the old key in your Keychain, so older encrypted backups (and copies from another Mac) still open.</p>
 <p>Your Shorthand password, if you have one, stays set for the app lock. If you sync, turn encryption off on every Mac that shares the folder; a Mac that still has it on encrypts the library again the next time it saves.</p>
@@ -161,7 +161,7 @@
 <h2 id="forgot">Forgot your password?</h2>
 <ul>
 <li><strong>Wherever Shorthand asks for your Shorthand password</strong>, you can type your recovery key instead, even if the box only says <em>Shorthand password</em>.</li>
-<li><strong>On a Mac where Shorthand still opens normally</strong>, your snippets are fine, because the key is in this Mac’s Keychain. Click <span class="ui">Remove Password…</span> in <span class="ui">Settings ▸ Security</span> (confirm with Touch ID, your Mac password or your recovery key), then <span class="ui">Set a Shorthand Password…</span> to choose a new one.</li>
+<li><strong>On a Mac where Shorthand still opens normally</strong>, your snippets are fine, because the key is in this Mac’s Keychain. Click <span class="ui">Remove Password…</span> in <span class="ui">Settings ▸ Security</span> (confirm with Touch ID, your Mac password, or your recovery key), then <span class="ui">Set a Shorthand Password…</span> to choose a new one.</li>
 <li><strong>Lost your recovery key too?</strong> If this Mac still opens Shorthand, click <span class="ui">New Recovery Key…</span> now and save the new key.</li>
 </ul>
 <div class="warn"><p>If you have neither your password nor your recovery key, and no Mac that still opens Shorthand, your encrypted files can’t be opened by anyone. Turning on encryption also encrypts every backup in Shorthand’s Backups folder, so those are encrypted too. Only a copy you made elsewhere before turning encryption on (an exported group, or an older Time Machine backup, for example) would still be readable.</p></div>

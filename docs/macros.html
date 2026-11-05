@@ -17,7 +17,7 @@
 <li><a href="#dates">Date and time</a></li>
 <li><a href="#date-math">Date and time math</a></li>
 <li><a href="#content">Clipboard and other snippets</a></li>
-<li><a href="#calc">Calculations, conditions and AI</a></li>
+<li><a href="#calc">Calculations, conditions, and AI</a></li>
 <li><a href="#keys">Keys</a></li>
 <li><a href="#cursor">Cursor and selection</a></li>
 <li><a href="#delimiter">Delimiter and percent sign</a></li>
@@ -25,7 +25,7 @@
 </ul>
 </div>
 
-<p>You don’t have to remember these. In the snippet editor, click the <span class="ui">Insert</span> menu (above the text, on the right) and pick a code. Its submenus are <span class="ui">Date</span>, <span class="ui">Time</span>, <span class="ui">Date/Time Math</span>, <span class="ui">Fill-ins</span>, <span class="ui">Snippet</span>, <span class="ui">Key</span>, <span class="ui">Clipboard</span>, <span class="ui">Calculation</span>, <span class="ui">Condition</span>, <span class="ui">AI ✨</span>, <span class="ui">Cursor</span>, <span class="ui">Delimiter</span> and <span class="ui">Percent Sign (%)</span>.</p>
+<p>You don’t have to remember these. In the snippet editor, click the <span class="ui">Insert</span> menu (above the text, on the right) and pick a code. Its submenus are <span class="ui">Date</span>, <span class="ui">Time</span>, <span class="ui">Date/Time Math</span>, <span class="ui">Fill-ins</span>, <span class="ui">Snippet</span>, <span class="ui">Key</span>, <span class="ui">Clipboard</span>, <span class="ui">Calculation</span>, <span class="ui">Condition</span>, <span class="ui">AI ✨</span>, <span class="ui">Cursor</span>, <span class="ui">Delimiter</span>, and <span class="ui">Percent Sign (%)</span>.</p>
 
 <h2 id="fill-ins">Fill-ins</h2>
 <p>Fill-ins open a small window where you type or choose values before the snippet is inserted. See <a href="fill-ins.html">Fill-ins</a> for a walkthrough.</p>
@@ -34,13 +34,13 @@
 <tr><td><code>%filltext:name=Name:default=Sam:width=20%</code></td><td>A single-line text field. All settings are optional.</td></tr>
 <tr><td><code>%fillarea:name=Notes:default=:width=30:height=5%</code></td><td>A multi-line text box. <code>width</code> and <code>height</code> are in characters and lines.</td></tr>
 <tr><td><code>%fillpopup:name=Size:Small:default=Medium:Large%</code></td><td>A pop-up menu. Options are separated by colons; <code>default=</code> marks the option chosen at first. Without it, the first option is chosen.</td></tr>
-<tr><td><code>%fillpart:name=PS:default=yes%</code>…<code>%fillpartend%</code></td><td>An optional section with a checkbox. The text between the two codes is included only when the box is ticked. <code>default=yes</code> (or <code>true</code> or <code>1</code>) ticks it at first.</td></tr>
-<tr><td><code>%filltop%</code></td><td>Opens the fill-in window at the top centre of the screen instead of near the text cursor.</td></tr>
+<tr><td><code>%fillpart:name=PS:default=yes%</code>…<code>%fillpartend%</code></td><td>An optional section with a checkbox. The text between the two codes is included only when the box is checked. <code>default=yes</code> (or <code>true</code> or <code>1</code>) checks it at first.</td></tr>
+<tr><td><code>%filltop%</code></td><td>Opens the fill-in window at the top center of the screen instead of near the text cursor.</td></tr>
 </table>
 <p>Settings inside a fill-in: <code>name=</code>, <code>default=</code>, <code>width=</code> (not for pop-ups) and <code>height=</code> (multi-line boxes only). Fields with the same <code>name</code> share one value, so you type it once.</p>
 
 <h2 id="dates">Date and time</h2>
-<p>Names of months, weekdays and AM/PM follow your Mac’s language and region settings. Examples are for Monday, 5 January 2026 at 2:05:07 PM in New York.</p>
+<p>Names of months, weekdays, and AM/PM follow your Mac’s language and region settings. Examples are for Monday, January 5, 2026, at 2:05:07 PM in New York.</p>
 <table>
 <tr><th>Code</th><th>Shows</th><th>Example</th></tr>
 <tr><td><code>%Y</code></td><td>Year, four digits</td><td>2026</td></tr>
@@ -70,7 +70,7 @@
 <div class="note"><p>Capital and small letters mean different things: <code>%1m</code> is the month, <code>%1M</code> is the minute. <code>%d</code> pads with a zero, <code>%e</code> doesn’t.</p></div>
 
 <h2 id="date-math">Date and time math</h2>
-<p>Put <code>%@</code>, a plus or minus sign, a number and a unit before your date codes. Every date code <em>after</em> it uses the shifted date.</p>
+<p>Put <code>%@</code>, a plus or minus sign, a number, and a unit before your date codes. Every date code <em>after</em> it uses the shifted date.</p>
 <table>
 <tr><th>Code</th><th>Shifts the date by</th></tr>
 <tr><td><code>%@+1Y</code></td><td>Years</td></tr>
@@ -90,14 +90,14 @@
 <tr><td><code>%snippet:sig%</code></td><td>Inserts another snippet by its abbreviation (here <code>sig</code>). Snippets can include snippets up to 8 levels deep. If no snippet has that abbreviation, nothing is inserted.</td></tr>
 </table>
 
-<h2 id="calc">Calculations, conditions and AI</h2>
+<h2 id="calc">Calculations, conditions, and AI</h2>
 <table class="wrap">
 <tr><th>Code</th><th>What it does</th></tr>
 <tr><td><code>%calc:{qty}*{price}:2%</code></td><td>Works out a sum. <code>:2</code> at the end means two decimal places. See <a href="calc.html">Calculations &amp; Conditions</a>.</td></tr>
 <tr><td><code>%if:{field}%</code>…<code>%else%</code>…<code>%endif%</code></td><td>Includes text only when a condition is true. <code>%else%</code> is optional.</td></tr>
 <tr><td><code>%ai:Write a polite reply to: {clipboard}%</code></td><td>AI writes this part when the snippet expands. Needs an AI provider (<a href="ai-setup.html">Setting Up AI</a>).</td></tr>
 </table>
-<p><code>{name}</code> means “the value of the fill-in called <em>name</em>”, and <code>{clipboard}</code> means the clipboard text. These references work only inside <code>%calc</code>, <code>%if</code> and <code>%ai</code>, so curly braces in ordinary text (CSS, code) are left alone.</p>
+<p><code>{name}</code> means “the value of the fill-in called <em>name</em>,” and <code>{clipboard}</code> means the clipboard text. These references work only inside <code>%calc</code>, <code>%if</code>, and <code>%ai</code>, so curly braces in ordinary text (CSS, code) are left alone.</p>
 
 <h2 id="keys">Keys</h2>
 <p><code>%key:name%</code> presses a key while the snippet is being typed, for example to move between fields in a web form.</p>
@@ -142,7 +142,7 @@
 
 <h2 id="rules">Rules worth knowing</h2>
 <ul>
-<li>A code runs to the <strong>next <code>%</code></strong>. So a prompt, condition, field name or default can’t contain a <code>%</code> sign, and fill-in settings can’t contain a colon.</li>
+<li>A code runs to the <strong>next <code>%</code></strong>. So a prompt, condition, field name, or default can’t contain a <code>%</code> sign, and fill-in settings can’t contain a colon.</li>
 <li>Write <code>%%</code> for a real percent sign, e.g. <code>Save 20%% today</code>.</li>
 <li>Anything that isn’t a known code is left exactly as written, so <code>100% sure</code> still types “100% sure”.</li>
 <li>Script snippets (AppleScript, shell, JavaScript) don’t use these codes; their output is inserted as-is. See <a href="scripts.html">Script Snippets</a>.</li>

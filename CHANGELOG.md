@@ -1,9 +1,25 @@
 # Changelog
 
-> Doc version 1.5.4 · Last updated 2026-11-01
+> Doc version 1.6.0 · Last updated 2026-11-05
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.6.0] — 2026-11-05
+
+### Added
+- **Template Packs** (File ▸ Template Packs…, or + below the group list): 9 ready-made groups with 57 snippets: Email essentials, Customer support, Dates & times, Symbols & keys, Meetings & notes, AI writing assistant, AI for support teams, Developers, and Smart calculations. Adding a pack creates a new group; abbreviations you already use get a number instead of being replaced.
+- **Import from other apps:** File ▸ Import Snippets… (⇧⌘I, formerly Import TextExpander Snippets…) now also reads Espanso match files and folders, Raycast and Alfred snippet exports, macOS Text Replacements, and CSV or tab-separated files with a header row (for example, exports from aText, TypeIt4Me, Typinator, PhraseExpress, Text Blaze, and Rocket Typist). Their clipboard, cursor, date, and fill-in placeholders are converted; anything without an equivalent is kept as text, and Shorthand tells you how many.
+- **Export Snippets** (File ▸ Export Snippets…, ⇧⌘E): every group, or just the selected ones, as Shorthand JSON (complete and re-importable), CSV, TextExpander group files, Espanso, or Raycast. Exports are plain, unencrypted files.
+- **shorthandexpander.com:** Shorthand's new home, with the full help center, comparisons with other text expanders, and release notes by email. Help ▸ Shorthand Website & Downloads and the links in Help now go there.
+
+### Changed
+- Help and the app now use US English throughout (for example, the tag menu's **Colour** is now **Color**).
+- The license agreement names John Kirker Inc. and gives a support address. Its terms are unchanged.
+
+### Help
+- New topics: Template Packs and Exporting Your Snippets. Importing from TextExpander is now Importing Snippets, with a section on other apps.
+- New screenshots (light and dark): Settings ▸ Expansion, Settings ▸ Options, Settings ▸ Hotkeys, Create Snippet, Template Packs, and Export Snippets.
 
 ## [1.5.4] — 2026-11-01
 
@@ -172,14 +188,14 @@ Dates are local (Pacific).
 - **Multi-select.** ⌘-click or ⇧-click snippets, and groups in the sidebar. Right-click acts on the whole selection.
   - Snippets: Duplicate, Move to Group (including New Group…), Tags, Move to Trash.
   - Groups: Duplicate, Export, Enable/Disable, Merge Groups into One, Move to Trash.
-- **Several groups (or tags) at once.** Their snippets are listed together, each labelled with its group. Selections can be dragged onto a group, a tag or the Trash.
+- **Several groups (or tags) at once.** Their snippets are listed together, each labeled with its group. Selections can be dragged onto a group, a tag or the Trash.
 - **Duplicating groups.** Copies start disabled so their abbreviations don't clash with the originals.
 - **Trash.** Deleting moves snippets and groups to a Trash in the sidebar, alongside the 8-second Undo bubble.
   - Put Back returns an item to its original group, recreating the group if it's gone.
   - Delete Immediately and Empty Trash… remove items for good.
   - Settings → General → Trash deletes items automatically after 7/14/30/60/90 days or never (default 30). The check runs at launch, hourly, and when the setting changes.
-- **Tags.** Add them in the editor's Tags row. The sidebar has a Tags section with colours and counts, and the filter accepts `#tag`. A snippet created while a tag is selected gets that tag.
-- **Tag Manager** (Window ▸ Tag Manager, ⇧⌘T): rename (renaming onto an existing tag merges the two), colour, merge several, delete (the snippets are kept), add.
+- **Tags.** Add them in the editor's Tags row. The sidebar has a Tags section with colors and counts, and the filter accepts `#tag`. A snippet created while a tag is selected gets that tag.
+- **Tag Manager** (Window ▸ Tag Manager, ⇧⌘T): rename (renaming onto an existing tag merges the two), color, merge several, delete (the snippets are kept), add.
 - **Privacy blocklist.** In blocked apps and on blocked websites, keystrokes pass through untouched: nothing is buffered, matched, counted or suggested.
   - Password managers are blocked by default.
   - Website domains are read through Accessibility in Safari, Chrome, Arc, Edge, Brave, Firefox, Opera, Vivaldi and Chromium.
@@ -218,7 +234,7 @@ Dates are local (Pacific).
   `APP_STORE=1 ./scripts/build.sh` hides it (Info.plist `ShorthandShowSupport` = false).
 - **Stable code signing.** `build.sh` signs with a self-signed "Shorthand Signing" identity kept in a dedicated keychain (`~/Library/Application Support/ShorthandSigning`), so macOS keeps the Accessibility permission across rebuilds.
 - **Permission status you can see.** The menu bar menu shows "✓ Keyboard access OK", or a "Fix…" warning when macOS blocks the keyboard. Settings → General → Permissions shows Accessibility, keyboard monitor and Input Monitoring status. "Reset Permission & Ask Again" (`tccutil reset`, Shorthand only) clears a stale grant left by an older build. State changes are written to `~/Library/Application Support/Shorthand/diagnostics.log`.
-- **`%filltop%` now works.** The fill-in window opens at the top centre of the screen. In 1.1 the code was accepted but ignored.
+- **`%filltop%` now works.** The fill-in window opens at the top center of the screen. In 1.1 the code was accepted but ignored.
 
 ### Changed
 - AI error messages name the provider instead of always saying "Claude".
@@ -259,7 +275,7 @@ Dates are local (Pacific).
 
 ### Fixed (independent review
 - Script snippets no longer block typing. They run asynchronously with a real 10-second timeout.
-- A cancelled expansion in "immediately" mode restores the swallowed keystroke.
+- A canceled expansion in "immediately" mode restores the swallowed keystroke.
 - Expansions are serialized, so overlapping ones (e.g. while AI is working) can't scramble text or the clipboard.
 - ⌘V pressed right after an expansion waits for the clipboard to be restored.
 - ⇧Return / ⇧Tab delimiters keep Shift. This matters in Slack, where plain Return sends.

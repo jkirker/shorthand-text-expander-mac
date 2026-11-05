@@ -9,7 +9,7 @@
 <body>
 <main>
 <h1>Sync, Backups &amp; Restore</h1>
-<p class="lead">Keep the same snippets on several Macs with Dropbox, iCloud Drive or any other sync service, and get back to an earlier version if something goes wrong.</p>
+<p class="lead">Keep the same snippets on several Macs with Dropbox, iCloud Drive, or any other sync service, and get back to an earlier version if something goes wrong.</p>
 
 <h2 id="where">Where your snippets live</h2>
 <p>Normally your library is a single file on this Mac: <code>~/Library/Application Support/Shorthand/Library.json</code>. You can see the current location in <span class="ui">Settings ▸ General ▸ Library ▸ Location</span>, and click <span class="ui">Show in Finder</span> to reveal it.</p>
@@ -19,7 +19,7 @@
 <ol class="steps">
 <li>Open <span class="ui">Settings ▸ General</span>.</li>
 <li>Under <span class="ui">Library</span>, click <span class="ui">Use Sync Folder…</span>.</li>
-<li>Pick (or create) a folder inside Dropbox, iCloud Drive or a similar service, and click <span class="ui">Use Folder</span>. Shorthand saves your library there as <code>Shorthand Library.json</code>.</li>
+<li>Pick (or create) a folder inside Dropbox, iCloud Drive, or a similar service, and click <span class="ui">Use Folder</span>. Shorthand saves your library there as <code>Shorthand Library.json</code>.</li>
 <li>Wait for the sync service to finish uploading the file.</li>
 </ol>
 
@@ -53,7 +53,7 @@
 <div class="note"><p>Avoid editing snippets on two Macs at the same moment. The most recently saved library wins, so a change made on the other Mac at the same time can be lost. Backups (below) let you recover.</p></div>
 <div class="note" id="encrypted"><p><strong>Encrypted libraries.</strong> If encryption is on, the library in your sync folder is encrypted too. Each other Mac asks for your Shorthand password or recovery key once, when you choose the folder, and opens it by itself after that. Update Shorthand on every Mac first: older versions can’t read an encrypted library. See <a href="security.html#sync">Syncing an encrypted library</a>.</p></div>
 <ul>
-<li>Only the snippet library is synced. Settings, hotkeys, statistics and AI keys stay on each Mac.</li>
+<li>Only the snippet library is synced. Settings, hotkeys, statistics, and AI keys stay on each Mac.</li>
 <li>To stop syncing on a Mac, click <span class="ui">Use Local Storage</span>. Its current snippets are saved back to the Mac.</li>
 </ul>
 
@@ -77,9 +77,9 @@
 
 <h2 id="safety">Built-in safety nets</h2>
 <ul>
-<li><strong>Undo:</strong> after deleting a snippet or group, click <span class="ui">Undo</span> in the notice that appears. <kbd>⌘</kbd><kbd>Z</kbd> undoes moves, deletes, tag changes and merges; see <a href="organize.html#undo">Undoing changes</a>. Reloading the library from your sync folder clears the undo history.</li>
+<li><strong>Undo:</strong> after deleting a snippet or group, click <span class="ui">Undo</span> in the notice that appears. <kbd>⌘</kbd><kbd>Z</kbd> undoes moves, deletes, tag changes, and merges; see <a href="organize.html#undo">Undoing changes</a>. Reloading the library from your sync folder clears the undo history.</li>
 <li><strong>Damaged library:</strong> if the library file can’t be read, Shorthand never overwrites it. It moves it aside (adding <code>.unreadable-</code> and the date to its name), starts with the two example snippets, and tells you. Restore a backup to continue.</li>
-<li><strong>Export:</strong> right-click a group and choose <span class="ui">Export Group…</span> to save it as a <code>.textexpander</code> group file you can keep or share.</li>
+<li><strong>Export:</strong> <span class="ui">File ▸ Export Snippets…</span> saves every group (or the ones you select) as a file you can keep, share, or open in another app. See <a href="export.html">Exporting Your Snippets</a>.</li>
 </ul>
 
 <nav class="related">Related: <a href="security.html">Security &amp; Encryption</a> <a href="import.html">Importing</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a> <a href="troubleshooting.html#library">Library problems</a></nav>

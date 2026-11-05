@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exporting Your Snippets — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Exporting Your Snippets</h1>
+<p class="lead">Your snippets are yours. Export them any time: to keep a copy, to move to another Mac, or to take them to another app.</p>
+
+<h2 id="how">To export</h2>
+<ol class="steps">
+<li>Choose <span class="ui">File ▸ Export Snippets…</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>E</kbd>).</li>
+<li>Pick a format (below).</li>
+<li>Choose <span class="ui">All groups</span>, or select some groups in the sidebar first and choose <span class="ui">Selected groups</span>.</li>
+<li>Click <span class="ui">Export … Snippets…</span> and choose where to save. Shorthand shows the file in the Finder and says what it exported.</li>
+</ol>
+<figure class="shot"><picture><source srcset="img/export-dark.png" media="(prefers-color-scheme: dark)"><img src="img/export.png" width="520" alt="The Export Snippets window with five formats"></picture><figcaption>The Export Snippets window.</figcaption></figure>
+
+<h2 id="formats">Formats</h2>
+<table class="wrap">
+<tr><th>Format</th><th>What you get</th><th>Good for</th></tr>
+<tr><td>Shorthand (<code>.json</code>)</td><td>Everything: groups, snippets, labels, tags, snippet types, and app rules.</td><td>A complete copy, or moving to another Mac. Import it with <a href="import.html">File ▸ Import Snippets…</a></td></tr>
+<tr><td>CSV (<code>.csv</code>)</td><td>One row per snippet: abbreviation, content, label, group, type, and tags.</td><td>Opening in Numbers or Excel, and importing into most other text expanders.</td></tr>
+<tr><td>TextExpander (<code>.textexpander</code>)</td><td>A folder with one group file per group.</td><td>TextExpander, and apps that import TextExpander files.</td></tr>
+<tr><td>Espanso (<code>.yml</code>)</td><td>An Espanso match file.</td><td>Moving to Espanso. Put the file in Espanso’s <code>match</code> folder.</td></tr>
+<tr><td>Raycast (<code>.json</code>)</td><td>Raycast’s snippet import format.</td><td>Raycast’s Import Snippets command.</td></tr>
+</table>
+
+<h2 id="codes">What happens to snippet codes</h2>
+<ul>
+<li><strong>Shorthand, CSV, and TextExpander</strong> keep your snippets exactly as they are, codes included. TextExpander uses the same codes.</li>
+<li><strong>Espanso and Raycast</strong> get their own versions of the clipboard (<code>%clipboard</code>) and cursor (<code>%|</code>) codes. Other codes, such as fill-ins, dates, and keys, are kept as text, and Shorthand tells you how many. Script snippets and snippets without an abbreviation are left out, because those apps can’t use them.</li>
+</ul>
+<div class="warn"><p><strong>Exports aren’t encrypted</strong>, even if your library is (<a href="security.html">Security &amp; Encryption</a>). Anyone who opens the file can read your snippets, so keep exports somewhere safe and delete copies you don’t need.</p></div>
+<div class="tip"><p>Right-clicking one group and choosing <span class="ui">Export Group…</span> still works too: it saves that group as a <code>.textexpander</code> file.</p></div>
+
+<nav class="related">Related: <a href="import.html">Importing Snippets</a> <a href="sync.html">Sync, Backups &amp; Restore</a> <a href="security.html">Security &amp; Encryption</a></nav>
+</main>
+</body>
+</html>

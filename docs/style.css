@@ -1,6 +1,6 @@
 /* Shorthand Help — shared styles.
    Pages are shown in a transparent WKWebView over the window background,
-   so the body has no opaque background and colours adapt to light/dark mode. */
+   so the body has no opaque background and colors adapt to light/dark mode. */
 
 :root {
   color-scheme: light dark;

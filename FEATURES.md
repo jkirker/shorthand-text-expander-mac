@@ -27,7 +27,7 @@
 | Duplicate snippets (unique abbreviations) and groups (copies start disabled); merge groups |
 | Trash with Put Back, Delete Immediately, Empty, and auto-delete after N days |
 | ⌘Z / ⇧⌘Z for structural edits (50 steps; cleared by non-undoable changes) (1.3.1) |
-| Tags: editor chips, sidebar section with colours and counts, `#tag` filter (main list and Search panel), Tag Manager |
+| Tags: editor chips, sidebar section with colors and counts, `#tag` filter (main list and Search panel), Tag Manager |
 
 ### Privacy (1.3)
 | Capability |
@@ -55,10 +55,13 @@
 | Notarized disk image (drag to Applications) alongside the update zip (1.5.2) |
 | Uninstall: keep snippets, or delete everything (Keychain items, data, login item, permissions) (1.5.2) |
 | Light and dark mode, with dark-mode screenshots in Help and on the website (1.5.2) |
-| Public website: downloads, docs, Help site (GitHub Pages) |
+| Public docs on GitHub: downloads, docs, Help site (GitHub Pages) |
+| Template packs: 9 ready-made groups (57 snippets) added from File ▸ Template Packs…; clashing abbreviations are numbered (1.6.0) |
+| Fixed download link `releases/latest/download/Shorthand.dmg` (1.5.4) |
+| Safe when Accessibility is turned off while running: the keyboard monitor stops at once (1.5.4) |
 
 ### Snippet content (macros)
-The full list is in Help › Macro Reference (also on the [Help site](https://jkirker.github.io/shorthand-text-expander-mac/macros.html)). 
+The full list is in Help › Macro Reference (also in the [help centre](https://shorthandexpander.com/help/macros/)). 
 | Family | Codes |
 |---|---|
 | Fill-ins | `%filltext`, `%fillarea`, `%fillpopup`, `%fillpart…%fillpartend%`, `%filltop%` |
@@ -77,8 +80,10 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
   - TextExpander `Settings.textexpander` (whole library, including the lifetime "Characters Saved" counter)
   - group `.textexpander` files
   - `.textexpanderbackup` folders
-  - CSV/TSV
+  - (1.6.0) Espanso `.yml` match files or folders; Raycast `.json`; Alfred `.alfredsnippets`; macOS Text Replacements `.plist`; Shorthand `.json`
+  - CSV/TSV, with or without a header row (quoted multi-line fields), e.g. exports from aText, TypeIt4Me, Typinator, PhraseExpress, Text Blaze, Rocket Typist
 - Export a group back to a TextExpander-format `.textexpander` file.
+- (1.6.0) File ▸ Export Snippets…: Shorthand JSON, CSV, TextExpander folder, Espanso YAML or Raycast JSON, for all or selected groups.
 - The library is JSON in Application Support, or in a sync folder (Dropbox / iCloud Drive). It reloads automatically when another Mac changes it.
 - Switching to a folder that already holds a library asks you to use it or replace it, and backs up the other copy (1.2).
 - Automatic backups at launch (keeps the last N), Back Up Now, and Restore.
@@ -163,3 +168,9 @@ Legend:
 | Encryption at rest + app lock | ➕ | TE5 stores its library as a plain file. |
 | App/website blocklist | ➕ | TE5 has per-group app exceptions only. Shorthand also blocks websites and stops listening entirely. |
 | AI (rewrite, generate, suggest) | ➕ | 12 providers with fallback. |
+
+
+## Doc history
+- 2026-11-05: Fixed two malformed Distribution rows; added website, fixed download link, and the 1.5.4 permission fix.
+- 2026-11-05: Template packs.
+- 2026-11-05 (later): Import formats from other apps and Export Snippets.

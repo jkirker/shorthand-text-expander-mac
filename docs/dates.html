@@ -12,17 +12,17 @@
 <p class="lead">Snippets can type today’s date, the time, or a date in the future or past, in any format.</p>
 
 <h2 id="examples">Ready-made examples</h2>
-<p>Examples are for Sunday, 1 November 2026 at 9:05 AM.</p>
+<p>Examples are for Sunday, November 1, 2026, at 9:05 AM.</p>
 <table class="wrap">
 <tr><th>Snippet content</th><th>Types</th></tr>
 <tr><td><code>%B %e, %Y</code></td><td>November 1, 2026 <small>(the starter snippet <code>ddate</code>)</small></td></tr>
 <tr><td><code>%1I:%M %p</code></td><td>9:05 AM <small>(the starter snippet <code>ttime</code>)</small></td></tr>
-<tr><td><code>%e %B %Y</code></td><td>1 November 2026</td></tr>
-<tr><td><code>%d/%m/%Y</code></td><td>01/11/2026</td></tr>
+<tr><td><code>%e %B %Y</code></td><td>1 November 2026 (day first)</td></tr>
 <tr><td><code>%m/%d/%y</code></td><td>11/01/26</td></tr>
+<tr><td><code>%m/%d/%Y</code></td><td>01/11/2026 (day first)</td></tr>
 <tr><td><code>%Y-%m-%d</code></td><td>2026-11-01</td></tr>
 <tr><td><code>%A, %B %e</code></td><td>Sunday, November 1</td></tr>
-<tr><td><code>%a %e %b</code></td><td>Sun 1 Nov</td></tr>
+<tr><td><code>%a, %b %e</code></td><td>Sun, Nov 1</td></tr>
 <tr><td><code>%H:%M</code></td><td>09:05</td></tr>
 <tr><td><code>%Y-%m-%d %H:%M:%S</code></td><td>2026-11-01 09:05:00</td></tr>
 <tr><td><code>Day %j of %Y</code></td><td>Day 305 of 2026</td></tr>
@@ -35,7 +35,7 @@
 <table class="wrap">
 <tr><th>Snippet content</th><th>Types</th></tr>
 <tr><td><code>%date:yyyy-MM-dd%</code></td><td>2026-11-01</td></tr>
-<tr><td><code>%date:EEEE d MMMM%</code></td><td>Sunday 1 November</td></tr>
+<tr><td><code>%date:EEEE, MMMM d%</code></td><td>Sunday, November 1</td></tr>
 <tr><td><code>%date:'Week' w%</code></td><td>Week 45 in the US (week 44 where weeks start on Monday)</td></tr>
 <tr><td><code>%date:QQQ yyyy%</code></td><td>Q4 2026</td></tr>
 <tr><td><code>%date:h:mm a%</code></td><td>9:05 AM</td></tr>
@@ -43,7 +43,7 @@
 <p>In patterns, <code>MM</code> is the month and <code>mm</code> the minute. The pattern can’t contain a <code>%</code>.</p>
 
 <h2 id="math">Dates in the future or past</h2>
-<p>Put <code>%@</code>, a <code>+</code> or <code>-</code>, a number and a unit <strong>before</strong> the date codes. Every date code after it is shifted.</p>
+<p>Put <code>%@</code>, a <code>+</code> or <code>-</code>, a number, and a unit <strong>before</strong> the date codes. Every date code after it is shifted.</p>
 <table>
 <tr><th>Unit</th><th>Letter</th><th>Example</th></tr>
 <tr><td>Years</td><td><code>Y</code></td><td><code>%@+1Y</code></td></tr>
@@ -59,9 +59,9 @@
 <tr><td><code>Payment due %@+30D%B %e, %Y</code></td><td>Payment due December 1, 2026</td></tr>
 <tr><td><code>Yesterday (%@-1D%A)</code></td><td>Yesterday (Saturday)</td></tr>
 <tr><td><code>Back at %@+2h%1I:%M %p</code></td><td>Back at 11:05 AM</td></tr>
-<tr><td><code>Offer ends %@+1M%e %B</code></td><td>Offer ends 1 December</td></tr>
+<tr><td><code>Offer ends %@+1M%B %e</code></td><td>Offer ends December 1</td></tr>
 </table>
-<div class="tip"><p>Need today <em>and</em> a later date in one snippet? Put today’s codes first, then <code>%@</code> and the later date: <code>Sent %d/%m. Reply by %@+7D%d/%m.</code> types “Sent 01/11. Reply by 08/11.”</p></div>
+<div class="tip"><p>Need today <em>and</em> a later date in one snippet? Put today’s codes first, then <code>%@</code> and the later date: <code>Sent %m/%d. Reply by %@+7D%m/%d.</code> types “Sent 11/01. Reply by 11/08.”</p></div>
 <p>Only one shift is active at a time: a second <code>%@</code> replaces the first (it doesn’t add to it), and it is counted from the current time.</p>
 
 <nav class="related">Related: <a href="macros.html#dates">Macro Reference: dates</a> <a href="fill-ins.html">Fill-ins</a> <a href="calc.html">Calculations &amp; Conditions</a></nav>
