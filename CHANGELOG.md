@@ -25,6 +25,7 @@ Dates are local (Pacific).
 - Share snippet groups with up to 5 people or Macs through a folder the team already shares, with no account or server. Admins sign everything they share; members' Macs verify it. Optional team password encrypts the shared snippets. Settings ▸ Team has the admin panel (shared groups, members and seats, admins, team details, security). `%team:Name%` inserts a team detail.
 
 ### Added: Shorthand Pro
+- **Free and Pro editions.** Free covers everything for typing on your Mac. Pro ($29 a year, up to 5 Macs or people) adds AI, Teams, AI assistants, script snippets, calculations and conditions, sync across Macs, and Pro template packs. See Help ▸ Shorthand Pro and Licenses.
 - **Early access:** every Pro feature is free for everyone until January 31, 2027. Then a 14-day trial.
 - **Settings ▸ License:** add or remove a license code. Codes are checked on your Mac; nothing is sent anywhere. Without Pro, Pro features pause and your snippets keep working.
 

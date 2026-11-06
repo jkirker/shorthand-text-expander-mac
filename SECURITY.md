@@ -137,8 +137,7 @@ injected into one, uses the connection to read private text or run code.
 ## 8f. Licensing (1.7)
 - License codes are Ed25519-signed JSON; the app has only issuer public keys and verifies offline. Changing any byte
   (seats, expiry) breaks the signature. Tests: `LicensingTests`.
-- The issuer private key is outside the repository (`~/Library/Application Support/Shorthand Issuer/issuer.key`, 0600).
-  `git ls-files` must never show it. Revocation ships in releases (`Licensing.revoked`).
+- The issuer private key never leaves the owner's Mac and is not in the repository. Revocation ships in releases (`Licensing.revoked`).
 - Codes and the first-launch date are in the Keychain. Resetting them can restart a trial; accepted (no server).
 - Without Pro, features pause; data is never locked.
 

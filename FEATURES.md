@@ -141,7 +141,7 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
 ### Licensing (1.7)
 | Feature | Code |
 |---|---|
-| Signed license codes, verified offline; Settings ▸ License add/remove; owner issuing tool | `Licensing.verify`, `LicensePrefs`, `scripts/license.swift` |
+| Free/Pro split, early access to 2027-01-31, 14-day trial (docs/PRICING.md) | `Licensing.status`, `LicenseManager` |
 | Pro checks: AI (AIClient.complete), Teams, MCP, scripts, %calc/%if, sync folder, Pro packs | `AIClient`, `TeamController`, `MCPBridge`, `Expander`, `AppState`, `TemplateGallery` |
 
 ### Teams (1.7)
