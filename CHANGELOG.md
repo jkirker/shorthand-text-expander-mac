@@ -1,9 +1,16 @@
 # Changelog
 
-> Doc version 1.7.0 · Last updated 2026-11-06
+> Doc version 1.7.1 · Last updated 2026-11-06
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.7.1] — 2026-11-06
+
+### Changed
+- **Early access extended:** every Pro feature is now free for everyone until March 31, 2027. Then a 14-day trial.
+- **Settings button:** a gear at the top right of the main window opens Settings.
+- **Apple Intelligence help:** when Apple Intelligence is off or still downloading, Settings ▸ AI shows step-by-step instructions, an Open System Settings button, and Check Again. AI features say the same and offer the button, instead of a general "set up a provider" message.
 
 ## [1.7.0] — 2026-11-06
 

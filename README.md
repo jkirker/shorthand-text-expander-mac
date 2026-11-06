@@ -6,7 +6,7 @@
 
 **[⬇ Download the latest version](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest)** · [Website](https://shorthandexpander.com/) · [Help](https://shorthandexpander.com/help/) · [Features](FEATURES.md) · [What's new](CHANGELOG.md) · [Privacy](PRIVACY.md) · [Security](SECURITY.md) · [License](LICENSE.md)
 
-Current version: **1.7.0** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
+Current version: **1.7.1** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
 
 ## Highlights
 - **Nearly everything TextExpander does:** abbreviations, fill-ins (text, choices, optional sections), dates and date math, the clipboard, nested snippets, keys and cursor placement, per-app rules, and formatted text.
@@ -16,7 +16,7 @@ Current version: **1.7.0** · macOS 14 or later · Apple Silicon · signed with 
 - **On your Mac:** search by meaning, Tune Up Library (duplicates and clashing abbreviations), tags, Trash, and ⌘Z for library changes.
 - **Privacy blocklist:** Shorthand stops listening entirely in password managers and on sites you block, such as your bank. It also asks before working in a new app.
 - **Encryption and app lock:** AES-256 encryption for your snippets and backups, plus Touch ID, Apple Watch, or a password to open Shorthand.
-- **Free and Pro:** the core is free. Pro ($29 a year, up to 5 Macs or people) adds AI, Teams, AI assistants, scripts, calculations, sync across Macs, and Pro template packs. Pro is free for everyone during early access, until January 31, 2027. [Pricing](https://shorthandexpander.com/pricing/)
+- **Free and Pro:** the core is free. Pro ($29 a year, up to 5 Macs or people) adds AI, Teams, AI assistants, scripts, calculations, sync across Macs, and Pro template packs. Pro is free for everyone during early access, until March 31, 2027. [Pricing](https://shorthandexpander.com/pricing/)
 - **Automatic updates,** signed and verified.
 - **Looks at home in light and dark mode.**
 
@@ -29,7 +29,7 @@ Current version: **1.7.0** · macOS 14 or later · Apple Silicon · signed with 
 </tr></table>
 
 ## Install
-1. Download **Shorthand-1.7.0.dmg** from [Releases](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest).
+1. Download **Shorthand-1.7.1.dmg** from [Releases](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest).
 2. Open it and drag **Shorthand** onto the **Applications** shortcut, then open Shorthand from Applications.
 3. Accept the license agreement, then follow the setup: grant **Accessibility**, then import from TextExpander if you like.
 
