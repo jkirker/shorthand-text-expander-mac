@@ -103,6 +103,18 @@ Shorthand's keyboard monitor is an active event tap. If its Accessibility access
 stall typing and clicks for the whole session. Since 1.5.4 the tap is removed within a fraction of a second of access
 going away, and "Reset Permission & Ask Again" stops it before resetting. See ARCHITECTURE §3 and PROCESS-FLOWS §12.
 
+## 8d. Import hardening (1.6.1)
+Import files come from other apps and other people, so they are untrusted input.
+- **aText 2 archives** are decoded with `requiresSecureCoding = true` and an allow-list (plist types plus two stand-in
+  classes). A file naming any other class fails to import without instantiating it (test:
+  `testATextArchiveWithForeignObjectIsRejected`, which fails against the 1.6.1-pre code that had secure coding off).
+- **aText 3 LZ4** output is capped at 64 MB (`ATextLZ4.maxOutput`); every length and back-reference is bounds-checked.
+- **Stress tests** (`ImportFuzzTests`): ~2,300 damaged copies of valid files for every format, random bytes under every
+  extension, and 3,000 random mixtures of each app's codes through every converter. Seeded, so failures repeat.
+  `RealSampleCheck.testDamagedRealSamples` does the same with real files when `SHORTHAND_SAMPLES` is set.
+- Not covered: Alfred `.alfredsnippets` is unzipped with `ditto` into a temporary folder; a doctored zip's paths were not
+  separately tested (unverified).
+
 ## 9. Known limits
 - **Mixed versions while syncing:** Shorthand 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
 - Retired keys stay in the Keychain so older files remain readable. Removing Shorthand's Keychain items in Keychain Access deletes them.
@@ -111,3 +123,4 @@ going away, and "Reset Permission & Ask Again" stops it before resetting. See AR
 ## Doc history
 - 2026-11-05: Added §8c input safety (1.5.4).
 - 2026-11-05 (later): Exports are plain files (§8b2).
+- 2026-11-05 (1.6.1): §8d import hardening (secure decoding, LZ4 cap, stress tests).

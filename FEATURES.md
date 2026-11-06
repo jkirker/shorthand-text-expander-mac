@@ -81,6 +81,8 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
   - group `.textexpander` files
   - `.textexpanderbackup` folders
   - (1.6.0) Espanso `.yml` match files or folders; Raycast `.json`; Alfred `.alfredsnippets`; macOS Text Replacements `.plist`; Shorthand `.json`
+  - (1.6.1) aText `.atext` (v2 verified, v3 experimental) and JSON export; TypeIt4Me `.typeit4me` (v6); Rocket Typist `.rtfolder`/`.rockettypist`; Text Blaze `.json` export. Details and confidence: docs/IMPORT-FORMATS.md
+  - Not supported: Typinator `.tyset` (opaque; use its CSV export), PhraseExpress (encrypted library)
   - CSV/TSV, with or without a header row (quoted multi-line fields), e.g. exports from aText, TypeIt4Me, Typinator, PhraseExpress, Text Blaze, Rocket Typist
 - Export a group back to a TextExpander-format `.textexpander` file.
 - (1.6.0) File ▸ Export Snippets…: Shorthand JSON, CSV, TextExpander folder, Espanso YAML or Raycast JSON, for all or selected groups.
@@ -174,3 +176,4 @@ Legend:
 - 2026-11-05: Fixed two malformed Distribution rows; added website, fixed download link, and the 1.5.4 permission fix.
 - 2026-11-05: Template packs.
 - 2026-11-05 (later): Import formats from other apps and Export Snippets.
+- 2026-11-05 (1.6.1): Import formats for aText, TypeIt4Me, Rocket Typist, Text Blaze.

@@ -1,9 +1,29 @@
 # Changelog
 
-> Doc version 1.6.0 · Last updated 2026-11-05
+> Doc version 1.6.1 · Last updated 2026-11-05
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.6.1] — 2026-11-05
+
+### Added
+- **More apps to import from** (File ▸ Import Snippets…):
+  - **aText:** `.atext` library files and aText's JSON export. Groups, abbreviations, labels, and text come across; aText's own variables stay as text.
+  - **TypeIt4Me:** `.typeit4me` set files, with dates, date math, the clipboard, Tab/Return/Delete keys, the cursor, and AppleScript snippets converted.
+  - **Rocket Typist:** `.rtfolder` and `.rockettypist` exports, with dates, text fields, option menus, nested snippets, keys, and JavaScript snippets converted.
+  - **Text Blaze:** the dashboard's folder export (`.json`), with the clipboard, cursor, dates, form fields, menus, toggles, imported snippets, and keys converted.
+- **Typinator:** spreadsheet exports that use Typinator's codes now convert dates, date math, the clipboard, the cursor, Tab and Return, simple input fields, and other abbreviations.
+
+### Security
+- Importing a damaged or doctored file can no longer create unexpected objects (aText files are now read with Apple's secure decoding) or exhaust memory (aText 3 decompression is capped at 64 MB).
+- New stress tests feed every importer thousands of damaged files and random code mixtures.
+
+### Changed
+- Help ▸ Importing Snippets lists every supported app, including how to bring snippets from Typinator (its spreadsheet export) and why PhraseExpress can't be imported.
+
+### Website
+- A switching hub at shorthandexpander.com/switch with step-by-step guides for TextExpander, aText, TypeIt4Me, Rocket Typist, Text Blaze, Espanso, Raycast, Alfred, macOS Text Replacements, and other apps.
 
 ## [1.6.0] — 2026-11-05
 

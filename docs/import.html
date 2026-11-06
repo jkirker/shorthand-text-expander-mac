@@ -9,7 +9,7 @@
 <body>
 <main>
 <h1>Importing Snippets</h1>
-<p class="lead">Bring your snippets from TextExpander, Espanso, Raycast, Alfred, macOS Text Replacements, or any app that exports a spreadsheet. TextExpander snippets come across unchanged, and their codes keep working.</p>
+<p class="lead">Bring your snippets from TextExpander, aText, TypeIt4Me, Rocket Typist, Text Blaze, Espanso, Raycast, Alfred, macOS Text Replacements, or any app that exports a spreadsheet. TextExpander snippets come across unchanged, and their codes keep working.</p>
 
 <h2 id="how">To import your snippets</h2>
 <ol class="steps">
@@ -60,18 +60,25 @@
 
 <h2 id="other-apps">From other apps</h2>
 <p>Use <span class="ui">Choose File…</span> in the same window and pick the file (or folder) the other app exports. Each import becomes a new group.</p>
+<figure class="shot"><picture><source srcset="img/import-dark.png" media="(prefers-color-scheme: dark)"><img src="img/import.png" width="520" alt="The import step in the Welcome window, listing the apps Shorthand imports from"></picture><figcaption>Choose File… accepts files from all of these apps.</figcaption></figure>
 <table class="wrap">
 <tr><th>App</th><th>What to choose</th><th>What Shorthand converts</th></tr>
 <tr><td>Espanso</td><td>A match file (<code>.yml</code>), or the whole <code>match</code> folder (one group per file). Run <code>espanso path</code> in Terminal to find it.</td><td><code>$|$</code> (cursor), clipboard variables, date variables (with offsets) and forms become Shorthand codes.</td></tr>
 <tr><td>Raycast</td><td>The <code>.json</code> file from Raycast’s snippet export.</td><td><code>{clipboard}</code>, <code>{cursor}</code>, <code>{date}</code>, <code>{time}</code>, <code>{datetime}</code>, <code>{day}</code> and <code>{argument}</code> (as fill-ins, with options as pop-up menus).</td></tr>
 <tr><td>Alfred</td><td>A <code>.alfredsnippets</code> file (export a snippet collection in Alfred’s preferences).</td><td><code>{clipboard}</code>, <code>{cursor}</code>, dates and times. The collection’s keyword prefix and suffix are added to each abbreviation.</td></tr>
 <tr><td>macOS Text Replacements</td><td>In <span class="ui">System Settings ▸ Keyboard ▸ Text Replacements</span>, select them all and drag them to the desktop. Choose the <code>Text Substitutions.plist</code> file that appears.</td><td>Everything (they’re plain text).</td></tr>
-<tr><td>aText, TypeIt4Me, Typinator, PhraseExpress, Text Blaze, Rocket Typist, and others</td><td>Export from that app as CSV or tab-separated text (see its help), then choose the file.</td><td>The text comes across as is. Their own codes have no direct Shorthand equivalent, so check snippets that used them.</td></tr>
+<tr><td>aText</td><td>In aText, choose <span class="ui">File ▸ Save…</span> to save an <code>.atext</code> file (or use one of its automatic backups). aText’s JSON export works too.</td><td>Groups, abbreviations, labels, and text. aText’s own variables stay as text; script and picture snippets are left out. aText 3 files are read from a reverse-engineered description, so check the result.</td></tr>
+<tr><td>TypeIt4Me</td><td>In TypeIt4Me, hover over a set in the sidebar, click its action button, and choose <span class="ui">Reveal in Finder</span>. Choose that <code>.typeit4me</code> file.</td><td>Dates (including date math), the clipboard (⌘), Tab, Return, and Delete keys, the cursor, and AppleScript snippets. Formatted text comes across as plain text.</td></tr>
+<tr><td>Rocket Typist</td><td>Export a folder (<code>.rtfolder</code>) or a snippet (<code>.rockettypist</code>) from Rocket Typist.</td><td>Dates (with date math), text fields, option menus, the cursor, the clipboard, nested snippets, keys, and JavaScript snippets.</td></tr>
+<tr><td>Text Blaze</td><td>In the Text Blaze dashboard, open <span class="ui">Import/Export</span> and click <span class="ui">Export</span> on a folder, or <span class="ui">Export all folders</span>. Choose the <code>.json</code> file.</td><td>Folders, shortcuts, labels, the clipboard, the cursor, dates (with shifts), form fields, menus, toggles, imported snippets, and keys. Formulas, conditions, and site commands stay as text.</td></tr>
+<tr><td>Typinator</td><td>In Typinator, export a set as tab-separated text or CSV, then choose that file.</td><td>Dates (with date math), the clipboard, the cursor, Tab and Return, simple input fields, and other abbreviations. Functions, pop-up menus, variables, and scripts stay as text.</td></tr>
+<tr><td>PhraseExpress</td><td>PhraseExpress doesn’t export its library in a format other apps can read. Copy your phrases over by hand, or export them one at a time as text.</td><td>Not available.</td></tr>
+<tr><td>Any other app</td><td>Export as CSV or tab-separated text (see that app’s help), then choose the file.</td><td>The text comes across as is.</td></tr>
 <tr><td>Shorthand</td><td>A <code>.json</code> file from <a href="export.html">File ▸ Export Snippets…</a></td><td>Everything, including tags, types, and app rules.</td></tr>
 </table>
 <ul>
 <li><strong>Spreadsheets</strong> can have a header row: Shorthand finds columns named like <em>abbreviation</em>, <em>shortcut</em>, <em>keyword</em>, or <em>trigger</em>, <em>content</em>, <em>snippet</em>, <em>text</em>, or <em>phrase</em>, and <em>label</em> or <em>name</em>. Without a header, the columns are abbreviation, content, label. Quoted fields can span several lines.</li>
-<li>A <code>%</code> sign in imported text is kept as a percent sign (Shorthand writes it as <code>%%</code>).</li>
+<li>A <code>%</code> sign in snippets from other apps is kept as a percent sign (Shorthand writes it as <code>%%</code>). Spreadsheets are the exception: their text is used as is, so TextExpander-style codes such as <code>%clipboard</code> in a spreadsheet keep working. Typinator spreadsheets follow the first rule.</li>
 <li>Codes with no Shorthand equivalent (for example Espanso shell variables or Raycast’s <code>{uuid}</code>) stay as text. Shorthand tells you how many, so you can find and fix them (search your snippets for the code’s name).</li>
 </ul>
 
