@@ -9,12 +9,18 @@
 <body>
 <main>
 <h1>AI Features</h1>
-<p class="lead">Three optional ways to use AI. Each one needs an AI provider and key first: see <a href="ai-setup.html">Setting Up AI</a>.</p>
+<p class="lead">Optional ways to use AI. Each one needs an AI provider first: see <a href="ai-setup.html">Setting Up AI</a>. Apple Intelligence on this Mac needs no key and sends nothing anywhere.</p>
 
 <div class="toc"><ul>
 <li><a href="#actions">AI Actions: rewrite selected text anywhere</a></li>
 <li><a href="#ai-snippets">AI in snippets: %ai</a></li>
 <li><a href="#suggest">Suggest with AI: turn text into a snippet</a></li>
+<li><a href="#fill">Fill from Clipboard: let AI fill in a form</a></li>
+<li><a href="#reply">Reply using my snippets</a></li>
+<li><a href="#tone">Tone by app</a></li>
+<li><a href="#translate">Translate a group</a></li>
+<li><a href="#mcp">AI assistants (Claude Desktop and others)</a></li>
+<li><a href="#what-is-sent">What each feature sends</a></li>
 </ul></div>
 
 <h2 id="actions">AI Actions</h2>
@@ -67,6 +73,67 @@
 <li>In the main snippet editor, a dialog <strong>Use this suggestion?</strong> shows the result. Choose:<ul><li><span class="ui">Use All</span>: takes the suggested abbreviation, label, and text (the text only for plain-text snippets).</li><li><span class="ui">Abbreviation &amp; Label Only</span>: keeps your text, takes the label, and takes the abbreviation only if the snippet has none.</li><li><span class="ui">Cancel</span>: changes nothing.</li></ul></li>
 </ol>
 <p>It avoids abbreviations you already use. It’s not available for script snippets.</p>
+
+<h2 id="fill">Fill from Clipboard</h2>
+<p>When a snippet has <a href="fill-ins.html">fill-in fields</a>, AI can fill them in from text you copied, such as a customer’s email.</p>
+<ol class="steps">
+<li>Copy the text that has the details (for example, an email with the person’s name and order number).</li>
+<li>Type the snippet’s abbreviation. The fill-in window opens.</li>
+<li>Click <span class="ui">✨ Fill from Clipboard</span>. AI fills in the fields it can find in the copied text.</li>
+<li>Check the values, change anything, and press <span class="ui">OK</span>.</li>
+</ol>
+<p>Only the copied text, the field names, and the pop-up menu choices are sent. AI only fills in what the text actually says; a pop-up field only takes one of its own choices.</p>
+
+<h2 id="reply">Reply using my snippets</h2>
+<p>Select a message you received (an email, a chat, a support ticket), press <kbd>⌃⌥A</kbd>, and choose <span class="ui">✨ Reply using my snippets</span>. Shorthand finds your snippets that fit the message best, on your Mac, and AI writes a reply using their wording. The reply is copied, so you can paste it where you want; the selected message isn’t changed.</p>
+<ul>
+<li>It sends the selected message and the text of up to 8 of your snippets. The first time, Shorthand asks before sending snippets to a cloud provider. With Apple Intelligence, nothing leaves your Mac.</li>
+<li>Groups set to <span class="ui">Never send to AI</span> and script snippets are never used.</li>
+</ul>
+
+<h2 id="tone">Tone by app</h2>
+<p>Tell AI how to sound in each app or website: casual in Slack, professional in Mail, upbeat on linkedin.com. AI Actions and <code>%ai</code> snippets use the tone for the app you’re typing in.</p>
+<ol class="steps">
+<li>Open <span class="ui">Settings ▸ AI ▸ Tone by app</span>.</li>
+<li>Click <span class="ui">Add App…</span> or <span class="ui">Add Website…</span>, then describe the tone, for example <em>Casual and brief. No sign-off.</em> (<span class="ui">Add Examples</span> fills in three to start from.)</li>
+</ol>
+<p>A website rule wins over its browser. Actions that shouldn’t change tone, such as translations and spelling fixes, skip it; each action has a <span class="ui">Use tone by app</span> checkbox.</p>
+
+<h2 id="translate">Translate a group</h2>
+<p>Right-click a group in the sidebar and choose <span class="ui">Translate Group…</span>. Pick a language, and Shorthand makes a translated copy, for example “Support (Spanish)”.</p>
+<ul>
+<li>Fill-ins, dates, the clipboard, and other codes stay exactly as they are. If AI changes one, that snippet is copied untranslated and listed, so you can fix it by hand.</li>
+<li>The copy starts turned off, so its abbreviations don’t clash with the original. You can add an ending to every abbreviation, such as <code>-es</code>.</li>
+<li>Formatted snippets come out as plain text.</li>
+<li>It sends each snippet’s text (without its codes), one at a time. Shorthand asks once before sending snippets to a cloud provider.</li>
+</ul>
+
+<h2 id="mcp">AI assistants (Claude Desktop and others)</h2>
+<p>AI assistants on your Mac that support MCP, such as Claude Desktop, Claude Code, and Cursor, can search your snippets and fill them in for you (“draft the refund reply for Dana”).</p>
+<ol class="steps">
+<li>Open <span class="ui">Settings ▸ AI</span> and turn on <span class="ui">Let AI assistants use my snippets</span>.</li>
+<li>Click <span class="ui">Copy Claude Desktop Setup</span>. In Claude Desktop, choose <span class="ui">Settings ▸ Developer ▸ Edit Config</span>, paste it into the file, and restart Claude.</li>
+</ol>
+<ul>
+<li>Assistants can only read. They can’t change your snippets.</li>
+<li>Script snippets, snippets that use <code>%ai</code>, your clipboard, and groups set to <span class="ui">Never send to AI</span> are never shared.</li>
+<li>Nothing works while Shorthand is locked, and it only works while Shorthand is running.</li>
+<li>Settings shows which assistant used it last, and when.</li>
+</ul>
+
+<h2 id="what-is-sent">What each feature sends</h2>
+<table>
+<tr><th>Feature</th><th>What goes to your AI provider</th></tr>
+<tr><td>AI Actions</td><td>The text you selected</td></tr>
+<tr><td><code>%ai</code> snippets</td><td>The prompt, with your clipboard and fill-in values if the prompt uses them</td></tr>
+<tr><td>Suggest with AI</td><td>The text you’re turning into a snippet</td></tr>
+<tr><td>Fill from Clipboard</td><td>The copied text, field names, and pop-up choices</td></tr>
+<tr><td>Reply using my snippets</td><td>The selected message and up to 8 snippets (asks first)</td></tr>
+<tr><td>Translate Group</td><td>The group’s snippet text, without codes (asks first)</td></tr>
+<tr><td>Review Kept Codes (import)</td><td>Each imported snippet that still has another app’s codes</td></tr>
+<tr><td>Search by meaning, Tune Up</td><td>Nothing: they run on your Mac</td></tr>
+</table>
+<p>With <strong>Apple Intelligence (on this Mac)</strong> as your provider, nothing in this table leaves your Mac.</p>
 
 <nav class="related">Related: <a href="ai-setup.html">Setting Up AI</a> <a href="macros.html#calc">Macro Reference</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a></nav>
 </main>

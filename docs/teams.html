@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teams — Shorthand Help</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1>Teams</h1>
+<p class="lead">Share snippet groups with up to 5 people or Macs, using a folder your team already shares. No account and no Shorthand server: only your team can read or change what’s shared.</p>
+
+<div class="toc"><ul>
+<li><a href="#how">How it works</a></li>
+<li><a href="#create">Create a team</a></li>
+<li><a href="#join">Join a team</a></li>
+<li><a href="#share">Share groups (admins)</a></li>
+<li><a href="#using">Using team snippets</a></li>
+<li><a href="#details">Team details</a></li>
+<li><a href="#members">Members and seats</a></li>
+<li><a href="#admins">Admins</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#leave">Leaving a team</a></li>
+</ul></div>
+
+<h2 id="how">How it works</h2>
+<ul>
+<li>The team picks a folder everyone can reach: a shared Dropbox, Google Drive, OneDrive, or iCloud Drive folder, a Synology or other NAS, or a network drive.</li>
+<li>Admins share groups into that folder. Everyone else’s Shorthand reads them, checks them, and uses them like their own snippets, read-only.</li>
+<li>Everything an admin shares is <strong>signed</strong>. Every Mac checks the signature, so nobody else can change the team’s snippets, even someone with access to the folder.</li>
+<li>With a team password, the shared snippets are also <strong>encrypted</strong>, so the storage service only sees scrambled data.</li>
+<li>A team has up to 5 people or Macs.</li>
+</ul>
+
+<h2 id="create">Create a team</h2>
+<figure class="shot"><picture><source srcset="img/team-setup-dark.png" media="(prefers-color-scheme: dark)"><img src="img/team-setup.png" width="520" alt="Settings, Team: create or join a team"></picture><figcaption>Settings ▸ Team before you’re in a team.</figcaption></figure>
+<ol class="steps">
+<li>Make an empty folder in your team’s shared storage.</li>
+<li>Open <span class="ui">Settings ▸ Team</span>, choose <span class="ui">Create a team</span>, enter your name and the team’s name, and choose the folder.</li>
+<li>Keep <span class="ui">Encrypt the team’s snippets</span> on and choose a team password (at least 8 characters). Share it with your team privately, not in the shared folder.</li>
+<li>Click <span class="ui">Create Team</span>. This Mac becomes the team’s first admin.</li>
+</ol>
+
+<h2 id="join">Join a team</h2>
+<ol class="steps">
+<li>Make sure the team’s shared folder is on your Mac (for example, accept the Dropbox or Google Drive share).</li>
+<li>Open <span class="ui">Settings ▸ Team</span>, choose <span class="ui">Join a team</span>, enter your name, and choose the folder.</li>
+<li>Shorthand shows the team’s name and each admin’s code, such as <code>D04A-78EA-FAE9-1B0C</code>. Check the code with an admin, in person or by phone. It proves the folder really is your team’s.</li>
+<li>Enter the team password if asked, and click <span class="ui">Join Team</span>.</li>
+</ol>
+
+<h2 id="share">Share groups (admins)</h2>
+<figure class="shot"><picture><source srcset="img/team-panel-dark.png" media="(prefers-color-scheme: dark)"><img src="img/team-panel.png" width="520" alt="Settings, Team for an admin: shared groups, members, and admins"></picture><figcaption>The admin panel in Settings ▸ Team.</figcaption></figure>
+<ul>
+<li>In <span class="ui">Settings ▸ Team ▸ Shared groups</span>, click <span class="ui">Share a Group…</span> and pick one of your groups.</li>
+<li>Edit a shared group in the main window like any other. When you’re ready, click <span class="ui">Publish Changes</span> in Settings ▸ Team. Members get the update within about a minute.</li>
+<li><span class="ui">Stop Sharing</span> removes the group from the team. Your own copy stays.</li>
+</ul>
+
+<h2 id="using">Using team snippets</h2>
+<ul>
+<li>Shared groups appear in the sidebar under the team’s name and expand like your own snippets.</li>
+<li>They’re read-only. To make your own version, select the group and click <span class="ui">Copy to My Snippets</span>.</li>
+<li>If one of your snippets has the same abbreviation as a team snippet, yours is used. The team snippet shows a ⚠ sign.</li>
+<li>Team <strong>script snippets</strong> (AppleScript, shell, JavaScript) don’t run unless you turn on <span class="ui">Run script snippets shared by this team</span> in Settings ▸ Team. Turn it on only if you trust the team’s admins.</li>
+</ul>
+
+<h2 id="details">Team details</h2>
+<p>Admins can set details once for everyone, such as the company name, phone number, and address. Use them in any snippet with <code>%team:</code> and the detail’s name: <code>%team:Company%</code> types the Company value. When an admin changes it, everyone’s snippets use the new value.</p>
+
+<h2 id="members">Members and seats</h2>
+<ul>
+<li><span class="ui">Settings ▸ Team ▸ Members</span> lists everyone who joined, their Mac, and when Shorthand last checked in.</li>
+<li>A team has 5 seats. Each Mac that joins uses one, so one person on two Macs uses two. When all 5 are taken, joining is refused; an admin can remove a member to free a seat. Need more? Start a second team.</li>
+</ul>
+
+<h2 id="admins">Admins</h2>
+<p>A Mac is an admin when it holds one of the team’s admin keys, which stay in that Mac’s Keychain.</p>
+<ol class="steps">
+<li>On the Mac that should become an admin, open Settings ▸ Team and click <span class="ui">Ask to Be an Admin…</span>. Copy the code it shows and send it to an admin.</li>
+<li>The admin pastes the code into <span class="ui">Admin request code from that Mac</span>, names it, and clicks <span class="ui">Add Admin</span>.</li>
+<li>Within about a minute, the new Mac becomes an admin.</li>
+</ol>
+<p>An admin can remove another admin. A team always keeps at least one.</p>
+
+<h2 id="security">Security</h2>
+<ul>
+<li>Members can’t change shared snippets, and a changed, swapped, or out-of-date file is ignored and listed as a problem in Settings ▸ Team.</li>
+<li>Admins can change the team password, which also changes the encryption key. Someone you removed keeps what was already on their Mac, but can’t read anything shared afterward. Give members the new password; they enter it in Settings ▸ Team.</li>
+<li>Admins should turn on the <a href="security.html">app lock</a>, since anyone using an admin’s Mac could publish to the team.</li>
+</ul>
+
+<h2 id="leave">Leaving a team</h2>
+<p>Click <span class="ui">Leave Team…</span> in Settings ▸ Team. Shared groups disappear from this Mac and its seat is freed; copies you made in your own snippets stay.</p>
+
+<nav class="related">Related: <a href="sync.html">Syncing Between Macs</a> <a href="security.html">Security</a> <a href="organize.html">Organizing Snippets</a></nav>
+</main>
+</body>
+</html>

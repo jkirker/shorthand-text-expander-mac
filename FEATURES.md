@@ -81,6 +81,7 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
   - group `.textexpander` files
   - `.textexpanderbackup` folders
   - (1.6.0) Espanso `.yml` match files or folders; Raycast `.json`; Alfred `.alfredsnippets`; macOS Text Replacements `.plist`; Shorthand `.json`
+  - (1.7.0) Export: Text Replacements for iPhone and iPad (plain snippets)
   - (1.6.1) aText `.atext` (v2 verified, v3 experimental) and JSON export; TypeIt4Me `.typeit4me` (v6); Rocket Typist `.rtfolder`/`.rockettypist`; Text Blaze `.json` export. Details and confidence: docs/IMPORT-FORMATS.md
   - Not supported: Typinator `.tyset` (opaque; use its CSV export), PhraseExpress (encrypted library)
   - CSV/TSV, with or without a header row (quoted multi-line fields), e.g. exports from aText, TypeIt4Me, Typinator, PhraseExpress, Text Blaze, Rocket Typist
@@ -122,6 +123,35 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
 - Live model lists per provider, with a type-or-pick model field.
 - Thinking effort (low/medium/high). Used by Claude and OpenAI reasoning models.
 - Keys live in the Keychain, one per provider. Custom base URLs must be https, or http only to localhost.
+
+### AI and meaning (1.7)
+| Feature | Code |
+|---|---|
+| Apple Intelligence provider (on-device, no key; macOS 26+, gated at run time) | `AppleIntelligence.swift`, `AIProviders.swift` |
+| Fill from Clipboard (named fields; pop-ups only accept their options) | `FillInWindow.swift`, `AIHelpers.fillInValues` |
+| Reply using my snippets (on-device selection of 8 snippets; consent once for cloud) | `AIActions.swift`, `SemanticIndex.nearest` |
+| Tone by app (bundle ID or domain; per-action opt-out) | `ToneRule` (Persistence), `AIClient.toneLine` |
+| Translate Group (codes protected as ⟦n⟧; copy starts disabled) | `TranslateGroup.swift`, `AIHelpers.protectCodes/restoreCodes` |
+| Review Kept Codes with AI (parse check + text-preservation guard) | `ImportReview.swift`, `AIHelpers.checkImportSuggestion/preservesText` |
+| AI assistants over MCP (read-only, off by default) | `MCPServer.swift`, `MCPBridge.swift` |
+| Never send to AI (group) | `SnippetGroup.neverSendToAI` |
+| Search by meaning (NLEmbedding, background index, text cache) | `SemanticIndex.swift`, `MeaningService.swift`, `SearchPanel.swift` |
+| Tune Up Library | `LibraryTuneUp.swift`, `TuneUpView.swift` |
+
+### Licensing (1.7)
+| Feature | Code |
+|---|---|
+| Signed license codes, verified offline; Settings ▸ License add/remove; owner issuing tool | `Licensing.verify`, `LicensePrefs`, `scripts/license.swift` |
+| Pro checks: AI (AIClient.complete), Teams, MCP, scripts, %calc/%if, sync folder, Pro packs | `AIClient`, `TeamController`, `MCPBridge`, `Expander`, `AppState`, `TemplateGallery` |
+
+### Teams (1.7)
+| Feature | Code |
+|---|---|
+| Create / join a team in a shared folder; trust on first join (admin fingerprints) | `TeamStore`, `TeamController`, `TeamViews` |
+| Signed manifest and groups (Curve25519), pins, revision (rollback protection) | `Team.swift`, `TeamStore.swift` |
+| Optional encryption (team password → AES-256-GCM data key); change password rotates key | `TeamStore.rotateTeamKey` |
+| Admin panel: share/publish/stop sharing, members and seats (5), admins, team details, scripts opt-in | `TeamViews.swift` |
+| Team groups in sidebar and expansion (yours win clashes), `%team:Name%` | `AppState.rebuildIndex`, `TeamVariables` |
 
 ### Typing insights (1.1)
 - Snippet suggestions from repeated phrases. In-memory SHA-256 counts; only rejected hashes are persisted.
@@ -177,3 +207,5 @@ Legend:
 - 2026-11-05: Template packs.
 - 2026-11-05 (later): Import formats from other apps and Export Snippets.
 - 2026-11-05 (1.6.1): Import formats for aText, TypeIt4Me, Rocket Typist, Text Blaze.
+- 2026-11-06 (1.7.0): AI features, on-device meaning, Teams, Text Replacements export.
+- 2026-11-06: Licensing.

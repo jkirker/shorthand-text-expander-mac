@@ -1,11 +1,42 @@
 # Changelog
 
-> Doc version 1.6.1 · Last updated 2026-11-05
+> Doc version 1.7.0 · Last updated 2026-11-06
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
 
+## [1.7.0] — 2026-11-06
+
+### Added: AI
+- **Apple Intelligence (on this Mac):** a new AI provider with no key and no account. Nothing leaves the Mac. Needs macOS 26 or later with Apple Intelligence turned on.
+- **Fill from Clipboard:** in the fill-in window, AI fills the fields from text you copied (for example, a name and order number from an email).
+- **Reply using my snippets:** an AI Action that writes a reply to a selected message from your most relevant snippets, and copies it.
+- **Tone by app:** AI Actions and `%ai` snippets write in the tone you set for each app or website.
+- **Translate Group:** a translated copy of a group, with fill-ins, dates, and other codes kept intact.
+- **Review Kept Codes with AI:** after an import, AI suggests Shorthand versions of another app's leftover codes; every suggestion is checked and you choose which to apply.
+- **AI assistants (MCP):** Claude Desktop, Claude Code, Cursor, and other MCP apps can search your snippets and fill them in. Off by default, read-only, never shares scripts, `%ai`, the clipboard, or private groups, and stops while Shorthand is locked.
+- **Never send to AI:** a group setting that keeps a group out of features that use your library.
+
+### Added: on this Mac
+- **Search by meaning:** the search window also finds snippets by what they mean, using Apple's on-device language tools. Nothing is sent anywhere.
+- **Tune Up Library** (File menu): duplicates, near-duplicates, abbreviations that get in each other's way, never-used and empty snippets.
+
+### Added: Teams
+- Share snippet groups with up to 5 people or Macs through a folder the team already shares, with no account or server. Admins sign everything they share; members' Macs verify it. Optional team password encrypts the shared snippets. Settings ▸ Team has the admin panel (shared groups, members and seats, admins, team details, security). `%team:Name%` inserts a team detail.
+
+### Added: Shorthand Pro
+- **Early access:** every Pro feature is free for everyone until January 31, 2027. Then a 14-day trial.
+- **Settings ▸ License:** add or remove a license code. Codes are checked on your Mac; nothing is sent anywhere. Without Pro, Pro features pause and your snippets keep working.
+
+### Added: iPhone and iPad
+- Export ▸ **Text Replacements for iPhone and iPad:** plain snippets as macOS Text Replacements, which sync to iPhone and iPad through your iCloud.
+
+### Changed
+- AI Actions have a "Use tone by app" option; translation and spelling actions skip it by default.
+
 ## [1.6.1] — 2026-11-05
+
+_Not released separately; these changes ship in 1.7.0._
 
 ### Added
 - **More apps to import from** (File ▸ Import Snippets…):

@@ -82,6 +82,13 @@
 <li>Codes with no Shorthand equivalent (for example Espanso shell variables or Raycast’s <code>{uuid}</code>) stay as text. Shorthand tells you how many, so you can find and fix them (search your snippets for the code’s name).</li>
 </ul>
 
+<h2 id="review-ai">Converting leftover codes with AI</h2>
+<p>When an import keeps some of the other app’s codes as text, and you’ve set up AI, the import window shows <span class="ui">✨ Review Kept Codes with AI…</span>. AI suggests the Shorthand version of each snippet; you tick the ones to use and click <span class="ui">Apply Checked</span> (<kbd>⌘Z</kbd> in the main window undoes it).</p>
+<ul>
+<li>Shorthand checks every suggestion. One that changes anything besides the codes, adds a script or <code>%ai</code>, or names a snippet you don’t have is ignored.</li>
+<li>Each snippet’s text is sent to your AI provider, one at a time. A large cloud model does this best.</li>
+</ul>
+
 <h2 id="errors">If the import fails</h2>
 <ul>
 <li><em>“… isn’t a snippet file Shorthand can import.”</em> Pick <code>Settings.textexpander</code>, a group file or backup folder, or one of the formats in <a href="#other-apps">From other apps</a>.</li>

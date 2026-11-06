@@ -100,7 +100,11 @@ Suggestions and reminders
 Both are off by default. When on, repeated phrases are tracked only as one-way fingerprints in memory and forgotten when Shorthand quits; a phrase is saved only once it becomes a suggestion. See Suggestions &amp; Reminders.
 
 AI
-AI is off until you add a key. When you use an AI feature, only the text it needs goes straight to the provider you chose (or your fallback provider). Details: AI privacy.
+AI is off until you set up a provider. When you use an AI feature, only the text it needs goes straight to the provider you chose (or your fallback provider). With Apple Intelligence (on this Mac), nothing leaves your Mac. See what each feature sends.
+
+Never send to AI: turn this on for a group (select it in the sidebar) to keep its snippets out of features that use your library: replies from your snippets, translation, and AI assistants. %ai parts inside those snippets still work.
+AI assistants (MCP) are off until you turn them on, can only read, never see script snippets, %ai snippets, your clipboard, or private groups, and stop while Shorthand is locked.
+Search by meaning and Tune Up run on your Mac and send nothing.
 
 Update checks
 When checking for updates, Shorthand downloads a small file (the update feed) from GitHub. It sends no information about you, your Mac, or your snippets. Turn automatic checks off in Settings ▸ General ▸ Updates.

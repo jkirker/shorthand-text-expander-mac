@@ -115,6 +115,33 @@ Import files come from other apps and other people, so they are untrusted input.
 - Not covered: Alfred `.alfredsnippets` is unzipped with `ditto` into a temporary folder; a doctored zip's paths were not
   separately tested (unverified).
 
+## 8e. AI assistants over MCP (1.7)
+Lets MCP clients (Claude Desktop, Claude Code, Cursor) read snippets on this Mac. Threat: an AI agent, or a prompt
+injected into one, uses the connection to read private text or run code.
+- **Off by default** (Settings ▸ AI ▸ AI assistants). When off, nothing listens.
+- **Read-only.** Four tools: search, get, list groups, expand. The provider protocol can only read; nothing writes the
+  library or settings.
+- **No code runs.** Script snippets (AppleScript, shell, JavaScript) are never expanded and their source is never
+  returned. Snippets with `%ai` aren't expanded. A nested `%snippet:` that reaches a script, `%ai`, or a hidden group
+  refuses the whole expansion.
+- **Hidden groups.** Groups marked "Never send to AI" and disabled groups are invisible to every tool. Limit: a nested
+  refusal names the abbreviation, which confirms it exists (only for abbreviations the visible snippet already uses).
+- **No clipboard.** `%clipboard` expands to nothing through MCP, so another app's clipboard contents can't leak.
+- **Lock and encryption stay in the app.** `Shorthand --mcp` is only a relay; the running app answers. While the app
+  lock is on or the library is encrypted and locked, every tool returns "Shorthand is locked."
+- **Local only.** A Unix socket in the per-user temporary folder (0700), created 0600; the app accepts a connection only
+  when `getpeereid` reports the same user. No network listener.
+- **Visibility.** Settings shows which client used it last and when.
+- Tests: `MCPServerTests` (20).
+
+## 8f. Licensing (1.7)
+- License codes are Ed25519-signed JSON; the app has only issuer public keys and verifies offline. Changing any byte
+  (seats, expiry) breaks the signature. Tests: `LicensingTests`.
+- The issuer private key is outside the repository (`~/Library/Application Support/Shorthand Issuer/issuer.key`, 0600).
+  `git ls-files` must never show it. Revocation ships in releases (`Licensing.revoked`).
+- Codes and the first-launch date are in the Keychain. Resetting them can restart a trial; accepted (no server).
+- Without Pro, features pause; data is never locked.
+
 ## 9. Known limits
 - **Mixed versions while syncing:** Shorthand 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
 - Retired keys stay in the Keychain so older files remain readable. Removing Shorthand's Keychain items in Keychain Access deletes them.
@@ -124,3 +151,4 @@ Import files come from other apps and other people, so they are untrusted input.
 - 2026-11-05: Added §8c input safety (1.5.4).
 - 2026-11-05 (later): Exports are plain files (§8b2).
 - 2026-11-05 (1.6.1): §8d import hardening (secure decoding, LZ4 cap, stress tests).
+- 2026-11-06: §8f licensing.
