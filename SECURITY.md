@@ -140,6 +140,20 @@ injected into one, uses the connection to read private text or run code.
 - The issuer private key never leaves the owner's Mac and is not in the repository. Revocation ships in releases (`Licensing.revoked`).
 - Codes and the first-launch date are in the Keychain. Resetting them can restart a trial; accepted (no server).
 - Without Pro, features pause; data is never locked.
+- Trial (1.7.2): 90 days from the later of first launch and the end of early access (2027-03-31); see PRICING.md.
+
+## 8g. AI provider choice and privacy (1.7.1)
+- **No setup, nothing sent.** If no AI provider the user chose is set up (for example, no key) and Apple Intelligence
+  is on, AI features use Apple Intelligence on this Mac (`AIClient.activeChain`). The text never leaves the Mac. A cloud
+  provider is used only after the user sets one up, and one that's set up is never replaced by Apple Intelligence.
+- AI still runs only when the user triggers it (AI Actions, a `%ai` snippet, Suggest with AI, and the 1.7 features).
+- **Library notice.** Reply using my snippets and Translate Group send snippet text, so they ask once before the first
+  use (`AIActionsController.confirmLibraryUse`, "Don't ask again" stores `aiLibraryConsent`). The question is skipped
+  only when every provider the request could reach runs on the Mac (`AIClient.onDeviceOnly`). With Apple
+  Intelligence as primary and a cloud fallback, the notice is shown, because a failed on-device request goes to the
+  cloud fallback. (In 1.7.1 the check was `onDeviceFirst`, which skipped the notice in that case; fixed in 1.7.2.)
+- "Open System Settings" (Apple Intelligence help) only opens System Settings ▸ Apple Intelligence & Siri through the
+  `x-apple.systempreferences:` URL; Shorthand changes no system setting.
 
 ## 9. Known limits
 - **Mixed versions while syncing:** Shorthand 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
@@ -151,3 +165,4 @@ injected into one, uses the connection to read private text or run code.
 - 2026-11-05 (later): Exports are plain files (§8b2).
 - 2026-11-05 (1.6.1): §8d import hardening (secure decoding, LZ4 cap, stress tests).
 - 2026-11-06: §8f licensing.
+- 2026-11-06 (1.7.1/1.7.2): §8g AI provider choice and privacy (Apple Intelligence automatically, library notice); 90-day trial in §8f; header version fixed (was still 1.6.1).

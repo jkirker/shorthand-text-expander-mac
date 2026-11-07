@@ -100,7 +100,7 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
   - warnings
   - Help
   - Ko-fi
-- Main window with a group/snippet list, rich editor, Insert menu for every macro, preview, conflict markers and use counts.
+- Main window with a group/snippet list, rich editor, Insert menu for every macro, preview, conflict markers and use counts. A Settings gear at the top right opens Settings (1.7.1).
 - Search panel (⌘1–9 to pick), and inline search.
 - Global hotkeys:
   - open
@@ -128,6 +128,8 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
 | Feature | Code |
 |---|---|
 | Apple Intelligence provider (on-device, no key; macOS 26+, gated at run time) | `AppleIntelligence.swift`, `AIProviders.swift` |
+| AI with no setup (1.7.1): if no chosen provider is set up and Apple Intelligence is on, it's used automatically, per request; a provider you set up is never overridden. Settings ▸ AI says so ("No setup needed") | `AIClient.activeChain`, `usingAppleAutomatically`, `PreferencesView` |
+| Apple Intelligence help (1.7.1): when it's off or still downloading, Settings ▸ AI shows numbered steps, Open System Settings and Check Again (re-checks when you come back); AI Actions, `%ai` and Suggest with AI show the reason with an Open System Settings button | `AppleIntelligence.problem/fixSteps/openSettings`, `AppleProviderStatus`, `AIClient.showNotReady` |
 | Fill from Clipboard (named fields; pop-ups only accept their options) | `FillInWindow.swift`, `AIHelpers.fillInValues` |
 | Reply using my snippets (on-device selection of 8 snippets; consent once for cloud) | `AIActions.swift`, `SemanticIndex.nearest` |
 | Tone by app (bundle ID or domain; per-action opt-out) | `ToneRule` (Persistence), `AIClient.toneLine` |
@@ -141,7 +143,7 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
 ### Licensing (1.7)
 | Feature | Code |
 |---|---|
-| Free/Pro split, early access to 2027-03-31, 14-day trial (docs/PRICING.md) | `Licensing.status`, `LicenseManager` |
+| Free/Pro split, early access to 2027-03-31, then a 90-day trial (1.7.2; was 14 days) (docs/PRICING.md) | `Licensing.status`, `LicenseManager` |
 | Pro checks: AI (AIClient.complete), Teams, MCP, scripts, %calc/%if, sync folder, Pro packs | `AIClient`, `TeamController`, `MCPBridge`, `Expander`, `AppState`, `TemplateGallery` |
 
 ### Teams (1.7)
@@ -209,3 +211,4 @@ Legend:
 - 2026-11-05 (1.6.1): Import formats for aText, TypeIt4Me, Rocket Typist, Text Blaze.
 - 2026-11-06 (1.7.0): AI features, on-device meaning, Teams, Text Replacements export.
 - 2026-11-06: Licensing.
+- 2026-11-06 (1.7.1/1.7.2): Settings gear in the main window; AI with no setup (Apple Intelligence automatically); Apple Intelligence help; 90-day trial.
