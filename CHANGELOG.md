@@ -1,9 +1,15 @@
 # Changelog
 
-> Doc version 1.7.2 · Last updated 2026-11-06
+> Doc version 1.7.3 · Last updated 2026-11-08
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.7.3] — 2026-11-08
+
+### Fixed
+- **Crash when setting a hotkey:** recording a hotkey in Settings ▸ Hotkeys (for example ⌃F) quit Shorthand. Hotkeys now record normally, and F1–F20 show their correct names.
+- **Template Packs:** packs that use AI now say you can turn on Apple Intelligence or set up a provider, and don't show the setup hint when AI is already working.
 
 ## [1.7.2] — 2026-11-06
 
