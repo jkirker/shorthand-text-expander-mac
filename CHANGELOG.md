@@ -1,9 +1,15 @@
 # Changelog
 
-> Doc version 1.7.3 · Last updated 2026-11-08
+> Doc version 1.7.4 · Last updated 2026-11-08
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.7.4] — 2026-11-08
+
+### Added
+- **Hotkey checks:** when you record a hotkey in Settings ▸ Hotkeys, Shorthand refuses one that another Shorthand action or macOS already uses, says what uses it, and warns about combinations most apps use (⌘ or ⌃ with a single letter). If macOS refuses a hotkey because another app holds it, Settings says so.
+- **Jump to the filter:** Edit ▸ Filter Snippets (⌘F, or ⌃F) puts the cursor in the Filter field above the snippet list.
 
 ## [1.7.3] — 2026-11-08
 
