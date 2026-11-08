@@ -19,19 +19,19 @@
 <ol class="steps">
 <li>Open <span class="ui">Settings ▸ General</span>.</li>
 <li>Under <span class="ui">Library</span>, click <span class="ui">Use Sync Folder…</span>.</li>
-<li>Pick (or create) a folder inside Dropbox, iCloud Drive, or a similar service, and click <span class="ui">Use Folder</span>. Shorthand saves your library there as <code>Shorthand Library.json</code>.</li>
+<li>Pick (or create) a folder inside Dropbox, iCloud Drive, or a similar service, and click <span class="ui">Use Folder</span>. Shorthand Expander™ saves your library there as <code>Shorthand Library.json</code>.</li>
 <li>Wait for the sync service to finish uploading the file.</li>
 </ol>
 
 <h3 id="other-macs">On each other Mac</h3>
 <ol class="steps">
-<li>Install Shorthand and wait until the sync folder (with <code>Shorthand Library.json</code> inside) has downloaded.</li>
+<li>Install Shorthand Expander and wait until the sync folder (with <code>Shorthand Library.json</code> inside) has downloaded.</li>
 <li>Open <span class="ui">Settings ▸ General</span>, click <span class="ui">Use Sync Folder…</span> and choose that same folder.</li>
-<li>Shorthand sees the library already there and asks what to do. Click <span class="ui">Use Library in Folder</span>. This Mac’s current snippets are backed up first, then it switches to the shared library.</li>
+<li>The app sees the library already there and asks what to do. Click <span class="ui">Use Library in Folder</span>. This Mac’s current snippets are backed up first, then it switches to the shared library.</li>
 </ol>
 <div class="note"><p>Choosing <span class="ui">Replace with This Mac’s</span> does the opposite: the folder’s copy is backed up, then this Mac’s library is saved over it. Either way, nothing is lost. The set-aside copy is in <span class="ui">Show Backups</span>.</p></div>
-<p>From then on, when another Mac changes the library, Shorthand reloads it within a few seconds and shows <strong>Snippet library updated from your sync folder.</strong></p>
-<div class="note" id="older-version"><p><strong>Update Shorthand on every Mac.</strong> Shorthand 1.2 doesn’t know about the Trash or tags, so when a Mac still running 1.2 saves the shared library, they’re dropped from the file. This Mac notices, keeps its own Trash and tags, saves them back, and shows <strong>Library updated by an older Shorthand on another Mac. Your Trash and tags were kept. Update Shorthand on your other Macs.</strong> If you see that, install the latest Shorthand on your other Macs.</p></div>
+<p>From then on, when another Mac changes the library, Shorthand Expander reloads it within a few seconds and shows <strong>Snippet library updated from your sync folder.</strong></p>
+<div class="note" id="older-version"><p><strong>Update Shorthand Expander on every Mac.</strong> Shorthand 1.2 doesn’t know about the Trash or tags, so when a Mac still running 1.2 saves the shared library, they’re dropped from the file. This Mac notices, keeps its own Trash and tags, saves them back, and shows <strong>Library updated by an older Shorthand on another Mac. Your Trash and tags were kept. Update Shorthand on your other Macs.</strong> If you see that, install the latest Shorthand Expander on your other Macs.</p></div>
 <figure>
 <svg viewBox="0 0 560 120" width="560" role="img" aria-label="Two Macs sharing one library file in a sync folder" font-family="-apple-system, sans-serif" font-size="13">
   <defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
@@ -51,7 +51,7 @@
 <figcaption>Each Mac reads and writes the same library file.</figcaption>
 </figure>
 <div class="note"><p>Avoid editing snippets on two Macs at the same moment. The most recently saved library wins, so a change made on the other Mac at the same time can be lost. Backups (below) let you recover.</p></div>
-<div class="note" id="encrypted"><p><strong>Encrypted libraries.</strong> If encryption is on, the library in your sync folder is encrypted too. Each other Mac asks for your Shorthand password or recovery key once, when you choose the folder, and opens it by itself after that. Update Shorthand on every Mac first: older versions can’t read an encrypted library. See <a href="security.html#sync">Syncing an encrypted library</a>.</p></div>
+<div class="note" id="encrypted"><p><strong>Encrypted libraries.</strong> If encryption is on, the library in your sync folder is encrypted too. Each other Mac asks for your Shorthand password or recovery key once, when you choose the folder, and opens it by itself after that. Update Shorthand Expander on every Mac first: older versions can’t read an encrypted library. See <a href="security.html#sync">Syncing an encrypted library</a>.</p></div>
 <ul>
 <li>Only the snippet library is synced. Settings, hotkeys, statistics, and AI keys stay on each Mac.</li>
 <li>To stop syncing on a Mac, click <span class="ui">Use Local Storage</span>. Its current snippets are saved back to the Mac.</li>
@@ -60,7 +60,7 @@
 <h2 id="backups">Backups</h2>
 <p>In <span class="ui">Settings ▸ General ▸ Backup</span>:</p>
 <ul>
-<li><span class="ui">Back up library at every launch</span> (on by default): a copy is saved each time Shorthand starts.</li>
+<li><span class="ui">Back up library at every launch</span> (on by default): a copy is saved each time the app starts.</li>
 <li><span class="ui">Keep 20 backups</span>: how many to keep; older ones are deleted. Set it to 0 to keep all.</li>
 <li><span class="ui">Back Up Now</span>: make a copy right away, e.g. before a big clean-up.</li>
 <li><span class="ui">Show Backups</span>: opens the backups folder (<code>~/Library/Application Support/Shorthand/Backups</code>). Each backup is named with its date and time.</li>
@@ -70,7 +70,7 @@
 <ol class="steps">
 <li>Open <span class="ui">Settings ▸ General</span> and click <span class="ui">Restore…</span>.</li>
 <li>Choose a backup file (they’re named like <code>Library 2026-11-01-093000.json</code>).</li>
-<li>Shorthand asks <em>Replace your library with this backup (… snippets)?</em> Click <span class="ui">Restore</span>.</li>
+<li>Shorthand Expander asks <em>Replace your library with this backup (… snippets)?</em> Click <span class="ui">Restore</span>.</li>
 </ol>
 <p>Your current library is backed up first, so restoring can itself be undone.</p>
 <p>With encryption on, backups are encrypted. See <a href="security.html#restore">Restoring an older encrypted backup</a>.</p>
@@ -78,7 +78,7 @@
 <h2 id="safety">Built-in safety nets</h2>
 <ul>
 <li><strong>Undo:</strong> after deleting a snippet or group, click <span class="ui">Undo</span> in the notice that appears. <kbd>⌘</kbd><kbd>Z</kbd> undoes moves, deletes, tag changes, and merges; see <a href="organize.html#undo">Undoing changes</a>. Reloading the library from your sync folder clears the undo history.</li>
-<li><strong>Damaged library:</strong> if the library file can’t be read, Shorthand never overwrites it. It moves it aside (adding <code>.unreadable-</code> and the date to its name), starts with the two example snippets, and tells you. Restore a backup to continue.</li>
+<li><strong>Damaged library:</strong> if the library file can’t be read, Shorthand Expander never overwrites it. It moves it aside (adding <code>.unreadable-</code> and the date to its name), starts with the two example snippets, and tells you. Restore a backup to continue.</li>
 <li><strong>Export:</strong> <span class="ui">File ▸ Export Snippets…</span> saves every group (or the ones you select) as a file you can keep, share, or open in another app. See <a href="export.html">Exporting Your Snippets</a>.</li>
 </ul>
 

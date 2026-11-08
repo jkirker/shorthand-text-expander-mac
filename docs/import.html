@@ -14,13 +14,13 @@
 <h2 id="how">To import your snippets</h2>
 <ol class="steps">
 <li>Choose <span class="ui">File ▸ Import Snippets…</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>I</kbd>). This opens the setup window; the import is one of its steps. You can also click <span class="ui">+</span> below the group list and choose <span class="ui">Import Snippets…</span>.</li>
-<li>If Shorthand finds your library, it shows a button for it, such as <span class="ui">Import TextExpander/Settings.textexpander</span>. Click it.</li>
+<li>If Shorthand Expander™ finds your library, it shows a button for it, such as <span class="ui">Import TextExpander/Settings.textexpander</span>. Click it.</li>
 <li>Otherwise click <span class="ui">Choose File…</span> and pick your file or backup folder.</li>
 <li>A green line reports what was imported, e.g. <em>Imported 1042 snippets in 9 groups (9 new, 0 replaced).</em></li>
 <li>Quit TextExpander (or turn off its expansion) so abbreviations don’t expand twice.</li>
 </ol>
 
-<h3 id="where">Where Shorthand looks automatically</h3>
+<h3 id="where">Where Shorthand Expander looks automatically</h3>
 <ul>
 <li><code>~/Dropbox/TextExpander/Settings.textexpander</code></li>
 <li><code>~/Library/Application Support/TextExpander/Settings.textexpander</code></li>
@@ -62,8 +62,8 @@
 <p>Use <span class="ui">Choose File…</span> in the same window and pick the file (or folder) the other app exports. Each import becomes a new group.</p>
 <figure class="shot"><picture><source srcset="img/import-dark.png" media="(prefers-color-scheme: dark)"><img src="img/import.png" width="520" alt="The import step in the Welcome window, listing the apps Shorthand imports from"></picture><figcaption>Choose File… accepts files from all of these apps.</figcaption></figure>
 <table class="wrap">
-<tr><th>App</th><th>What to choose</th><th>What Shorthand converts</th></tr>
-<tr><td>Espanso</td><td>A match file (<code>.yml</code>), or the whole <code>match</code> folder (one group per file). Run <code>espanso path</code> in Terminal to find it.</td><td><code>$|$</code> (cursor), clipboard variables, date variables (with offsets) and forms become Shorthand codes.</td></tr>
+<tr><th>App</th><th>What to choose</th><th>What Shorthand Expander converts</th></tr>
+<tr><td>Espanso</td><td>A match file (<code>.yml</code>), or the whole <code>match</code> folder (one group per file). Run <code>espanso path</code> in Terminal to find it.</td><td><code>$|$</code> (cursor), clipboard variables, date variables (with offsets) and forms become Shorthand Expander codes.</td></tr>
 <tr><td>Raycast</td><td>The <code>.json</code> file from Raycast’s snippet export.</td><td><code>{clipboard}</code>, <code>{cursor}</code>, <code>{date}</code>, <code>{time}</code>, <code>{datetime}</code>, <code>{day}</code> and <code>{argument}</code> (as fill-ins, with options as pop-up menus).</td></tr>
 <tr><td>Alfred</td><td>A <code>.alfredsnippets</code> file (export a snippet collection in Alfred’s preferences).</td><td><code>{clipboard}</code>, <code>{cursor}</code>, dates and times. The collection’s keyword prefix and suffix are added to each abbreviation.</td></tr>
 <tr><td>macOS Text Replacements</td><td>In <span class="ui">System Settings ▸ Keyboard ▸ Text Replacements</span>, select them all and drag them to the desktop. Choose the <code>Text Substitutions.plist</code> file that appears.</td><td>Everything (they’re plain text).</td></tr>
@@ -74,18 +74,18 @@
 <tr><td>Typinator</td><td>In Typinator, export a set as tab-separated text or CSV, then choose that file.</td><td>Dates (with date math), the clipboard, the cursor, Tab and Return, simple input fields, and other abbreviations. Functions, pop-up menus, variables, and scripts stay as text.</td></tr>
 <tr><td>PhraseExpress</td><td>PhraseExpress doesn’t export its library in a format other apps can read. Copy your phrases over by hand, or export them one at a time as text.</td><td>Not available.</td></tr>
 <tr><td>Any other app</td><td>Export as CSV or tab-separated text (see that app’s help), then choose the file.</td><td>The text comes across as is.</td></tr>
-<tr><td>Shorthand</td><td>A <code>.json</code> file from <a href="export.html">File ▸ Export Snippets…</a></td><td>Everything, including tags, types, and app rules.</td></tr>
+<tr><td>Shorthand Expander</td><td>A <code>.json</code> file from <a href="export.html">File ▸ Export Snippets…</a></td><td>Everything, including tags, types, and app rules.</td></tr>
 </table>
 <ul>
-<li><strong>Spreadsheets</strong> can have a header row: Shorthand finds columns named like <em>abbreviation</em>, <em>shortcut</em>, <em>keyword</em>, or <em>trigger</em>, <em>content</em>, <em>snippet</em>, <em>text</em>, or <em>phrase</em>, and <em>label</em> or <em>name</em>. Without a header, the columns are abbreviation, content, label. Quoted fields can span several lines.</li>
-<li>A <code>%</code> sign in snippets from other apps is kept as a percent sign (Shorthand writes it as <code>%%</code>). Spreadsheets are the exception: their text is used as is, so TextExpander-style codes such as <code>%clipboard</code> in a spreadsheet keep working. Typinator spreadsheets follow the first rule.</li>
-<li>Codes with no Shorthand equivalent (for example Espanso shell variables or Raycast’s <code>{uuid}</code>) stay as text. Shorthand tells you how many, so you can find and fix them (search your snippets for the code’s name).</li>
+<li><strong>Spreadsheets</strong> can have a header row: Shorthand Expander finds columns named like <em>abbreviation</em>, <em>shortcut</em>, <em>keyword</em>, or <em>trigger</em>, <em>content</em>, <em>snippet</em>, <em>text</em>, or <em>phrase</em>, and <em>label</em> or <em>name</em>. Without a header, the columns are abbreviation, content, label. Quoted fields can span several lines.</li>
+<li>A <code>%</code> sign in snippets from other apps is kept as a percent sign (Shorthand Expander writes it as <code>%%</code>). Spreadsheets are the exception: their text is used as is, so TextExpander-style codes such as <code>%clipboard</code> in a spreadsheet keep working. Typinator spreadsheets follow the first rule.</li>
+<li>Codes with no Shorthand Expander equivalent (for example Espanso shell variables or Raycast’s <code>{uuid}</code>) stay as text. The app tells you how many, so you can find and fix them (search your snippets for the code’s name).</li>
 </ul>
 
 <h2 id="review-ai">Converting leftover codes with AI</h2>
-<p>When an import keeps some of the other app’s codes as text, and you’ve set up AI, the import window shows <span class="ui">✨ Review Kept Codes with AI…</span>. AI suggests the Shorthand version of each snippet; you tick the ones to use and click <span class="ui">Apply Checked</span> (<kbd>⌘Z</kbd> in the main window undoes it).</p>
+<p>When an import keeps some of the other app’s codes as text, and you’ve set up AI, the import window shows <span class="ui">✨ Review Kept Codes with AI…</span>. AI suggests the Shorthand Expander version of each snippet; you tick the ones to use and click <span class="ui">Apply Checked</span> (<kbd>⌘Z</kbd> in the main window undoes it).</p>
 <ul>
-<li>Shorthand checks every suggestion. One that changes anything besides the codes, adds a script or <code>%ai</code>, or names a snippet you don’t have is ignored.</li>
+<li>Shorthand Expander checks every suggestion. One that changes anything besides the codes, adds a script or <code>%ai</code>, or names a snippet you don’t have is ignored.</li>
 <li>Each snippet’s text is sent to your AI provider, one at a time. A large cloud model does this best.</li>
 </ul>
 

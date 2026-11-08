@@ -9,7 +9,7 @@
 <body>
 <main>
 <h1>Setting Up AI</h1>
-<p class="lead">Shorthand’s AI features are optional. If Apple Intelligence is on, they work with no setup, and nothing leaves your Mac. Or bring your own account with an AI provider; Shorthand talks to it directly.</p>
+<p class="lead">The AI features in Shorthand Expander™ are optional. If Apple Intelligence is on, they work with no setup, and nothing leaves your Mac. Or bring your own account with an AI provider; the app talks to it directly.</p>
 
 <div class="toc"><ul>
 <li><a href="#quick">Quick setup</a></li>
@@ -25,7 +25,7 @@
 
 <h2 id="quick">Quick setup</h2>
 <ol class="steps">
-<li>Open Settings: choose <span class="ui">Shorthand ▸ Settings…</span> (<kbd>⌘</kbd><kbd>,</kbd>), or <span class="ui">Preferences…</span> from the Shorthand menu bar icon.</li>
+<li>Open Settings: choose <span class="ui">Shorthand ▸ Settings…</span> (<kbd>⌘</kbd><kbd>,</kbd>), or <span class="ui">Preferences…</span> from the Shorthand Expander menu bar icon.</li>
 <li>Click the <span class="ui">AI</span> tab.</li>
 <li>Pick a <span class="ui">Provider</span>. Claude (Anthropic) is the default.</li>
 <li>Click the <span class="ui">Get a … key…</span> link, create a key on the provider’s website and copy it.</li>
@@ -37,14 +37,14 @@
 
 <h2 id="providers">Choosing a provider</h2>
 <p><strong>Apple Intelligence (on this Mac)</strong> needs no key and no account, and nothing you send leaves your Mac. It needs macOS 26 or later on an Apple silicon Mac with Apple Intelligence turned on (<span class="ui">System Settings ▸ Apple Intelligence &amp; Siri</span>). It’s fast and private, and best for short jobs such as fixing text, filling in fields, and short replies; it handles about 9,000 characters at a time, so long jobs and tricky ones (like converting another app’s codes) go better with a large cloud model. Choose it as your main provider, or as the fallback.</p>
-<p><strong>No setup needed:</strong> if you haven’t set up a provider and Apple Intelligence is on, Shorthand uses it automatically, and <span class="ui">Settings ▸ AI</span> says so. Once you add a key for another provider, Shorthand uses that one instead.</p>
+<p><strong>No setup needed:</strong> if you haven’t set up a provider and Apple Intelligence is on, Shorthand Expander uses it automatically, and <span class="ui">Settings ▸ AI</span> says so. Once you add a key for another provider, it uses that one instead.</p>
 <h3 id="apple-intelligence-off">If Apple Intelligence is off</h3>
-<p>Shorthand checks whether Apple Intelligence is ready. If it isn’t, <span class="ui">Settings ▸ AI</span> says why and shows the steps, with an <span class="ui">Open System Settings</span> button that goes straight to the right place. AI features show the same message when you try them.</p>
+<p>Shorthand Expander checks whether Apple Intelligence is ready. If it isn’t, <span class="ui">Settings ▸ AI</span> says why and shows the steps, with an <span class="ui">Open System Settings</span> button that goes straight to the right place. AI features show the same message when you try them.</p>
 <ol>
 <li>Open <span class="ui">System Settings ▸ Apple Intelligence &amp; Siri</span>.</li>
 <li>Turn on <span class="ui">Apple Intelligence</span>. If you don’t see the switch, set your Mac’s language and Siri language to a supported one, such as English (United States).</li>
 <li>Wait while your Mac downloads the model. The first time can take a while; keep the Mac plugged in and online.</li>
-<li>Back in Shorthand, click <span class="ui">Check Again</span> in <span class="ui">Settings ▸ AI</span>.</li>
+<li>Back in Shorthand Expander, click <span class="ui">Check Again</span> in <span class="ui">Settings ▸ AI</span>.</li>
 </ol>
 <p>Apple Intelligence needs a Mac with Apple silicon (M1 or later) and macOS 26 or later. On other Macs, choose another provider.</p>
 <p>Pick one in the <span class="ui">Provider</span> menu. Each provider needs its own API key, made on its website:</p>
@@ -71,7 +71,7 @@
 <li>Paste the key into the <span class="ui">API key</span> field.</li>
 <li>Press <kbd>Return</kbd> (you’ll see <strong>Key saved</strong>), or just click <span class="ui">Test key &amp; load models</span>, which saves it too.</li>
 </ol>
-<p>Keys are stored in your Mac’s Keychain, never in Shorthand’s settings files. Once a key is saved, the field shows <strong>•••••• saved – blank keeps it</strong>. To replace it, paste a new one; to delete it, click <span class="ui">Remove key</span>.</p>
+<p>Keys are stored in your Mac’s Keychain, never in the app’s settings files. Once a key is saved, the field shows <strong>•••••• saved – blank keeps it</strong>. To replace it, paste a new one; to delete it, click <span class="ui">Remove key</span>.</p>
 
 <h2 id="models">Choosing a model</h2>
 <p><span class="ui">Test key &amp; load models</span> does two things:</p>
@@ -80,14 +80,14 @@
 <li>It sends a tiny test message to the selected model. The result reads, for example, <strong>✓ Key works with claude-opus-5-5 · 24 models available</strong>, or starts with <strong>✗</strong> and the reason.</li>
 </ol>
 <p>To pick a model, click the small ⇕ button at the end of the <span class="ui">model</span> field and choose from the list. Until you’ve loaded the list, the menu says <em>Click “Test key &amp; load models” to list models</em>.</p>
-<p><strong>Model not in the list?</strong> Type its id straight into the model field, for example a brand-new model or one your provider hides from its list. Shorthand uses whatever you type. The field starts with the provider’s suggested model; replace it with any model id.</p>
+<p><strong>Model not in the list?</strong> Type its id straight into the model field, for example a brand-new model or one your provider hides from its list. Shorthand Expander uses whatever you type. The field starts with the provider’s suggested model; replace it with any model id.</p>
 
 <h2 id="effort">Thinking effort</h2>
 <p>Choose <span class="ui">Low — fastest</span> (the default), <span class="ui">Medium</span> or <span class="ui">High — most careful</span>. Higher effort lets the model think longer before answering: better on tricky rewrites, but slower.</p>
 <p>It is used by Claude and by OpenAI reasoning models. Other providers ignore it.</p>
 
 <h2 id="fallback">Fallback provider</h2>
-<p>A fallback is a second provider Shorthand can use when the first one has a problem.</p>
+<p>A fallback is a second provider Shorthand Expander can use when the first one has a problem.</p>
 <ol class="steps">
 <li>In the <span class="ui">Fallback (optional)</span> section, choose a <span class="ui">Fallback provider</span>.</li>
 <li>Enter its key and model in the rows that appear, and click <span class="ui">Test key &amp; load models</span>.</li>
@@ -121,9 +121,9 @@
 </figure>
 <ul>
 <li><strong>Used when</strong> the main provider fails: a rejected key, an outage, a rate limit, a network problem, or an empty reply.</li>
-<li><strong>Not used when</strong> the model declines a request (a refusal). Shorthand shows the reason and stops; it never shops the same request around to another provider.</li>
+<li><strong>Not used when</strong> the model declines a request (a refusal). Shorthand Expander shows the reason and stops; it never shops the same request around to another provider.</li>
 <li>It is tried <strong>once</strong>. If it also fails, you see both error messages.</li>
-<li>If the main provider has no key at all but the fallback does, Shorthand goes straight to the fallback.</li>
+<li>If the main provider has no key at all but the fallback does, Shorthand Expander goes straight to the fallback.</li>
 </ul>
 
 <h2 id="local">Custom and local providers (Ollama, LM Studio)</h2>
@@ -139,13 +139,13 @@
 <h2 id="privacy">Privacy</h2>
 <ul>
 <li>Nothing is sent until you use an AI feature. Then only the text that feature needs is sent: your selection (AI Actions), the prompt of a <code>%ai</code> snippet with any clipboard text or fill-in values it mentions, or the snippet you ask <span class="ui">Suggest with AI</span> to improve.</li>
-<li>It goes straight from your Mac to the provider you chose, or to the fallback if the main one fails. There is no Shorthand server in between.</li>
+<li>It goes straight from your Mac to the provider you chose, or to the fallback if the main one fails. There is no Shorthand Expander server in between.</li>
 <li>What happens to it next is up to that provider’s terms. With a local model (Ollama, LM Studio), nothing leaves your Mac.</li>
 <li>Your typing in general is never sent to any AI. See <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a>.</li>
 </ul>
 
 <h2 id="keychain">Keychain prompts</h2>
-<p>macOS may ask “Shorthand wants to use your confidential information stored in … in your keychain”. Click <span class="ui">Always Allow</span>. This mainly happens after Shorthand has been rebuilt or updated without a permanent signature (an ad-hoc build): macOS then treats it as a new app and asks once for each saved key.</p>
+<p>macOS may ask “Shorthand wants to use your confidential information stored in … in your keychain”. Click <span class="ui">Always Allow</span>. This mainly happens after the app has been rebuilt or updated without a permanent signature (an ad-hoc build): macOS then treats it as a new app and asks once for each saved key.</p>
 
 <nav class="related">Related: <a href="ai-features.html">AI Features</a> <a href="troubleshooting.html#ai">AI troubleshooting</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a></nav>
 </main>

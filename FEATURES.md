@@ -1,4 +1,4 @@
-# Shorthand — Features & TextExpander Parity
+# Shorthand Expander™ — Features & TextExpander Parity
 
 
 ## 1. Capability inventory
@@ -70,7 +70,7 @@ The full list is in Help › Macro Reference (also in the [help centre](https://
 | Keys & cursor | `%key:name%`, `%|`, `%\` (select to here), arrows `%< %> %^ %v` |
 | Delimiter | `%+` keep, `%-` abandon |
 | Literal | `%%` |
-| **Shorthand-only** | `%calc:expr:decimals%`, `%if:cond%…%else%…%endif%`, `%ai:prompt%` |
+| **Shorthand Expander only** | `%calc:expr:decimals%`, `%if:cond%…%else%…%endif%`, `%ai:prompt%` |
 
 ### Snippet types
 Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA). Scripts run in a separate process with a 10-second timeout.
@@ -166,13 +166,13 @@ Plain text, formatted text (RTF), AppleScript, shell script and JavaScript (JXA)
 
 Legend:
 - ✅ **equal:** the same feature.
-- ➕ **better:** Shorthand does more.
+- ➕ **better:** Shorthand Expander does more.
 - ◐ **partial:** only part of it.
 - ❌ **not supported:** missing.
 
-| TextExpander 5 feature | Shorthand | Notes |
+| TextExpander 5 feature | Shorthand Expander | Notes |
 |---|---|---|
-| Runs natively on Apple Silicon / macOS 28 | ➕ | TE5 is Intel-only (Rosetta). Shorthand is arm64. |
+| Runs natively on Apple Silicon / macOS 28 | ➕ | TE5 is Intel-only (Rosetta). Shorthand Expander is arm64. |
 | Abbreviation expansion, delimiters, expand-immediately | ✅ | |
 | Case sensitive / ignore / adapt | ✅ | |
 | "Expand after" per group | ✅ | |
@@ -200,7 +200,7 @@ Legend:
 | Trash / restore deleted snippets | ➕ | TE5 deletes immediately (backups only). |
 | Tags | ➕ | TE5 has groups only. |
 | Encryption at rest + app lock | ➕ | TE5 stores its library as a plain file. |
-| App/website blocklist | ➕ | TE5 has per-group app exceptions only. Shorthand also blocks websites and stops listening entirely. |
+| App/website blocklist | ➕ | TE5 has per-group app exceptions only. Shorthand Expander also blocks websites and stops listening entirely. |
 | AI (rewrite, generate, suggest) | ➕ | 12 providers with fallback. |
 
 
@@ -212,3 +212,4 @@ Legend:
 - 2026-11-06 (1.7.0): AI features, on-device meaning, Teams, Text Replacements export.
 - 2026-11-06: Licensing.
 - 2026-11-06 (1.7.1/1.7.2): Settings gear in the main window; AI with no setup (Apple Intelligence automatically); Apple Intelligence help; 90-day trial.
+- 2026-11-08: brand name Shorthand Expander (docs/BRAND.md)

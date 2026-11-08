@@ -1,9 +1,14 @@
 # Changelog
 
-> Doc version 1.7.5 · Last updated 2026-11-08
+> Doc version 1.7.6 · Last updated 2026-11-08
 
-All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
+All notable changes to Shorthand Expander™. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.7.6] — 2026-11-08
+
+### Changed
+- **Shorthand Expander™:** the app now uses its official name in the About window, the welcome window, the main window title, the license agreement, and Help.
 
 ## [1.7.5] — 2026-11-08
 

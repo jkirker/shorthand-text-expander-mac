@@ -9,23 +9,23 @@
 <body>
 <main>
 <h1>Privacy, Blocklist &amp; Permissions</h1>
-<p class="lead">A text expander has to see what you type. Here is exactly what Shorthand does with that, where you can switch it off completely, and what it asks macOS for.</p>
+<p class="lead">A text expander has to see what you type. Here is exactly what Shorthand Expander™ does with that, where you can switch it off completely, and what it asks macOS for.</p>
 
 <h2 id="typing">Your typing</h2>
 <ul>
-<li>Shorthand keeps only the last few hundred characters you typed, in memory, to check whether they end with an abbreviation. Clicking, arrow keys, shortcuts, and switching apps clear it.</li>
+<li>Shorthand Expander keeps only the last few hundred characters you typed, in memory, to check whether they end with an abbreviation. Clicking, arrow keys, shortcuts, and switching apps clear it.</li>
 <li>Your typing is never saved to disk, never logged, and never sent anywhere.</li>
-<li>Shorthand has no account, no analytics, and no tracking. It contacts the internet only for the AI features you use.</li>
-<li>While a password field (or another app’s Secure Input) is active, macOS hides keystrokes from Shorthand completely. See <a href="troubleshooting.html#secure-input">Secure Input</a>.</li>
-<li>In apps and on websites you block, Shorthand doesn’t look at your typing at all. See <a href="#blocklist">Blocklist</a>.</li>
+<li>It has no account, no analytics, and no tracking. It contacts the internet only for the AI features you use.</li>
+<li>While a password field (or another app’s Secure Input) is active, macOS hides keystrokes from the app completely. See <a href="troubleshooting.html#secure-input">Secure Input</a>.</li>
+<li>In apps and on websites you block, Shorthand Expander doesn’t look at your typing at all. See <a href="#blocklist">Blocklist</a>.</li>
 </ul>
 
-<h2 id="blocklist">Blocklist: apps and websites where Shorthand stays out</h2>
+<h2 id="blocklist">Blocklist: apps and websites where Shorthand Expander stays out</h2>
 <figure class="shot"><picture><source srcset="img/settings-privacy-dark.png" media="(prefers-color-scheme: dark)"><img src="img/settings-privacy.png" width="680" alt="Settings ▸ Privacy"></picture><figcaption>Settings ▸ Privacy: blocked apps and websites</figcaption></figure>
 <p>Set these up in <span class="ui">Settings ▸ Privacy</span>.</p>
 
 <h3 id="paused">What “paused” means</h3>
-<p>In a blocked app, or on a blocked website, Shorthand is <strong>paused</strong>. Your keystrokes pass straight through, untouched. Nothing is kept in memory, nothing is matched against abbreviations, nothing is counted in statistics and nothing is used for suggestions. Snippets don’t expand there.</p>
+<p>In a blocked app, or on a blocked website, Shorthand Expander is <strong>paused</strong>. Your keystrokes pass straight through, untouched. Nothing is kept in memory, nothing is matched against abbreviations, nothing is counted in statistics and nothing is used for suggestions. Snippets don’t expand there.</p>
 
 <h3 id="blocked-apps">Blocked apps</h3>
 <p>Password managers are blocked from the start: <strong>1Password</strong> (versions 7 and 8), <strong>Bitwarden</strong>, <strong>Keychain Access</strong>, and <strong>Passwords</strong> (macOS 15 and later).</p>
@@ -40,29 +40,29 @@
 <table class="wrap">
 <tr><th>You type</th><th>What’s blocked</th></tr>
 <tr><td><code>chase.com</code></td><td>chase.com and every address ending in .chase.com, such as secure.chase.com.</td></tr>
-<tr><td><code>*.mybank.com</code> or <code>https://www.mybank.com/login</code></td><td>Tidied up to <code>mybank.com</code>, which then works as above. Shorthand drops <code>https://</code>, <code>www.</code>, a leading <code>*.</code>, anything after the first <code>/</code>, and port numbers.</td></tr>
+<tr><td><code>*.mybank.com</code> or <code>https://www.mybank.com/login</code></td><td>Tidied up to <code>mybank.com</code>, which then works as above. The app drops <code>https://</code>, <code>www.</code>, a leading <code>*.</code>, anything after the first <code>/</code>, and port numbers.</td></tr>
 <tr><td><code>bank</code> (a word with no dot)</td><td>Any site whose address contains it: bankofamerica.com, mybank.co.uk, and so on.</td></tr>
 </table>
 <p><span class="ui">Add Common Banking &amp; Finance Sites</span> adds a ready-made list in one click: the word <code>bank</code> (so every address containing “bank”) plus chase.com, wellsfargo.com, bankofamerica.com, citi.com, capitalone.com, usbank.com, americanexpress.com, discover.com, paypal.com, venmo.com, schwab.com, fidelity.com, vanguard.com, irs.gov, and ssa.gov. Remove any you don’t want with <strong>−</strong>.</p>
-<p>Shorthand checks every part of the page, not just its address. Many sites embed a sign-in box from another site (a bank login inside a shopping or bill-payment page, for example). Shorthand pauses if either the page or the embedded box is on your blocklist.</p>
-<p>Shorthand reads page addresses in these browsers: Safari (and Safari Technology Preview), Google Chrome (and its Beta and Canary versions), Arc, Microsoft Edge, Brave, Firefox, Opera, Vivaldi, and Chromium.</p>
-<p>Chrome, Arc, Edge, Brave, Opera, Vivaldi, and Chromium only prepare the accessibility information Shorthand reads when an app asks for it, so Shorthand asks for it. Website blocking has been confirmed working in Arc. The other browsers haven’t been confirmed yet: after you block a site, open it and check that the menu shows <strong>⏸ Paused here:</strong> before relying on it.</p>
+<p>Shorthand Expander checks every part of the page, not just its address. Many sites embed a sign-in box from another site (a bank login inside a shopping or bill-payment page, for example). It pauses if either the page or the embedded box is on your blocklist.</p>
+<p>Shorthand Expander reads page addresses in these browsers: Safari (and Safari Technology Preview), Google Chrome (and its Beta and Canary versions), Arc, Microsoft Edge, Brave, Firefox, Opera, Vivaldi, and Chromium.</p>
+<p>Chrome, Arc, Edge, Brave, Opera, Vivaldi, and Chromium only prepare the accessibility information Shorthand Expander reads when an app asks for it, so it asks for it. Website blocking has been confirmed working in Arc. The other browsers haven’t been confirmed yet: after you block a site, open it and check that the menu shows <strong>⏸ Paused here:</strong> before relying on it.</p>
 
 <h3 id="menu-bar">Blocking and allowing from the menu bar</h3>
-<p>Click the Shorthand icon in the menu bar while you’re in the app or on the page:</p>
+<p>Click the Shorthand Expander icon in the menu bar while you’re in the app or on the page:</p>
 <ul>
 <li><span class="ui">Block Shorthand in <em>App</em></span> blocks the app in front.</li>
-<li><span class="ui">Block Shorthand on <em>site</em></span> blocks the website you’re on. It appears only in a supported browser, once Shorthand has read the page’s address.</li>
-<li>When Shorthand is paused, the menu shows <strong>⏸ Paused here:</strong> and the app or site, for example <strong>⏸ Paused here: 1Password</strong>. If a broader rule caused it, the rule is shown too, such as <strong>mybank.co.uk (rule “bank”)</strong>.</li>
+<li><span class="ui">Block Shorthand on <em>site</em></span> blocks the website you’re on. It appears only in a supported browser, once the app has read the page’s address.</li>
+<li>When Shorthand Expander is paused, the menu shows <strong>⏸ Paused here:</strong> and the app or site, for example <strong>⏸ Paused here: 1Password</strong>. If a broader rule caused it, the rule is shown too, such as <strong>mybank.co.uk (rule “bank”)</strong>.</li>
 <li><span class="ui">Allow Shorthand Here</span> removes the block that applies here.</li>
 </ul>
-<div class="note"><p><span class="ui">Allow Shorthand Here</span> removes the rule that blocks this site. If that rule also covers other sites, for example the word <code>bank</code> or a parent domain, Shorthand names the rule and asks before removing it. Choose <span class="ui">Cancel</span> to keep it.</p></div>
+<div class="note"><p><span class="ui">Allow Shorthand Here</span> removes the rule that blocks this site. If that rule also covers other sites, for example the word <code>bank</code> or a parent domain, Shorthand Expander names the rule and asks before removing it. Choose <span class="ui">Cancel</span> to keep it.</p></div>
 
 <h3 id="new-apps">The first time you use an app</h3>
-<p>The first time an app comes to the front, Shorthand asks <strong>Use Shorthand in <em>App</em>?</strong> with <span class="ui">Allow</span> and <span class="ui">Block</span> buttons.</p>
+<p>The first time an app comes to the front, Shorthand Expander asks <strong>Use Shorthand in <em>App</em>?</strong> with <span class="ui">Allow</span> and <span class="ui">Block</span> buttons.</p>
 <ul>
-<li>While the question is on screen, Shorthand doesn’t listen in that app. The menu bar menu shows <strong>⏸ Paused here: waiting for your answer</strong>.</li>
-<li><span class="ui">Allow</span> lets Shorthand work there as usual. It won’t ask about that app again. Choosing <span class="ui">Allow Shorthand Here</span> from the menu bar menu does the same.</li>
+<li>While the question is on screen, the app doesn’t listen in that app. The menu bar menu shows <strong>⏸ Paused here: waiting for your answer</strong>.</li>
+<li><span class="ui">Allow</span> lets Shorthand Expander work there as usual. It won’t ask about that app again. Choosing <span class="ui">Allow Shorthand Here</span> from the menu bar menu does the same.</li>
 <li>If you don’t answer within about 12 seconds, that counts as <span class="ui">Allow</span>.</li>
 <li><span class="ui">Block</span> adds the app to <strong>Blocked apps</strong>. You can undo that in <span class="ui">Settings ▸ Privacy</span>.</li>
 </ul>
@@ -72,24 +72,24 @@
 
 <h3 id="limits">Limits worth knowing</h3>
 <ul>
-<li><strong>Website blocking depends on the browser.</strong> Shorthand reads the page address through Accessibility, so it works only if the browser makes the address available that way (see the list of browsers <a href="#blocked-sites">above</a>).</li>
-<li><strong>When Shorthand checks the page.</strong> It re-checks within about 0.15 seconds after you click, press <kbd>Return</kbd>, use a <kbd>⌘</kbd> or <kbd>⌃</kbd> shortcut (including switching tabs with <kbd>⌃</kbd><kbd>Tab</kbd> or <kbd>⌘</kbd><kbd>1</kbd>–<kbd>⌘</kbd><kbd>9</kbd>) or switch apps, and checks again in the background every 1.5 seconds. A keystroke typed in the split second before a check finishes may still be seen, though it is only ever held in memory.</li>
+<li><strong>Website blocking depends on the browser.</strong> The app reads the page address through Accessibility, so it works only if the browser makes the address available that way (see the list of browsers <a href="#blocked-sites">above</a>).</li>
+<li><strong>When Shorthand Expander checks the page.</strong> It re-checks within about 0.15 seconds after you click, press <kbd>Return</kbd>, use a <kbd>⌘</kbd> or <kbd>⌃</kbd> shortcut (including switching tabs with <kbd>⌃</kbd><kbd>Tab</kbd> or <kbd>⌘</kbd><kbd>1</kbd>–<kbd>⌘</kbd><kbd>9</kbd>) or switch apps, and checks again in the background every 1.5 seconds. A keystroke typed in the split second before a check finishes may still be seen, though it is only ever held in memory.</li>
 <li><strong>Checks don’t slow your typing.</strong> Page lookups happen in the background, so a slow browser can’t hold up your keystrokes.</li>
 <li><strong>Other browsers aren’t covered.</strong> In a browser not on the list above, blocked websites have no effect. Block the whole browser app instead if you need to.</li>
-<li><strong>Password fields are protected anyway.</strong> macOS hides typing in password fields from every app, Shorthand included, through <a href="troubleshooting.html#secure-input">Secure Input</a>. The blocklist adds protection for everything else on the page.</li>
+<li><strong>Password fields are protected anyway.</strong> macOS hides typing in password fields from every app, Shorthand Expander included, through <a href="troubleshooting.html#secure-input">Secure Input</a>. The blocklist adds protection for everything else on the page.</li>
 </ul>
 
 <h2 id="accessibility">Accessibility permission</h2>
-<p>Shorthand needs <strong>Accessibility</strong> permission to see keystrokes, find your text cursor (to place the fill-in window and search panel), read selected text (for AI Actions and Create Snippet from Selection), and type and paste snippets.</p>
+<p>Shorthand Expander needs <strong>Accessibility</strong> permission to see keystrokes, find your text cursor (to place the fill-in window and search panel), read selected text (for AI Actions and Create Snippet from Selection), and type and paste snippets.</p>
 <ol class="steps">
-<li>Open <span class="ui">System Settings ▸ Privacy &amp; Security ▸ Accessibility</span>, or click <span class="ui">Grant…</span> in Shorthand’s setup window or in <span class="ui">Settings ▸ General ▸ Permissions</span>.</li>
+<li>Open <span class="ui">System Settings ▸ Privacy &amp; Security ▸ Accessibility</span>, or click <span class="ui">Grant…</span> in the setup window or in <span class="ui">Settings ▸ General ▸ Permissions</span>.</li>
 <li>Turn on <strong>Shorthand</strong>.</li>
 </ol>
 <p>The status is shown in <span class="ui">Settings ▸ General ▸ Permissions</span> (green check mark or red ✕). If expansion stops after an update, see <a href="troubleshooting.html#rebuild">re-granting after a rebuild</a>.</p>
-<p>Shorthand may also ask, through macOS, to control other apps when an AppleScript snippet does so, and to use its Keychain items for AI keys.</p>
+<p>Shorthand Expander may also ask, through macOS, to control other apps when an AppleScript snippet does so, and to use its Keychain items for AI keys.</p>
 
 <h2 id="clipboard">The clipboard</h2>
-<p>Shorthand inserts snippets by pasting. It saves what was on your clipboard first and puts it back right after (unless you turn off <span class="ui">Restore clipboard after expansion</span>). The clipboard is read when a snippet uses <code>%clipboard</code> or <code>{clipboard}</code>, and when you create a snippet from the clipboard.</p>
+<p>Shorthand Expander inserts snippets by pasting. It saves what was on your clipboard first and puts it back right after (unless you turn off <span class="ui">Restore clipboard after expansion</span>). The clipboard is read when a snippet uses <code>%clipboard</code> or <code>{clipboard}</code>, and when you create a snippet from the clipboard.</p>
 
 <h2 id="stored">What’s stored on your Mac</h2>
 <table class="wrap">
@@ -106,18 +106,18 @@
 <p>Even with encryption, it’s best not to keep passwords in snippets. A password manager is the right place for them.</p>
 
 <h2 id="suggestions">Suggestions and reminders</h2>
-<p>Both are off by default. When on, repeated phrases are tracked only as one-way fingerprints in memory and forgotten when Shorthand quits; a phrase is saved only once it becomes a suggestion. See <a href="suggestions.html#privacy">Suggestions &amp; Reminders</a>.</p>
+<p>Both are off by default. When on, repeated phrases are tracked only as one-way fingerprints in memory and forgotten when the app quits; a phrase is saved only once it becomes a suggestion. See <a href="suggestions.html#privacy">Suggestions &amp; Reminders</a>.</p>
 
 <h2 id="ai">AI</h2>
-<p>AI runs only when you use an AI feature. If you haven’t set up a provider and Apple Intelligence is on, Shorthand uses Apple Intelligence on your Mac, so nothing leaves it. When you use an AI feature, only the text it needs goes straight to the provider you chose (or your fallback provider). With <strong>Apple Intelligence (on this Mac)</strong>, nothing leaves your Mac. See <a href="ai-features.html#what-is-sent">what each feature sends</a>.</p>
+<p>AI runs only when you use an AI feature. If you haven’t set up a provider and Apple Intelligence is on, Shorthand Expander uses Apple Intelligence on your Mac, so nothing leaves it. When you use an AI feature, only the text it needs goes straight to the provider you chose (or your fallback provider). With <strong>Apple Intelligence (on this Mac)</strong>, nothing leaves your Mac. See <a href="ai-features.html#what-is-sent">what each feature sends</a>.</p>
 <ul>
 <li><strong>Never send to AI:</strong> turn this on for a group (select it in the sidebar) to keep its snippets out of features that use your library: replies from your snippets, translation, and AI assistants. <code>%ai</code> parts inside those snippets still work.</li>
-<li><strong>AI assistants (MCP)</strong> are off until you turn them on, can only read, never see script snippets, <code>%ai</code> snippets, your clipboard, or private groups, and stop while Shorthand is locked.</li>
+<li><strong>AI assistants (MCP)</strong> are off until you turn them on, can only read, never see script snippets, <code>%ai</code> snippets, your clipboard, or private groups, and stop while Shorthand Expander is locked.</li>
 <li><strong>Search by meaning</strong> and <strong>Tune Up</strong> run on your Mac and send nothing.</li>
 </ul>
 
 <h2 id="updates">Update checks</h2>
-<p>When checking for updates, Shorthand downloads a small file (the update feed) from GitHub. It sends no information about you, your Mac, or your snippets. Turn automatic checks off in <span class="ui">Settings ▸ General ▸ Updates</span>.</p>
+<p>When checking for updates, Shorthand Expander downloads a small file (the update feed) from GitHub. It sends no information about you, your Mac, or your snippets. Turn automatic checks off in <span class="ui">Settings ▸ General ▸ Updates</span>.</p>
 
 <h2 id="scripts">Scripts</h2>
 <p>Script snippets run with your permissions. Imported libraries can contain scripts; check them before use, or turn off <span class="ui">Run script snippets (AppleScript, shell, JavaScript)</span>. See <a href="scripts.html">Script Snippets</a>.</p>

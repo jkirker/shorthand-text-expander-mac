@@ -9,7 +9,7 @@
 <body>
 <main>
 <h1>Troubleshooting</h1>
-<p class="lead">Start with the Shorthand menu bar icon: it shows warnings for the most common problems at the top of its menu.</p>
+<p class="lead">Start with the Shorthand Expander™ menu bar icon: it shows warnings for the most common problems at the top of its menu.</p>
 
 <div class="toc"><ul>
 <li><a href="#nothing">Nothing expands at all</a></li>
@@ -22,8 +22,8 @@
 <li><a href="#scripts">Script snippets time out or insert nothing</a></li>
 <li><a href="#ai">AI errors</a></li>
 <li><a href="#library">Library and settings problems</a></li>
-<li><a href="#encrypted-launch">Shorthand asks for a password or recovery key at launch</a></li>
-<li><a href="#locked">Shorthand is locked</a></li>
+<li><a href="#encrypted-launch">Shorthand Expander asks for a password or recovery key at launch</a></li>
+<li><a href="#locked">Shorthand Expander is locked</a></li>
 <li><a href="#lock-paused">Snippets don’t expand: the lock is pausing expansion</a></li>
 <li><a href="#forgot">Forgot my password</a></li>
 </ul></div>
@@ -32,27 +32,27 @@
 <p>Check these in order:</p>
 <ol class="steps">
 <li><strong>Is expansion on?</strong> If the menu bar icon has a small ✕, expansion is off. Choose <span class="ui">Enable Expansion</span> from its menu.</li>
-<li><strong>Does Shorthand have keyboard access?</strong> Open the menu bar menu. <strong>✓ Keyboard access OK</strong> means it does. If you see <strong>⚠︎ No Accessibility access — snippets can’t expand. Fix…</strong> or <strong>⚠︎ Keyboard access blocked by macOS — Fix…</strong>, see <a href="#accessibility">below</a>.</li>
-<li><strong>Is Shorthand locked?</strong> If the menu shows <strong>🔒 Shorthand is locked — Unlock…</strong>, expansion may be paused until you unlock. See <a href="#lock-paused">below</a>.</li>
+<li><strong>Does Shorthand Expander have keyboard access?</strong> Open the menu bar menu. <strong>✓ Keyboard access OK</strong> means it does. If you see <strong>⚠︎ No Accessibility access — snippets can’t expand. Fix…</strong> or <strong>⚠︎ Keyboard access blocked by macOS — Fix…</strong>, see <a href="#accessibility">below</a>.</li>
+<li><strong>Is Shorthand Expander locked?</strong> If the menu shows <strong>🔒 Shorthand is locked — Unlock…</strong>, expansion may be paused until you unlock. See <a href="#lock-paused">below</a>.</li>
 <li><strong>Is Secure Input on?</strong> A warning triangle as the menu bar icon means another app is blocking all text expanders. See <a href="#secure-input">Secure Input</a>.</li>
-<li><strong>Is Shorthand paused in this app or website?</strong> If the menu shows <strong>⏸ Paused here: …</strong>, it’s on your blocklist, or (<strong>⏸ Paused here: waiting for your answer</strong>) Shorthand is waiting for you to answer “Use Shorthand in …?”. See <a href="#one-app">below</a>.</li>
-<li><strong>Are you typing in a Shorthand window?</strong> Abbreviations never expand inside Shorthand’s own windows (so you can type them in the editor), or in its search and AI Actions panels. Try TextEdit.</li>
+<li><strong>Is Shorthand Expander paused in this app or website?</strong> If the menu shows <strong>⏸ Paused here: …</strong>, it’s on your blocklist, or (<strong>⏸ Paused here: waiting for your answer</strong>) Shorthand Expander is waiting for you to answer “Use Shorthand in …?”. See <a href="#one-app">below</a>.</li>
+<li><strong>Are you typing in a Shorthand Expander window?</strong> Abbreviations never expand inside the app’s own windows (so you can type them in the editor), or in its search and AI Actions panels. Try TextEdit.</li>
 <li><strong>Did you type the delimiter?</strong> By default an abbreviation expands when you type a space, Tab, Return, or Escape after it. See <a href="expansion.html#delimiters">Delimiters</a>.</li>
 </ol>
 
 <h2 id="accessibility">Accessibility permission</h2>
-<p>macOS must allow Shorthand to see your keystrokes, or it can’t notice abbreviations.</p>
+<p>macOS must allow Shorthand Expander to see your keystrokes, or it can’t notice abbreviations.</p>
 <ol class="steps">
-<li>Open <span class="ui">System Settings ▸ Privacy &amp; Security ▸ Accessibility</span>. (Shorthand’s <span class="ui">Grant…</span> button in <span class="ui">Settings ▸ General ▸ Permissions</span> opens it for you.)</li>
+<li>Open <span class="ui">System Settings ▸ Privacy &amp; Security ▸ Accessibility</span>. (The <span class="ui">Grant…</span> button in <span class="ui">Settings ▸ General ▸ Permissions</span> opens it for you.)</li>
 <li>Turn on the switch next to <strong>Shorthand</strong>.</li>
 </ol>
-<p>Turning the switch off while Shorthand is running is safe: Shorthand stops its keyboard monitor right away. (Before 1.5.4, doing this could freeze typing and clicking until Shorthand was quit. If you see that on an older version, update.)</p>
+<p>Turning the switch off while Shorthand Expander is running is safe: the app stops its keyboard monitor right away. (Before 1.5.4, doing this could freeze typing and clicking until the app was quit. If you see that on an older version, update.)</p>
 
 <h3 id="rebuild">The switch is on, but snippets still don’t expand</h3>
-<p>macOS is remembering an older copy of Shorthand, for example from before an update or rebuild. The switch looks on, but it belongs to the old copy.</p>
+<p>macOS is remembering an older copy of Shorthand Expander, for example from before an update or rebuild. The switch looks on, but it belongs to the old copy.</p>
 <ol class="steps">
-<li>Click the Shorthand menu bar icon and choose the <strong>⚠︎ … Fix…</strong> item. Or use <span class="ui">Settings ▸ General ▸ Permissions ▸ Reset Permission &amp; Ask Again</span>.</li>
-<li>Shorthand clears its old permission entries, asks macOS again, and opens <span class="ui">Accessibility</span> settings.</li>
+<li>Click the Shorthand Expander menu bar icon and choose the <strong>⚠︎ … Fix…</strong> item. Or use <span class="ui">Settings ▸ General ▸ Permissions ▸ Reset Permission &amp; Ask Again</span>.</li>
+<li>Shorthand Expander clears its old permission entries, asks macOS again, and opens <span class="ui">Accessibility</span> settings.</li>
 <li>Switch <strong>Shorthand</strong> on. Within about two seconds the menu shows <strong>✓ Keyboard access OK</strong>. You don’t need to restart.</li>
 </ol>
 <p><span class="ui">Settings ▸ General ▸ Permissions</span> shows what macOS actually reports: <em>Accessibility (macOS)</em> and <em>Keyboard monitor running</em> should both be green. <span class="ui">Show Diagnostics Log</span> reveals a small log of these changes. The log never contains anything you type.</p>
@@ -76,10 +76,10 @@
 </ol>
 
 <h2 id="one-app">Snippets don’t expand in one app or website</h2>
-<p><strong>First, check whether Shorthand is paused there.</strong> Click the Shorthand icon in the menu bar while you’re in that app or on that page. If it shows <strong>⏸ Paused here: …</strong>, the app or website is on your <a href="privacy.html#blocklist">blocklist</a> (password managers are blocked from the start). Choose <span class="ui">Allow Shorthand Here</span> to let snippets work there again, or edit the lists in <span class="ui">Settings ▸ Privacy</span>.</p>
-<p>If it says <strong>⏸ Paused here: waiting for your answer</strong>, the app is new to Shorthand and the question “Use Shorthand in …?” is on screen. Click <span class="ui">Allow</span> (or choose <span class="ui">Allow Shorthand Here</span>); if you don’t answer, Shorthand allows it after about 12 seconds. See <a href="privacy.html#new-apps">The first time you use an app</a>.</p>
-<p>On a website you haven’t blocked, check whether the page includes a sign-in box from a blocked site (a bank login, for example). Shorthand checks every part of the page, so that also pauses it.</p>
-<p>If it isn’t paused, Shorthand checks app rules in this order: the snippet’s own <span class="ui">Expand in</span> setting, then its group’s, then the default in <span class="ui">Settings ▸ Expansion ▸ Expand snippet groups in</span>.</p>
+<p><strong>First, check whether Shorthand Expander is paused there.</strong> Click the Shorthand Expander icon in the menu bar while you’re in that app or on that page. If it shows <strong>⏸ Paused here: …</strong>, the app or website is on your <a href="privacy.html#blocklist">blocklist</a> (password managers are blocked from the start). Choose <span class="ui">Allow Shorthand Here</span> to let snippets work there again, or edit the lists in <span class="ui">Settings ▸ Privacy</span>.</p>
+<p>If it says <strong>⏸ Paused here: waiting for your answer</strong>, the app is new to Shorthand Expander and the question “Use Shorthand in …?” is on screen. Click <span class="ui">Allow</span> (or choose <span class="ui">Allow Shorthand Here</span>); if you don’t answer, the app allows it after about 12 seconds. See <a href="privacy.html#new-apps">The first time you use an app</a>.</p>
+<p>On a website you haven’t blocked, check whether the page includes a sign-in box from a blocked site (a bank login, for example). Shorthand Expander checks every part of the page, so that also pauses it.</p>
+<p>If it isn’t paused, Shorthand Expander checks app rules in this order: the snippet’s own <span class="ui">Expand in</span> setting, then its group’s, then the default in <span class="ui">Settings ▸ Expansion ▸ Expand snippet groups in</span>.</p>
 <ol class="steps">
 <li>Select the snippet. Is <span class="ui">Expand in</span> set to <span class="ui">No Applications</span>, or to <span class="ui">Only These Applications…</span> without that app?</li>
 <li>Select the snippet’s group. Check its <span class="ui">Expand in</span> setting the same way, and make sure <span class="ui">Enabled</span> is on.</li>
@@ -94,13 +94,13 @@
 <li><strong>Case:</strong> with <span class="ui">Case Sensitive</span>, <code>Sig</code> won’t trigger <code>sig</code>. Try <span class="ui">Ignore Case</span>.</li>
 <li><strong>What’s before it:</strong> the group’s <span class="ui">Expand after</span> rule may require a space before the abbreviation. If you type it straight after a letter, choose <span class="ui">All characters</span>. See <a href="expansion.html#expand-after">Expand after</a>.</li>
 <li><strong>Conflicts:</strong> an abbreviation shown in orange is the start of another abbreviation (e.g. <code>addr</code> and <code>addr2</code>). With <span class="ui">Immediately when typed</span> the shorter one always wins. Rename one, or use a delimiter mode.</li>
-<li><strong>You clicked or used arrow keys</strong> while typing the abbreviation. That resets what Shorthand has seen; retype it in one go.</li>
+<li><strong>You clicked or used arrow keys</strong> while typing the abbreviation. That resets what Shorthand Expander has seen; retype it in one go.</li>
 </ul>
 
 <h2 id="output">The expanded text looks wrong</h2>
 <dl>
 <dt>Your clipboard changes after expanding</dt>
-<dd>Shorthand pastes snippets and then puts your clipboard back. If a slow app pastes the old clipboard, raise <span class="ui">Restore delay</span> in <span class="ui">Settings ▸ Expansion</span> (default 0.40 s).</dd>
+<dd>Shorthand Expander pastes snippets and then puts your clipboard back. If a slow app pastes the old clipboard, raise <span class="ui">Restore delay</span> in <span class="ui">Settings ▸ Expansion</span> (default 0.40 s).</dd>
 <dt>Formatting is lost or odd in a web app such as Gmail</dt>
 <dd>Turn on <span class="ui">Include HTML for formatted snippets (web apps like Gmail)</span> in <span class="ui">Settings ▸ Expansion</span>. Turn it off if an app pastes stray styling.</dd>
 <dt>A <code>%</code> code is typed literally</dt>
@@ -136,46 +136,46 @@
 <tr><td>Two messages joined by “Fallback:”</td><td>The main provider failed, the fallback was tried once, and it failed too. The first message is the main provider’s, the second the fallback’s.</td></tr>
 <tr><td>Select some text first, then press the AI Actions hotkey.</td><td>AI Actions works on selected text. Select it, then press <kbd>⌃</kbd><kbd>⌥</kbd><kbd>A</kbd>.</td></tr>
 </table>
-<p>If a <code>%ai</code> snippet fails, Shorthand types your abbreviation back so nothing is lost.</p>
-<div class="note"><p>If a model rejects one of Shorthand’s optional request settings, Shorthand automatically retries once with a simpler request to the same provider. That retry is not the fallback.</p></div>
+<p>If a <code>%ai</code> snippet fails, Shorthand Expander types your abbreviation back so nothing is lost.</p>
+<div class="note"><p>If a model rejects one of the app’s optional request settings, Shorthand Expander automatically retries once with a simpler request to the same provider. That retry is not the fallback.</p></div>
 
 <h2 id="library">Library and settings problems</h2>
 <ul>
 <li><strong>“Shorthand couldn’t read your snippet library.”</strong> The damaged file was moved aside (nothing deleted). Restore a backup: <span class="ui">Settings ▸ General ▸ Backup ▸ Restore…</span>. See <a href="sync.html#restore">Restore</a>.</li>
 <li><strong>Deleted something by mistake?</strong> Press <kbd>⌘</kbd><kbd>Z</kbd> in the main window or click <span class="ui">Undo</span> in the notice that appears, or select <strong>Trash</strong> in the main window’s sidebar and click <span class="ui">Put Back</span>. See <a href="organize.html#trash">The Trash</a>. If it has already left the Trash, restore a backup.</li>
 <li><strong>macOS keeps asking for Keychain access.</strong> See <a href="ai-setup.html#keychain">Keychain prompts</a>.</li>
-<li><strong>“Library updated by an older Shorthand on another Mac.”</strong> Another Mac sharing your sync folder is still on Shorthand 1.2. Your Trash and tags were kept; update Shorthand on that Mac. See <a href="sync.html#older-version">Sync</a>.</li>
-<li><strong>The menu bar icon is missing.</strong> Open Shorthand from Applications (this opens the main window), then turn on <span class="ui">Show Shorthand in menu bar</span> in <span class="ui">Settings ▸ General</span>.</li>
+<li><strong>“Library updated by an older Shorthand on another Mac.”</strong> Another Mac sharing your sync folder is still on Shorthand 1.2. Your Trash and tags were kept; update Shorthand Expander on that Mac. See <a href="sync.html#older-version">Sync</a>.</li>
+<li><strong>The menu bar icon is missing.</strong> Open Shorthand Expander from Applications (this opens the main window), then turn on <span class="ui">Show Shorthand in menu bar</span> in <span class="ui">Settings ▸ General</span>.</li>
 </ul>
 
-<h2 id="encrypted-launch">Shorthand asks for a password or recovery key at launch</h2>
+<h2 id="encrypted-launch">Shorthand Expander asks for a password or recovery key at launch</h2>
 <p>The window says <strong>Your snippets are encrypted</strong> and asks for your Shorthand password or recovery key. Your files are encrypted, but this Mac doesn’t have the key in its Keychain: for example, it’s a new Mac, or the Keychain was reset.</p>
 <ol class="steps">
 <li>Type your Shorthand password or your recovery key in <span class="ui">Password or recovery key</span>.</li>
 <li>Click <span class="ui">Unlock</span>.</li>
 </ol>
-<p>It’s needed once: Shorthand keeps the key on this Mac from then on. Until you unlock, Shorthand doesn’t save or back up anything and snippets don’t expand, so nothing is overwritten. If it says <strong>That isn’t right. Try again.</strong>, check the password, or use the recovery key instead. See <a href="#forgot">Forgot my password</a> and <a href="security.html#sync">Syncing between Macs</a>.</p>
+<p>It’s needed once: Shorthand Expander keeps the key on this Mac from then on. Until you unlock, it doesn’t save or back up anything and snippets don’t expand, so nothing is overwritten. If it says <strong>That isn’t right. Try again.</strong>, check the password, or use the recovery key instead. See <a href="#forgot">Forgot my password</a> and <a href="security.html#sync">Syncing between Macs</a>.</p>
 
-<h2 id="locked">Shorthand is locked</h2>
-<p>If the menu bar menu shows <strong>🔒 Shorthand is locked — Unlock…</strong> instead of your snippets, the <a href="security.html#lock">app lock</a> is on. Choose that item, or open any Shorthand window, and unlock with Touch ID, your Apple Watch, or your password. Shorthand locks again when the Mac sleeps or the screen locks, or as set in <span class="ui">Settings ▸ Security ▸ Lock again</span>. To stop locking, turn off <span class="ui">Require unlock to open Shorthand</span> there.</p>
+<h2 id="locked">Shorthand Expander is locked</h2>
+<p>If the menu bar menu shows <strong>🔒 Shorthand is locked — Unlock…</strong> instead of your snippets, the <a href="security.html#lock">app lock</a> is on. Choose that item, or open any Shorthand Expander window, and unlock with Touch ID, your Apple Watch, or your password. The app locks again when the Mac sleeps or the screen locks, or as set in <span class="ui">Settings ▸ Security ▸ Lock again</span>. To stop locking, turn off <span class="ui">Require unlock to open Shorthand</span> there.</p>
 <p>Help never locks, so you can keep reading.</p>
 
 <h2 id="lock-paused">Snippets don’t expand: the lock is pausing expansion</h2>
-<p>With <span class="ui">Pause expansion while locked</span> on, nothing expands while Shorthand is locked. At login a bubble says <strong>Shorthand is locked. Snippets expand after you unlock.</strong></p>
+<p>With <span class="ui">Pause expansion while locked</span> on, nothing expands while Shorthand Expander is locked. At login a bubble says <strong>Shorthand is locked. Snippets expand after you unlock.</strong></p>
 <ul>
 <li>Click <span class="ui">Unlock…</span> in the bubble, or choose <strong>🔒 Shorthand is locked — Unlock…</strong> from the menu bar icon, and unlock.</li>
-<li>To keep snippets expanding while Shorthand is locked, turn off <span class="ui">Pause expansion while locked</span> in <span class="ui">Settings ▸ Security</span>.</li>
+<li>To keep snippets expanding while Shorthand Expander is locked, turn off <span class="ui">Pause expansion while locked</span> in <span class="ui">Settings ▸ Security</span>.</li>
 </ul>
-<p>Snippets also don’t expand while Shorthand is waiting for your password or recovery key (see <a href="#encrypted-launch">above</a>), or after another Mac encrypted your synced library, until you click <span class="ui">Unlock…</span> in the bubble that appears.</p>
+<p>Snippets also don’t expand while Shorthand Expander is waiting for your password or recovery key (see <a href="#encrypted-launch">above</a>), or after another Mac encrypted your synced library, until you click <span class="ui">Unlock…</span> in the bubble that appears.</p>
 
 <h2 id="forgot">Forgot my password</h2>
 <ul>
-<li>Type your <strong>recovery key</strong> wherever Shorthand asks for your Shorthand password.</li>
-<li>If Shorthand still opens on this Mac, click <span class="ui">Remove Password…</span> in <span class="ui">Settings ▸ Security</span>, then <span class="ui">Set a Shorthand Password…</span>.</li>
+<li>Type your <strong>recovery key</strong> wherever Shorthand Expander asks for your Shorthand password.</li>
+<li>If Shorthand Expander still opens on this Mac, click <span class="ui">Remove Password…</span> in <span class="ui">Settings ▸ Security</span>, then <span class="ui">Set a Shorthand Password…</span>.</li>
 </ul>
 <p>Without the password or the recovery key, encrypted files can’t be opened on a Mac that doesn’t already have the key. See <a href="security.html#forgot">Forgot your password?</a></p>
 
-<nav class="related">Related: <a href="security.html">Security &amp; Encryption</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a> <a href="expansion.html">Abbreviations &amp; Expansion</a> <a href="support.html">Support Shorthand</a></nav>
+<nav class="related">Related: <a href="security.html">Security &amp; Encryption</a> <a href="privacy.html">Privacy, Blocklist &amp; Permissions</a> <a href="expansion.html">Abbreviations &amp; Expansion</a> <a href="support.html">Support Shorthand Expander</a></nav>
 </main>
 </body>
 </html>

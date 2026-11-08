@@ -1,11 +1,11 @@
-# Shorthand — Security Design (encryption at rest + app lock)
+# Shorthand Expander™ — Security Design (encryption at rest + app lock)
 
 
 ![Encryption keys](images/encryption-keys.svg)
 
 ## 1. Goals
-- Snippets, settings and backups are unreadable outside Shorthand: by other apps, in copied files, on sync servers.
-- Opening Shorthand can require Touch ID, Apple Watch, or a Mac or Shorthand password.
+- Snippets, settings and backups are unreadable outside Shorthand Expander: by other apps, in copied files, on sync servers.
+- Opening the app can require Touch ID, Apple Watch, or a Mac or Shorthand password.
 - Never lose data: an encrypted file this Mac can't open is **locked**, never "damaged".
 - Everything is optional, and offered once ("Protect Shorthand?").
 
@@ -15,8 +15,8 @@
 | Synced copy read on Dropbox's or iCloud's servers, or in a leaked account | Yes | AES-256-GCM. The key never leaves the Mac except wrapped in slots. |
 | Other apps or tools reading files in `~/Library/Application Support/Shorthand` | Yes (encryption on) | Same |
 | Copied or stolen backups | Yes | Backups are encrypted too |
-| Someone at your unlocked Mac opening Shorthand | Yes (app lock on) | LocalAuthentication gate; windows close on relock |
-| Malware already running as you while Shorthand is unlocked | **No** | Snippets must be readable in memory to expand. No text expander can prevent this. |
+| Someone at your unlocked Mac opening the app | Yes (app lock on) | LocalAuthentication gate; windows close on relock |
+| Malware already running as you while the app is unlocked | **No** | Snippets must be readable in memory to expand. No text expander can prevent this. |
 | Stolen, powered-off Mac | Already covered | FileVault (on for this user) |
 | Forgotten password **and** lost recovery key | **Unrecoverable by design** | Nobody can open the files, including the developer |
 
@@ -34,7 +34,7 @@
   - The code is 128+ random bits encoded as 26 characters from a 32-symbol alphabet with no 0/O/1/I, shown as `XXXX-XXXX-…`.
   - The key is derived with HKDF-SHA256 (16-byte salt, info `shorthand-recovery-v1`); the code's high entropy makes slow stretching unnecessary.
   - Input is normalized to uppercase with dashes and spaces removed.
-- **Keychain:** a generic password, service `com.kirker.shorthand`, account `vault-key-<keyID>`, created by Shorthand's Developer ID signature. Other apps get a macOS prompt.
+- **Keychain:** a generic password, service `com.kirker.shorthand`, account `vault-key-<keyID>`, created by the app's Developer ID signature. Other apps get a macOS prompt.
 
 ## 4. File formats
 - **Encrypted file:** `{"format":"shorthand-encrypted","version":1,"keyID":…,"slots":[…],"box":…}`. Schema: [encrypted-envelope.schema.json](schemas/encrypted-envelope.schema.json). Every encrypted file carries the slots, so a synced library can be opened on another Mac.
@@ -99,7 +99,7 @@ Sparkle installs an update only if it carries a valid EdDSA signature from the d
 File ▸ Export Snippets… always writes plain files, even when the library is encrypted; the window says so. Uninstall's "delete everything" now points to it for keeping a copy.
 
 ## 8c. Input safety (1.5.4)
-Shorthand's keyboard monitor is an active event tap. If its Accessibility access is removed while it runs, macOS can
+The app's keyboard monitor is an active event tap. If its Accessibility access is removed while it runs, macOS can
 stall typing and clicks for the whole session. Since 1.5.4 the tap is removed within a fraction of a second of access
 going away, and "Reset Permission & Ask Again" stops it before resetting. See ARCHITECTURE §3 and PROCESS-FLOWS §12.
 
@@ -153,11 +153,11 @@ injected into one, uses the connection to read private text or run code.
   Intelligence as primary and a cloud fallback, the notice is shown, because a failed on-device request goes to the
   cloud fallback. (In 1.7.1 the check was `onDeviceFirst`, which skipped the notice in that case; fixed in 1.7.2.)
 - "Open System Settings" (Apple Intelligence help) only opens System Settings ▸ Apple Intelligence & Siri through the
-  `x-apple.systempreferences:` URL; Shorthand changes no system setting.
+  `x-apple.systempreferences:` URL; Shorthand Expander changes no system setting.
 
 ## 9. Known limits
-- **Mixed versions while syncing:** Shorthand 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
-- Retired keys stay in the Keychain so older files remain readable. Removing Shorthand's Keychain items in Keychain Access deletes them.
+- **Mixed versions while syncing:** Shorthand Expander 1.3 or older can't read an encrypted synced library. It treats it as damaged, sets it aside and saves a starter library, which a 1.4 Mac then loads. Recoverable from the set-aside file or backups. Turning encryption on with a sync folder therefore first asks you to confirm every Mac is on 1.4+.
+- Retired keys stay in the Keychain so older files remain readable. Removing the app's Keychain items in Keychain Access deletes them.
 - A separate Shorthand password protects the app lock and other Macs. On this Mac, the data key is still opened automatically from the Keychain, so expansion can work without a prompt.
 
 ## Doc history
@@ -166,3 +166,4 @@ injected into one, uses the connection to read private text or run code.
 - 2026-11-05 (1.6.1): §8d import hardening (secure decoding, LZ4 cap, stress tests).
 - 2026-11-06: §8f licensing.
 - 2026-11-06 (1.7.1/1.7.2): §8g AI provider choice and privacy (Apple Intelligence automatically, library notice); 90-day trial in §8f; header version fixed (was still 1.6.1).
+- 2026-11-08: brand name Shorthand Expander (docs/BRAND.md)

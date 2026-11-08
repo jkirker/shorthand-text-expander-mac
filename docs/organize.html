@@ -130,7 +130,7 @@
 <ul>
 <li>Click a tag to list every snippet with that tag, from any group. Select several tags (or tags and groups) to list them all together.</li>
 <li>With a tag selected, <span class="ui">New Snippet</span> creates a snippet that already has that tag.</li>
-<li>Right-click a tag for <span class="ui">Rename Tag…</span>, <span class="ui">Color</span>, <span class="ui">Delete Tag</span>, and <span class="ui">Tag Manager…</span>. If you rename it to a tag that’s already in use, Shorthand asks before merging the two.</li>
+<li>Right-click a tag for <span class="ui">Rename Tag…</span>, <span class="ui">Color</span>, <span class="ui">Delete Tag</span>, and <span class="ui">Tag Manager…</span>. If you rename it to a tag that’s already in use, Shorthand Expander™ asks before merging the two.</li>
 </ul>
 
 <h3 id="filter">Filtering by tag</h3>
@@ -141,7 +141,7 @@
 <figure class="shot"><picture><source srcset="img/tag-manager-dark.png" media="(prefers-color-scheme: dark)"><img src="img/tag-manager.png" width="480" alt="The Tag Manager"></picture><figcaption>The Tag Manager: color, name, and snippet count for each tag</figcaption></figure>
 <p>Open it with <span class="ui">Window ▸ Tag Manager</span> (<kbd>⇧</kbd><kbd>⌘</kbd><kbd>T</kbd>), the tag button in the main window’s toolbar, or the small slider button next to the <strong>Tags</strong> heading in the sidebar. It lists every tag with its color and the number of snippets that use it.</p>
 <ul>
-<li><strong>Rename:</strong> double-click a name, type the new one, and press <kbd>Return</kbd>. If you rename a tag to the name of a tag that already exists or is already on some snippets, Shorthand asks whether to merge them: every snippet with the old tag gets the other tag instead.</li>
+<li><strong>Rename:</strong> double-click a name, type the new one, and press <kbd>Return</kbd>. If you rename a tag to the name of a tag that already exists or is already on some snippets, Shorthand Expander asks whether to merge them: every snippet with the old tag gets the other tag instead.</li>
 <li><strong>Color:</strong> click the colored dot and choose a color (Red, Orange, Yellow, Green, Mint, Teal, Blue, Indigo, Purple, Pink, or Gray).</li>
 <li><strong>Merge several:</strong> select two or more tags (<kbd>⌘</kbd>-click), click <span class="ui">Merge…</span> and type the name to keep.</li>
 <li><strong>Delete:</strong> select tags and click <span class="ui">Delete</span>. The tag is removed from every snippet; the snippets themselves are kept.</li>
@@ -154,7 +154,7 @@
 <figure class="shot"><picture><source srcset="img/trash-dark.png" media="(prefers-color-scheme: dark)"><img src="img/trash.png" width="1100" alt="The Trash, with how long each item has left"></picture><figcaption>The Trash, with how long each item has left</figcaption></figure>
 <p>Click <strong>Trash</strong> to see what’s in it, newest first. Each item shows when it was deleted, which group it came from, and how long it has left, for example “Deleted 2 days ago from Email · 28 days left”. Select an item to see its content.</p>
 <dl>
-<dt><span class="ui">Put Back</span></dt><dd>Returns the item to the group it came from. If that group has since been deleted, the item goes to a group with the same name, and if there isn’t one, Shorthand creates it. A deleted group comes back as a whole group. Use the button below the list, the button in the right-hand pane, or right-click.</dd>
+<dt><span class="ui">Put Back</span></dt><dd>Returns the item to the group it came from. If that group has since been deleted, the item goes to a group with the same name, and if there isn’t one, Shorthand Expander creates it. A deleted group comes back as a whole group. Use the button below the list, the button in the right-hand pane, or right-click.</dd>
 <dt><span class="ui">Delete Immediately</span></dt><dd>Right-click an item to remove it for good.</dd>
 <dt><span class="ui">Empty Trash…</span></dt><dd>Removes everything in the Trash, after asking. It’s below the Trash list, in the Trash’s right-click menu in the sidebar, and in <span class="ui">Settings ▸ General ▸ Trash</span>.</dd>
 </dl>
@@ -167,7 +167,7 @@
 <li>Under <strong>Trash</strong>, choose <span class="ui">Delete items in the Trash after</span>: <span class="ui">7 days</span>, <span class="ui">14 days</span>, <span class="ui">30 days</span>, <span class="ui">60 days</span>, <span class="ui">90 days</span>, or <span class="ui">Never (empty it yourself)</span>.</li>
 </ol>
 <p>The same section shows how many items are in the Trash.</p>
-<div class="note"><p>Deleting a suggestion from the <em>Suggested Snippets</em> group doesn’t go to the Trash: it tells Shorthand not to suggest that phrase again. See <a href="suggestions.html#dismiss">Suggestions</a>.</p></div>
+<div class="note"><p>Deleting a suggestion from the <em>Suggested Snippets</em> group doesn’t go to the Trash: it tells Shorthand Expander not to suggest that phrase again. See <a href="suggestions.html#dismiss">Suggestions</a>.</p></div>
 <div class="tip"><p>Even after the Trash is emptied, your <a href="sync.html#backups">automatic backups</a> still have older copies of your library.</p></div>
 
 <h2 id="undo">Undoing changes</h2>
@@ -180,7 +180,7 @@
 <li>enabling and disabling groups from the right-click menu;</li>
 <li>merging groups.</li>
 </ul>
-<p>Shorthand remembers up to 50 steps.</p>
+<p>Shorthand Expander remembers up to 50 steps.</p>
 <div class="note"><p>Text you type in the snippet editor has its own undo: while you’re typing there, <kbd>⌘</kbd><kbd>Z</kbd> undoes your typing. Click in the snippet list or the sidebar first to undo library changes.</p></div>
 <p>The undo history starts again when you edit a snippet’s text or a group’s settings, create a snippet or group, reorder groups, import snippets, restore a backup, switch the sync folder, or when the library reloads from your sync folder. <kbd>⌘</kbd><kbd>Z</kbd> never rolls those back; for them, use the <a href="#trash">Trash</a> or a <a href="sync.html#restore">backup</a>.</p>
 
