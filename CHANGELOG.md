@@ -1,9 +1,22 @@
 # Changelog
 
-> Doc version 1.7.6 · Last updated 2026-11-08
+> Doc version 1.7.7 · Last updated 2026-11-08
 
 All notable changes to Shorthand Expander™. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.7.7] — Unreleased
+
+### Added
+- **Privacy policy link:** Help ▸ Privacy Policy and Settings ▸ Privacy open the privacy policy.
+- **One copy at a time:** if another copy of Shorthand Expander is already running, a new one says where the other copy is and quits, so abbreviations never expand twice.
+
+### Changed
+- **Window placement:** when the text cursor's position can't be found, fill-in, inline search, and AI Actions windows (and the message bubble) open centered on the screen with the mouse pointer.
+
+### Changed
+- **Permission walkthrough:** the welcome window now asks for Input Monitoring first, then Accessibility. Each step says why Shorthand needs it, opens the right pane of System Settings, and shows whether it's allowed yet.
+- **Sync and team folders:** Shorthand remembers the folder itself, not just its path, so it keeps working if you rename or move the folder.
 
 ## [1.7.6] — 2026-11-08
 
