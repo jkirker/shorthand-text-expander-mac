@@ -1,11 +1,17 @@
 # Changelog
 
-> Doc version 1.7.7 · Last updated 2026-11-08
+> Doc version 1.7.8 · Last updated 2026-11-08
 
 All notable changes to Shorthand Expander™. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
 
-## [1.7.7] — Unreleased
+## [1.7.8] — Unreleased
+
+### Changed
+- **Wider abbreviation field:** in the snippet editor the Abbreviation field now spans the full width, with the case menu below it, so long abbreviations stay readable. The field in the New Snippet window is wider too.
+- **When Pro stops:** the message says why: a license that ran out (with the date it ended and how to renew) or a free trial that has ended. It used to say only that Pro was paused.
+
+## [1.7.7] — 2026-11-08
 
 ### Added
 - **Privacy policy link:** Help ▸ Privacy Policy and Settings ▸ Privacy open the privacy policy.
@@ -13,8 +19,6 @@ Dates are local (Pacific).
 
 ### Changed
 - **Window placement:** when the text cursor's position can't be found, fill-in, inline search, and AI Actions windows (and the message bubble) open centered on the screen with the mouse pointer.
-
-### Changed
 - **Permission walkthrough:** the welcome window now asks for Input Monitoring first, then Accessibility. Each step says why Shorthand needs it, opens the right pane of System Settings, and shows whether it's allowed yet.
 - **Sync and team folders:** Shorthand remembers the folder itself, not just its path, so it keeps working if you rename or move the folder.
 
