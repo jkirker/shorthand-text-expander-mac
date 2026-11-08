@@ -1,9 +1,13 @@
 # Changelog
 
-> Doc version 1.7.4 · Last updated 2026-11-08
+> Doc version 1.7.5 · Last updated 2026-11-08
 
 All notable changes to Shorthand. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
+
+## [1.7.5] — 2026-11-08
+
+### Added
 
 ## [1.7.4] — 2026-11-08
 
