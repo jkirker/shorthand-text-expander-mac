@@ -1,11 +1,26 @@
 # Changelog
 
-> Doc version 1.7.8 · Last updated 2026-11-08
+> Doc version 1.7.9 · Last updated 2026-11-11
 
 All notable changes to Shorthand Expander™. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [SemVer](https://semver.org/).
 Dates are local (Pacific).
 
-## [1.7.8] — Unreleased
+## [1.7.9] — Unreleased
+
+### Fixed
+- **Crash with fill-in snippets in some apps:** when an app reported no usable text-cursor position, Shorthand Expander tried to put the fill-in window at an impossible spot. macOS refused, nothing was typed, and the app crashed a few seconds later. Cursor positions from other apps are now checked, and fill-in, notice, and search windows always open on screen (near the cursor when it's known, otherwise centered on the screen with the pointer).
+
+### Changed
+- **Sort the snippet list:** a ⇅ button below the list sorts by group order, abbreviation, label, most used, recently used, or recently changed. The choice is remembered.
+- **Filter matches are highlighted,** and a snippet that matches only inside its text shows a line of that text.
+- **Recently Used** at the top of the sidebar lists the snippets you expanded most recently.
+- **Live abbreviation check:** as you type an abbreviation, the editor warns right under the field if it's the same as another or expands before you can finish another (click to show it). Prefixes that are harmless with your Expand setting get a gray note instead.
+- **Copy Abbreviation and Copy Expanded Text** in a snippet's right-click menu.
+- **Shortcuts:** ⌘D duplicates the selected snippets (or groups), ⌘1–⌘9 show the first nine groups, and ⌘↑/⌘↓ jump to the first and last snippet.
+- **Hover a snippet** in the list to see the start of its text.
+- **Arrow keys in the filter:** while typing, ↓ and ↑ select snippets in the list, Return moves into the list, and Esc clears the filter.
+
+## [1.7.8] — 2026-11-08
 
 ### Changed
 - **Wider abbreviation field:** in the snippet editor the Abbreviation field now spans the full width, with the case menu below it, so long abbreviations stay readable. The field in the New Snippet window is wider too.

@@ -45,9 +45,14 @@
 
 <h2 id="manage">Managing snippets</h2>
 <ul>
-<li><strong>Find a snippet:</strong> type in the <span class="ui">Filter</span> field above the list. Press <kbd>⌘F</kbd> or <kbd>⌃F</kbd> to jump to it. It matches abbreviations, labels, content, and tags. Start with <code>#</code> to match tags only, for example <code>#clients</code>.</li>
+<li><strong>Find a snippet:</strong> type in the <span class="ui">Filter</span> field above the list. Press <kbd>⌘F</kbd> or <kbd>⌃F</kbd> to jump to it. It matches abbreviations, labels, content, and tags. Start with <code>#</code> to match tags only, for example <code>#clients</code>. Matches are highlighted, and when a snippet matches only inside its text, a line of that text shows where. While you type, press <kbd>↓</kbd> or <kbd>↑</kbd> to select a snippet (<kbd>⌘</kbd><kbd>↓</kbd> and <kbd>⌘</kbd><kbd>↑</kbd> jump to the last and first), <kbd>Return</kbd> to move into the list, or <kbd>Esc</kbd> to clear the filter.</li>
+<li><strong>Sort the list:</strong> click the <span class="ui">⇅</span> button below the list and choose <span class="ui">Group Order</span>, <span class="ui">Abbreviation</span>, <span class="ui">Label</span>, <span class="ui">Most Used</span>, <span class="ui">Recently Used</span>, or <span class="ui">Recently Changed</span>. Shorthand Expander remembers your choice.</li>
+<li><strong>Peek at a snippet:</strong> hold the pointer over it in the list to see the start of its text.</li>
+<li><strong>Recently used:</strong> click <span class="ui">Recently Used</span> at the top of the sidebar to see the snippets you expanded most recently, newest first.</li>
+<li><strong>Jump to a group:</strong> press <kbd>⌘</kbd><kbd>1</kbd> through <kbd>⌘</kbd><kbd>9</kbd> to show the first nine groups in the sidebar.</li>
+<li><strong>Copy its abbreviation or text:</strong> right-click and choose <span class="ui">Copy Abbreviation</span> or <span class="ui">Copy Expanded Text</span> (the text the snippet types, with fill-ins at their defaults), for pasting where expansion is off.</li>
 <li><strong>Move it:</strong> drag it onto another group in the sidebar, use the <span class="ui">Group:</span> menu, or right-click and choose <span class="ui">Move to Group</span>.</li>
-<li><strong>Copy it:</strong> right-click and choose <span class="ui">Duplicate</span>. The copy’s abbreviation gets a number added (“1”, or the next free number).</li>
+<li><strong>Copy it:</strong> right-click and choose <span class="ui">Duplicate</span>, or press <kbd>⌘</kbd><kbd>D</kbd>. The copy’s abbreviation gets a number added (“1”, or the next free number).</li>
 <li><strong>Delete it:</strong> right-click and choose <span class="ui">Move to Trash</span>, or press <kbd>⌫</kbd>. It goes to the <a href="organize.html#trash">Trash</a>, where you can put it back later. Click <span class="ui">Undo</span> in the notice that appears, or press <kbd>⌘</kbd><kbd>Z</kbd>, to undo it straight away.</li>
 <li><strong>Tag it:</strong> type in the <span class="ui">Tags:</span> row of the editor. See <a href="organize.html#tags">Tags</a>.</li>
 <li><strong>Changed your mind?</strong> Moves, copies, deletes, and tag changes can be undone with <span class="ui">Edit ▸ Undo</span> (<kbd>⌘</kbd><kbd>Z</kbd>) while the snippet list or sidebar is active. See <a href="organize.html#undo">Undoing changes</a>.</li>
@@ -57,7 +62,12 @@
 <div class="tip"><p>To move, tag, copy, or delete many snippets at once, <kbd>⌘</kbd>-click or <kbd>⇧</kbd>-click them first. See <a href="organize.html">Tags, Trash &amp; Multi-Select</a>.</p></div>
 
 <h3 id="conflicts">Conflicts</h3>
-<p>An abbreviation shown in <strong>orange</strong> is the beginning of another abbreviation, for example <code>;addr</code> and <code>;addr2</code>. The editor lists them under <em>Conflicts with:</em>. Depending on your expansion mode, the shorter one may fire before you can finish typing the longer one. Rename one of them to fix it.</p>
+<p>An abbreviation shown in <strong>orange</strong> is the beginning of another abbreviation, for example <code>;addr</code> and <code>;addr2</code>. As you type an abbreviation, the editor checks it against all the others:</p>
+<ul>
+<li>An <strong>orange warning</strong> under the field means two snippets have the same abbreviation, or one expands before you can finish typing the other. Click the warning to show the other snippet, then rename one of them.</li>
+<li>A <strong>gray note</strong> means the abbreviations only start alike. With expansion at a space or punctuation (the default), each one expands when you finish it, so nothing needs fixing.</li>
+</ul>
+<p><span class="ui">File ▸ Tune Up Library…</span> lists every conflict at once.</p>
 
 <h2 id="groups">Groups</h2>
 <ol class="steps">

@@ -6,7 +6,7 @@
 
 **[⬇ Download the latest version](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest)** · [Website](https://shorthandexpander.com/) · [Help](https://shorthandexpander.com/help/) · [Features](FEATURES.md) · [What's new](CHANGELOG.md) · [Privacy](PRIVACY.md) · [Security](SECURITY.md) · [License](LICENSE.md)
 
-Current version: **1.7.8** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
+Current version: **1.7.9** · macOS 14 or later · Apple Silicon · signed with a Developer ID and notarized by Apple.
 
 ## Highlights
 - **Nearly everything TextExpander does:** abbreviations, fill-ins (text, choices, optional sections), dates and date math, the clipboard, nested snippets, keys and cursor placement, per-app rules, and formatted text.
@@ -29,7 +29,7 @@ Current version: **1.7.8** · macOS 14 or later · Apple Silicon · signed with 
 </tr></table>
 
 ## Install
-1. Download **Shorthand-1.7.8.dmg** from [Releases](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest).
+1. Download **Shorthand-1.7.9.dmg** from [Releases](https://github.com/jkirker/shorthand-text-expander-mac/releases/latest).
 2. Open it and drag **Shorthand** onto the **Applications** shortcut, then open it from Applications.
 3. Accept the license agreement, then follow the setup: grant **Accessibility**, then import from TextExpander if you like.
 
